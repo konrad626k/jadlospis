@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="theme-color" content="#c85a2a">
+<meta name="theme-color" content="#1a3a2a">
 <title>Jadłospis dla Pary 🍽️</title>
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -14,17 +14,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #faf7f2;
+  --bg: #f4f6f4;
   --surface: #ffffff;
-  --border: #e8e0d4;
-  --accent: #c85a2a;
-  --accent2: #2a7a4f;
-  --accent3: #d4a017;
-  --text: #1a1208;
-  --muted: #8a7a6a;
-  --tag-bg: #f5ede3;
-  --safe-b: env(safe-area-inset-bottom, 0px);
-  --safe-t: env(safe-area-inset-top, 0px);
+  --border: #dde3dd;
+
+  --accent: #1f5c3a;
+  --accent-light: #2a7a4f;
+  --accent2: #4a90a4;
+  --accent3: #c8a84b;
+
+  --text: #1a2620;
+  --muted: #6b7c72;
+  --tag-bg: #eef3ee;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
@@ -35,18 +36,18 @@ html, body { height: 100%; overflow: hidden; font-family: 'Nunito', sans-serif; 
 
 /* HEADER */
 .top-bar {
-  background: var(--accent);
-  padding: calc(var(--safe-t) + 12px) 18px 12px;
+  background: linear-gradient(135deg, #1a3a2a, #1f5c3a);
+  padding: calc(env(safe-area-inset-top, 0px) + 12px) 18px 12px;
   display: flex; align-items: center; justify-content: space-between;
   flex-shrink: 0;
-  box-shadow: 0 2px 12px rgba(200,90,42,0.3);
+  box-shadow: 0 2px 16px rgba(26,58,42,0.35);
 }
 .logo { display: flex; align-items: center; gap: 10px; }
 .logo-icon { font-size: 26px; }
 .logo-text h1 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; color: white; line-height: 1.1; }
-.logo-text span { font-size: 10px; color: rgba(255,255,255,0.75); font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; }
-.week-chip { background: rgba(255,255,255,0.2); color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; border: 1px solid rgba(255,255,255,0.3); cursor: pointer; font-family: 'Nunito', sans-serif; }
-.week-chip:active { background: rgba(255,255,255,0.3); }
+.logo-text span { font-size: 10px; color: rgba(255,255,255,0.70); font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; }
+.week-chip { background: rgba(255,255,255,0.15); color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; border: 1px solid rgba(255,255,255,0.25); cursor: pointer; font-family: 'Nunito', sans-serif; }
+.week-chip:active { background: rgba(255,255,255,0.25); }
 
 /* TABS */
 .tabs { display: flex; background: var(--surface); border-bottom: 2px solid var(--border); flex-shrink: 0; }
@@ -83,18 +84,18 @@ html, body { height: 100%; overflow: hidden; font-family: 'Nunito', sans-serif; 
 .meal-row:last-child { border-bottom: none; }
 .meal-row:active { background: var(--tag-bg); }
 .meal-icon { width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
-.ic1 { background: #fff3e0; } .ic2 { background: #e8f5e9; } .ic3 { background: #fce4ec; } .ic4 { background: #f3e5f5; } .ic5 { background: #e3f2fd; }
+.ic1 { background: #fef6e8; } .ic2 { background: #e8f4ee; } .ic3 { background: #edf3fb; } .ic4 { background: #f5eef8; } .ic5 { background: #e8f0f4; }
 .meal-info { flex: 1; min-width: 0; }
 .meal-type { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 2px; }
 .meal-name { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 600; color: var(--text); line-height: 1.2; margin-bottom: 3px; }
 .meal-flag { font-size: 13px; }
 .meal-arrow { color: var(--muted); font-size: 12px; padding-top: 6px; }
-.box-tag { display: inline-flex; align-items: center; gap: 3px; background: #e3f2fd; color: #1565c0; font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 6px; margin-top: 3px; }
+.box-tag { display: inline-flex; align-items: center; gap: 3px; background: #e6f0f5; color: #1f5c3a; font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 6px; margin-top: 3px; }
 
 /* RECIPE MODAL */
-.modal-overlay { position: fixed; inset: 0; background: rgba(26,18,8,0.6); z-index: 200; display: flex; align-items: flex-end; opacity: 0; pointer-events: none; transition: opacity .25s; }
+.modal-overlay { position: fixed; inset: 0; background: rgba(10,20,15,0.6); z-index: 200; display: flex; align-items: flex-end; opacity: 0; pointer-events: none; transition: opacity .25s; }
 .modal-overlay.show { opacity: 1; pointer-events: all; }
-.modal { background: var(--bg); border-radius: 24px 24px 0 0; width: 100%; max-height: 88vh; overflow-y: auto; padding: 0 0 calc(var(--safe-b) + 20px); transform: translateY(100%); transition: transform .3s cubic-bezier(.32,0,.67,0); }
+.modal { background: var(--bg); border-radius: 24px 24px 0 0; width: 100%; max-height: 88vh; overflow-y: auto; padding: 0 0 calc(env(safe-area-inset-bottom, 0px) + 20px); transform: translateY(100%); transition: transform .3s cubic-bezier(.32,0,.67,0); }
 .modal-overlay.show .modal { transform: translateY(0); }
 .modal-handle { width: 40px; height: 4px; background: var(--border); border-radius: 2px; margin: 12px auto 0; }
 .modal-header { padding: 16px 18px 12px; border-bottom: 1px solid var(--border); }
@@ -111,7 +112,7 @@ html, body { height: 100%; overflow: hidden; font-family: 'Nunito', sans-serif; 
 .recipe-steps { display: flex; flex-direction: column; gap: 10px; }
 .step { display: flex; gap: 10px; font-size: 13px; line-height: 1.6; color: var(--text); }
 .step-num { width: 22px; height: 22px; border-radius: 50%; background: var(--accent); color: white; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
-.tip-box { background: #fffbeb; border: 1px solid #fcd34d; border-radius: 10px; padding: 10px 12px; font-size: 12px; color: #78350f; margin-top: 12px; line-height: 1.6; }
+.tip-box { background: #f9f7ed; border: 1px solid #d4c878; border-radius: 10px; padding: 10px 12px; font-size: 12px; color: #5a4a10; margin-top: 12px; line-height: 1.6; }
 .tip-box strong { display: block; margin-bottom: 3px; }
 .close-btn { width: calc(100% - 36px); margin: 16px 18px 0; padding: 13px; border-radius: 14px; border: none; background: var(--accent); color: white; font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; }
 .close-btn:active { transform: scale(.98); }
@@ -121,24 +122,24 @@ html, body { height: 100%; overflow: hidden; font-family: 'Nunito', sans-serif; 
 .shop-sub { font-size: 12px; color: var(--muted); margin-bottom: 14px; }
 .shop-cat { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; margin-bottom: 10px; }
 .shop-cat-hdr { padding: 11px 14px; font-size: 11px; font-weight: 700; letter-spacing: .5px; display: flex; align-items: center; gap: 7px; border-bottom: 1px solid var(--border); }
-.hm { background: #ffeaea; color: #c0392b; }
-.hd { background: #fffde7; color: #c77800; }
-.hv { background: #e8f5e9; color: #2a7a4f; }
-.hg { background: #f3e5f5; color: #7b1fa2; }
-.ho { background: #e3f2fd; color: #1565c0; }
-.hc { background: #fce4ec; color: #ad1457; }
+.hm { background: #fdecea; color: #9c2a2a; }
+.hd { background: #fdf8e8; color: #8a6400; }
+.hv { background: #e8f4ee; color: #1f5c3a; }
+.hg { background: #f0ecf8; color: #5a3a8a; }
+.ho { background: #e8f0f5; color: #1a4a6a; }
+.hc { background: #fbeef4; color: #8a1f4a; }
 .sitem { display: flex; align-items: center; gap: 11px; padding: 11px 14px; border-bottom: 1px solid rgba(0,0,0,.04); cursor: pointer; transition: background .15s; }
 .sitem:last-child { border-bottom: none; }
 .sitem:active { background: var(--tag-bg); }
 .sitem.done { opacity: .4; }
 .sitem.done .iname { text-decoration: line-through; }
 .chk { width: 22px; height: 22px; border-radius: 7px; border: 2px solid var(--border); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; transition: all .2s; }
-.sitem.done .chk { background: var(--accent2); border-color: var(--accent2); color: white; }
+.sitem.done .chk { background: var(--accent); border-color: var(--accent); color: white; }
 .iname { flex: 1; font-size: 13px; font-weight: 500; }
 .imeta { text-align: right; flex-shrink: 0; }
 .iqty { font-size: 10px; color: var(--muted); }
 .iprice { font-size: 11px; font-weight: 700; color: var(--accent); }
-.total-card { background: linear-gradient(135deg, #c85a2a, #e07040); border-radius: 16px; padding: 16px 18px; margin-top: 12px; display: flex; align-items: center; justify-content: space-between; color: white; }
+.total-card { background: linear-gradient(135deg, #1a3a2a, #1f5c3a); border-radius: 16px; padding: 16px 18px; margin-top: 12px; display: flex; align-items: center; justify-content: space-between; color: white; }
 .total-left strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 700; }
 .total-left span { font-size: 11px; opacity: .8; }
 .total-right { font-size: 11px; text-align: right; opacity: .85; line-height: 1.8; }
@@ -149,7 +150,7 @@ html, body { height: 100%; overflow: hidden; font-family: 'Nunito', sans-serif; 
 .prog-text strong { font-size: 14px; font-weight: 700; }
 .prog-text span { display: block; font-size: 11px; color: var(--muted); margin-top: 1px; }
 .prog-bar { height: 5px; background: var(--border); border-radius: 99px; overflow: hidden; margin-top: 6px; }
-.prog-fill { height: 100%; background: var(--accent2); border-radius: 99px; transition: width .4s; }
+.prog-fill { height: 100%; background: var(--accent); border-radius: 99px; transition: width .4s; }
 
 /* WEEK SWITCHER IN SHOP */
 .shop-week-nav { display: flex; gap: 8px; margin-bottom: 14px; }
@@ -220,474 +221,485 @@ html, body { height: 100%; overflow: hidden; font-family: 'Nunito', sans-serif; 
 </div>
 
 <script>
-// ═══════════════════════════════════ DATA ═══════════════════════════════════
-
-// Structure: 4 weeks, each week has 7 days (0=Sun, 1=Mon, ..., 6=Sat)
-// Meals: [sniadanie1, sniadanie2, obiad, podwieczorek, kolacja]
-// Poniedziałek-Wtorek = same meals (box), Środa-Czwartek = same (box), Piątek-Sobota = same (box), Niedziela = special home
-
 const DAY_NAMES = ['Niedziela','Poniedziałek','Wtorek','Środa','Czwartek','Piątek','Sobota'];
 const DAY_SHORT = ['Nd','Pn','Wt','Śr','Cz','Pt','Sb'];
-
-// Meal types
 const MT = ['☀️ I Śniadanie','🍳 II Śniadanie','🍽️ Obiad','🍰 Podwieczorek','📺 Kolacja box'];
 const MI = ['ic1','ic2','ic3','ic4','ic5'];
 
-// Helper: is this day a "box" day?
-const isBox = d => d !== 0; // Sunday = home day
-
 const WEEKS = [
-  // ═══ TYDZIEŃ 1 ═══
-  {
-    // Pon-Wt
-    monTue: [
-      { name:'Owsianka z jabłkiem i cynamonem', flag:'🇵🇱', type:'Lekkie śniadanie', box:false,
-        ingredients:[{q:'80g',n:'płatki owsiane'},{q:'200ml',n:'mleko'},{q:'1 szt.',n:'jabłko'},{q:'1 łyżeczka',n:'cynamon'},{q:'1 łyżka',n:'miód'},{q:'garść',n:'orzechy włoskie'}],
-        steps:['Zagotuj mleko, wsyp płatki, gotuj 3 min mieszając.','Jabłko zetrzyj na tarce lub pokrój w kostkę.','Dodaj jabłko, cynamon i miód do owsianki.','Posyp orzechami przed podaniem.'],
-        tip:'Do pudełka wlej owsiankę na zimno (overnight oats) — zalej płatki mlekiem wieczorem, rano gotowe!'
-      },
-      { name:'Bułki z jajkiem sadzonym i awokado', flag:'🌍', type:'Konkretne śniadanie', box:true,
-        ingredients:[{q:'2 szt.',n:'bułki kajzerki'},{q:'2 szt.',n:'jajka'},{q:'1 szt.',n:'awokado'},{q:'1 szt.',n:'pomidor'},{q:'szczypta',n:'sól, pieprz, chili'},{q:'kilka liści',n:'roszponka'}],
-        steps:['Usmaż jajka sadzone na maśle.','Awokado rozgnieć widelcem, dopraw solą i cytryną.','Bułki przepół, posmaruj awokado.','Ułóż jajko, plasterki pomidora i roszponkę.'],
-        tip:'Do boxu: zawiń bułki osobno, awokado posmaruj na miejscu.'
-      },
-      { name:'Makaron z kurczakiem i pesto', flag:'🇮🇹', type:'Obiad', box:true,
-        ingredients:[{q:'300g',n:'makaron penne (2 os.)'},{q:'2 piersi',n:'filet z kurczaka'},{q:'3 łyżki',n:'pesto bazyliowe (słoik)'},{q:'1 szt.',n:'cukinia'},{q:'100g',n:'pomidorki cherry'},{q:'2 łyżki',n:'parmezan'},{q:'2 łyżki',n:'oliwa z oliwek'},{q:'2 ząbki',n:'czosnek'}],
-        steps:['Ugotuj makaron al dente, odcedź zachowując szklankę wody.','Kurczaka pokrój w kostkę, usmaż na oliwie z czosnkiem 6-8 min.','Cukinię pokrój w półtalarki, dodaj do kurczaka, smaż 3 min.','Wymieszaj makaron z pesto, kurczakiem i warzywami.','Dodaj trochę wody z gotowania, posyp parmezanem.'],
-        tip:'Do boxu doskonały na zimno lub po podgrzaniu.'
-      },
-      { name:'Muffiny bananowe z orzechami', flag:'🌍', type:'Podwieczorek / deser', box:true,
-        ingredients:[{q:'3 szt.',n:'dojrzałe banany'},{q:'2 szt.',n:'jajka'},{q:'150g',n:'mąka'},{q:'50g',n:'cukier brązowy'},{q:'1 łyżeczka',n:'proszek do pieczenia'},{q:'50g',n:'orzechy włoskie'},{q:'4 łyżki',n:'olej'}],
-        steps:['Rozgrzej piekarnik 180°C.','Banany rozgnieć widelcem, wymieszaj z jajkami i olejem.','Dodaj mąkę, cukier, proszek do pieczenia — wymieszaj.','Dodaj posiekane orzechy.','Piecz 18-20 min.'],
-        tip:'Rób od razu 12 szt. — starczą na cały tydzień!'
-      },
-      { name:'Box przekąskowy: deska włoska', flag:'🇮🇹', type:'Kolacja serials box', box:true,
-        ingredients:[{q:'80g',n:'prosciutto lub salami'},{q:'80g',n:'mozzarella'},{q:'garść',n:'oliwki'},{q:'2 szt.',n:'chleb ciabatta'},{q:'kilka szt.',n:'pomidorki cherry'},{q:'1 łyżka',n:'oliwa + zioła'}],
-        steps:['Ułóż wszystko na desce lub do pojemnika.','Ciabattę potnij w kawałki.','Mozzarellę porwij na kawałki, skrop oliwą.','Posyp ziołami prowansalskimi.'],
-        tip:'Układaj w box warstwowo — wygląda pięknie i smakuje wyśmienicie!'
-      },
-    ],
-    // Śr-Cz
-    wedThu: [
-      { name:'Kasza manna z malinami i wanilią', flag:'🇵🇱', type:'Lekkie śniadanie', box:false,
-        ingredients:[{q:'4 łyżki',n:'kasza manna'},{q:'400ml',n:'mleko'},{q:'1 łyżeczka',n:'cukier waniliowy'},{q:'garść',n:'maliny (świeże lub mrożone)'},{q:'1 łyżeczka',n:'dżem malinowy'}],
-        steps:['Zagotuj mleko z cukrem waniliowym.','Wsyp kaszę mannę cienkim strumieniem, mieszając.','Gotuj 3 min na małym ogniu.','Podaj z malinami i dżemem.'],
-        tip:'Kaszy nie rób do pudełka — rozleje się. Zjedz rano w domu!'
-      },
-      { name:'Naleśniki z twarożkiem i truskawkami', flag:'🇵🇱', type:'Konkretne śniadanie', box:true,
-        ingredients:[{q:'200g',n:'mąka'},{q:'2 szt.',n:'jajka'},{q:'400ml',n:'mleko'},{q:'szczypta',n:'sól'},{q:'250g',n:'twaróg półtłusty'},{q:'2 łyżki',n:'cukier puder'},{q:'garść',n:'truskawki'}],
-        steps:['Wymieszaj mąkę, jajka, mleko, sól na gładkie ciasto.','Smaż cienkie naleśniki na odrobinie masła.','Twaróg wymieszaj z cukrem pudrem.','Posmaruj naleśniki, ułóż truskawki, zawiń.'],
-        tip:'Do boxu zawiń ciasno w folię — nie rozpadną się.'
-      },
-      { name:'Kurczak po chińsku z ryżem i warzywami', flag:'🇨🇳', type:'Obiad', box:true,
-        ingredients:[{q:'2 piersi',n:'filet z kurczaka'},{q:'200g',n:'ryż jaśminowy'},{q:'1 szt.',n:'papryka czerwona'},{q:'1 szt.',n:'marchewka'},{q:'2 szt.',n:'cebula dymka'},{q:'3 łyżki',n:'sos sojowy'},{q:'1 łyżka',n:'miód'},{q:'1 łyżka',n:'ocet ryżowy'},{q:'2 cm',n:'imbir świeży'},{q:'2 ząbki',n:'czosnek'},{q:'1 łyżka',n:'olej sezamowy'}],
-        steps:['Ugotuj ryż wg przepisu na opakowaniu.','Kurczaka pokrój w paski, zamarynuj w sosie sojowym, miodzie i imbirze 15 min.','Na rozgrzanym woku smaż kurczaka 5-6 min.','Dodaj warzywa pokrojone w julienne, smaż 3 min.','Dopraw olejem sezamowym i czosnkiem.'],
-        tip:'Idealny do boxu — smakuje równie dobrze na zimno.'
-      },
-      { name:'Sernik w kubku (5 minut)', flag:'🇵🇱', type:'Podwieczorek / deser', box:false,
-        ingredients:[{q:'200g',n:'twaróg sernikowy'},{q:'2 łyżki',n:'cukier'},{q:'1 szt.',n:'jajko'},{q:'1 łyżeczka',n:'skrobia ziemniaczana'},{q:'1 łyżeczka',n:'ekstrakt waniliowy'},{q:'kilka szt.',n:'jagody do podania'}],
-        steps:['Wymieszaj twaróg z cukrem, jajkiem, skrobią i wanilią.','Wlej do kubka odpowiedniego do mikrofalówki.','Gotuj w mikrofali 3-4 min (600W).','Ostudź 2 min, podaj z jagodami.'],
-        tip:'Rób wieczór wcześniej — wstaw do lodówki i rano zabierz do pracy!'
-      },
-      { name:'Box przekąskowy: azjatycki', flag:'🌏', type:'Kolacja serials box', box:true,
-        ingredients:[{q:'200g',n:'edamame (mrożone)'},{q:'4 szt.',n:'ryżowe crackersy'},{q:'50g',n:'hummus'},{q:'1 szt.',n:'ogórek'},{q:'2 szt.',n:'marchewka baby'},{q:'2 łyżki',n:'sos sojowy do moczenia'}],
-        steps:['Edamame ugotuj 5 min, posoł.','Ogórek pokrój w słupki.','Ułóż wszystko w pojemniku.','Sos sojowy wlej do małego pojemnika.'],
-        tip:'Zdrowy i sycący box idealny na wieczór!'
-      },
-    ],
-    // Pt-Sb
-    friSat: [
-      { name:'Jogurt grecki z granolą i owocami', flag:'🌍', type:'Lekkie śniadanie', box:false,
-        ingredients:[{q:'2 kubki (400g)',n:'jogurt grecki'},{q:'4 łyżki',n:'granola'},{q:'garść',n:'borówki'},{q:'1 łyżka',n:'miód'},{q:'kilka szt.',n:'orzechy nerkowca'}],
-        steps:['Do miseczki nałóż jogurt.','Posyp granolą i borówkami.','Skrop miodem, posyp orzechami.'],
-        tip:'Do boxu: granola oddzielnie — żeby nie rozmiękła.'
-      },
-      { name:'Tortilla z kurczakiem i guacamole', flag:'🇲🇽', type:'Konkretne śniadanie', box:true,
-        ingredients:[{q:'2 szt.',n:'tortilla pszenna (duża)'},{q:'1 pierś',n:'filet z kurczaka (z obiadu)'},{q:'1 szt.',n:'awokado'},{q:'1 szt.',n:'limonka'},{q:'1 szt.',n:'pomidor'},{q:'garść',n:'liście sałaty'},{q:'2 łyżki',n:'śmietana 18%'},{q:'szczypta',n:'kuminu, papryki wędzonej'}],
-        steps:['Kurczaka (resztkę) pokrój w paski lub rozdrobnij widelcem.','Awokado rozgnieć z sokiem z limonki i solą.','Tortillę podgrzej chwilę na suchej patelni.','Posmaruj guacamole, ułóż kurczaka, pomidora, sałatę.','Zwiń ciasno, zawiń w papier śniadaniowy.'],
-        tip:'Świetny box — nie rozlewa się i jest pyszny!'
-      },
-      { name:'Grillowany łosoś z ziemniakami i cytryną', flag:'🇬🇷', type:'Obiad', box:true,
-        ingredients:[{q:'2 filety (300g)',n:'łosoś'},{q:'4 szt.',n:'ziemniaki'},{q:'1 szt.',n:'cytryna'},{q:'3 łyżki',n:'oliwa z oliwek'},{q:'2 ząbki',n:'czosnek'},{q:'gałązki',n:'koperek i pietruszka'},{q:'szczypta',n:'sól, pieprz'},{q:'200g',n:'szpinak baby'}],
-        steps:['Ziemniaki ugotuj lub upiecz w piekarniku z oliwą 200°C/35 min.','Łososia skrop oliwą, czosnkiem, cytryną.','Grilluj lub smaż 4 min z każdej strony.','Szpinak podsmaż chwilę na oliwie z czosnkiem.','Podaj razem, udekoruj koperkiem.'],
-        tip:'Do boxu: łosoś świetnie smakuje na zimno z cytryną!'
-      },
-      { name:'Brownie czekoladowe', flag:'🇫🇷', type:'Podwieczorek / deser', box:true,
-        ingredients:[{q:'100g',n:'gorzka czekolada 70%'},{q:'80g',n:'masło'},{q:'2 szt.',n:'jajka'},{q:'100g',n:'cukier'},{q:'60g',n:'mąka'},{q:'2 łyżki',n:'kakao'},{q:'szczypta',n:'sól'}],
-        steps:['Rozpuść czekoladę z masłem w kąpieli wodnej.','Wymieszaj jajka z cukrem, dodaj czekoladę.','Dodaj przesianą mąkę, kakao i sól.','Piecz w formie 20x20 cm, 180°C, 20-22 min.','Studź i kroń w kwadraty.'],
-        tip:'Rób w piątek — starczy na cały weekend!'
-      },
-      { name:'Box przekąskowy: śródziemnomorski', flag:'🇬🇷', type:'Kolacja serials box', box:true,
-        ingredients:[{q:'80g',n:'hummus'},{q:'80g',n:'ser feta'},{q:'garść',n:'oliwki kalamata'},{q:'1 szt.',n:'pita lub chleb pita'},{q:'1 szt.',n:'ogórek'},{q:'garść',n:'pomidorki cherry'},{q:'1 łyżka',n:'oliwa + oregano'}],
-        steps:['Feta pokrusz do pojemnika.','Oliwki, pomidorki, ogórek w słupkach.','Hummus w osobnym pojemniku.','Pitę podgrzej i pokrój w trójkąty.'],
-        tip:'Ten box to festiwal smaków — idealny do serialu!'
-      },
-    ],
-    // Niedziela
-    sunday: [
-      { name:'Pancakes z owocami sezonowymi', flag:'🇺🇸', type:'Lekkie śniadanie (niedziela)', box:false,
-        ingredients:[{q:'200g',n:'mąka pszenna'},{q:'2 szt.',n:'jajka'},{q:'250ml',n:'maślanka'},{q:'1 łyżeczka',n:'proszek do pieczenia'},{q:'½ łyżeczki',n:'soda'},{q:'1 łyżka',n:'cukier'},{q:'30g',n:'masło'},{q:'garść',n:'owoce sezonowe'},{q:'3 łyżki',n:'syrop klonowy'}],
-        steps:['Wymieszaj suche składniki osobno.','Jajka, maślankę i rozpuszczone masło wymieszaj.','Połącz obie mieszanki — nie mieszaj za długo!','Smaż małe placki na średnim ogniu po 2 min.','Podaj z owocami i syropem klonowym.'],
-        tip:'Niedziela = czas dla Was. Wstańcie i ugotujcie razem!'
-      },
-      { name:'Gofry z bitą śmietaną i owocami', flag:'🌍', type:'Konkretne śniadanie (niedziela)', box:false,
-        ingredients:[{q:'250g',n:'mąka'},{q:'2 szt.',n:'jajka'},{q:'250ml',n:'mleko'},{q:'100g',n:'masło'},{q:'1 łyżka',n:'cukier'},{q:'1 łyżeczka',n:'proszek do pieczenia'},{q:'200ml',n:'śmietana 30% (do ubicia)'},{q:'2 łyżki',n:'cukier puder'},{q:'garść',n:'truskawki'}],
-        steps:['Rozpuść masło, studź. Wymieszaj mąkę, jajka, mleko, masło, cukier, proszek.','Rozgrzej gofrownicę, posmaruj masłem.','Wlej porcję ciasta, piecz 4-5 min.','Ubij śmietanę z cukrem pudrem.','Podaj gofry z bitą śmietaną i truskawkami.'],
-        tip:'Przygotujcie razem — jedno piecze, drugie ubija śmietanę!'
-      },
-      { name:'Paella z owocami morza (niedzielny obiad)', flag:'🇪🇸', type:'Niedzielny obiad specjalny', box:false,
-        ingredients:[{q:'300g',n:'ryż do paelli lub arborio'},{q:'400g',n:'owoce morza mix (mrożone)'},{q:'1 szt.',n:'cebula'},{q:'3 ząbki',n:'czosnek'},{q:'1 szt.',n:'papryka czerwona'},{q:'400g',n:'pomidory krojone (puszka)'},{q:'500ml',n:'bulion rybny'},{q:'szczypta',n:'szafran'},{q:'1 łyżeczka',n:'słodka papryka'},{q:'3 łyżki',n:'oliwa'},{q:'1 szt.',n:'cytryna'}],
-        steps:['Rozgrzej oliwę w szerokiej patelni, zeszklij cebulę i czosnek.','Dodaj paprykę pokrojoną w paseczki, smaż 3 min.','Dodaj ryż, wymieszaj z oliwą.','Wlej bulion z szafranem i pomidory, gotuj 15 min.','Dodaj owoce morza, gotuj jeszcze 8-10 min.','Podaj z cytryną.'],
-        tip:'Paella to rytuał — gotujcie razem przy dobrej muzyce!'
-      },
-      { name:'Tarta cytrynowa', flag:'🇫🇷', type:'Niedzielny deser', box:false,
-        ingredients:[{q:'150g',n:'mąka'},{q:'80g',n:'masło zimne'},{q:'2 łyżki',n:'cukier puder'},{q:'1 szt.',n:'jajko (do ciasta)'},{q:'3 szt.',n:'jajka (do kremu)'},{q:'150g',n:'cukier'},{q:'3 szt.',n:'cytryny (sok i skórka)'},{q:'100g',n:'masło (do kremu)'},{q:'100ml',n:'śmietana 30%'}],
-        steps:['Posiekaj mąkę z masłem, dodaj cukier i jajko — zagnieć kruche ciasto.','Wstaw na 30 min do lodówki, wyłóż formę, piecz 15 min (180°C) z obciążnikiem.','Krem: sok cytrynowy, jajka, cukier i masło gotuj w kąpieli wodnej mieszając aż zgęstnieje.','Wlej krem do upieczonego spodu.','Wstaw na 2 godz. do lodówki.'],
-        tip:'Niedzielna tarta to show — podaj z kawą i delektujcie się!'
-      },
-      { name:'Zupa cebulowa po francusku', flag:'🇫🇷', type:'Niedzielna kolacja', box:false,
-        ingredients:[{q:'6 szt.',n:'cebule'},{q:'2 łyżki',n:'masło'},{q:'150ml',n:'białe wino wytrawne'},{q:'1L',n:'bulion wołowy'},{q:'2 gałązki',n:'tymianek'},{q:'4 kromki',n:'bagietka'},{q:'100g',n:'ser Gruyère lub żółty'}],
-        steps:['Cebulę pokrój w cienkie krążki. Smaż na maśle na małym ogniu 40 min aż skarmelizuje.','Wlej wino, gotuj 2 min.','Dodaj bulion i tymianek, gotuj 20 min.','Zupę przelej do żaroodpornych misek.','Na wierzch połóż grzankę z bagietki, posyp serem.','Zapiekaj w piekarniku 200°C przez 10 min aż ser się roztopi.'],
-        tip:'Klasyk! Przy odrobinie cierpliwości (karmelizacja) wychodzi magicznie.'
-      },
-    ],
-  },
 
-  // ═══ TYDZIEŃ 2 ═══
-  {
-    monTue: [
-      { name:'Budyń waniliowy z owocami', flag:'🌍', type:'Lekkie śniadanie', box:false,
-        ingredients:[{q:'500ml',n:'mleko'},{q:'2 łyżki',n:'budyń waniliowy (proszek)'},{q:'2 łyżki',n:'cukier'},{q:'garść',n:'maliny lub truskawki'},{q:'1 łyżeczka',n:'wiórki kokosowe'}],
-        steps:['Przygotuj budyń wg przepisu na opakowaniu.','Ostudź lekko, wlej do słoiczków.','Na wierzch ułóż owoce i wiórki kokosowe.','Do boxu: zakryj pokrywką — gotowe!'],
-        tip:'Rób 2 porcje wieczorem — śniadanie gotowe na 2 dni!'
-      },
-      { name:'Kanapki z pastą jajeczną i szczypiorkiem', flag:'🇵🇱', type:'Konkretne śniadanie', box:true,
-        ingredients:[{q:'4 szt.',n:'jajka'},{q:'2 łyżki',n:'majonez'},{q:'2 łyżki',n:'jogurt grecki'},{q:'1 pęczek',n:'szczypiorek'},{q:'sól, pieprz',n:''},{q:'4 kromki',n:'chleb żytni'}],
-        steps:['Ugotuj jajka na twardo (9 min), wystudź, obierz.','Posiekaj jajka drobno.','Wymieszaj z majonezem, jogurtem i szczypiorkiem.','Dopraw solą i pieprzem.','Posmaruj chleb, zawiń w folię.'],
-        tip:'Pasty nie dawaj na chleb do boxu — chłeb się moczy. Daj oddzielnie!'
-      },
-      { name:'Zupa pomidorowa z makaronem (po polsku)', flag:'🇵🇱', type:'Obiad', box:true,
-        ingredients:[{q:'800g',n:'pomidory pelati (puszka)'},{q:'500ml',n:'bulion drobiowy'},{q:'2 łyżki',n:'przecier pomidorowy'},{q:'1 szt.',n:'cebula'},{q:'2 ząbki',n:'czosnek'},{q:'2 łyżki',n:'śmietana 18%'},{q:'200g',n:'makaron świderki (na 2 dni)'},{q:'2 łyżki',n:'masło'},{q:'bazylia, cukier, sól',n:'do smaku'}],
-        steps:['Cebulę zeszklij na maśle, dodaj czosnek.','Dodaj pomidory, przecier i bulion. Gotuj 20 min.','Zmiksuj blenderem na krem.','Dopraw cukrem, solą, bazylią, dodaj śmietanę.','Ugotuj makaron osobno, dodaj przed podaniem.'],
-        tip:'Zupa do termosu — przez 6h utrzyma temperaturę!'
-      },
-      { name:'Ciasto marchewkowe z lukrem', flag:'🇺🇸', type:'Podwieczorek / deser', box:true,
-        ingredients:[{q:'250g',n:'marchewka (starta)'},{q:'2 szt.',n:'jajka'},{q:'150g',n:'cukier brązowy'},{q:'150ml',n:'olej'},{q:'200g',n:'mąka'},{q:'1 łyżeczka',n:'proszek do pieczenia'},{q:'1 łyżeczka',n:'cynamon'},{q:'100g',n:'ser Philadelphia (do lukru)'},{q:'50g',n:'cukier puder'}],
-        steps:['Wymieszaj jajka z cukrem i olejem.','Dodaj marchewkę, mąkę, proszek, cynamon.','Piecz 180°C, 35 min w formie keksowej.','Ser Philadelphia wymieszaj z cukrem pudrem na lukier.','Posmaruj ostudzone ciasto.'],
-        tip:'Ciasto marchewkowe zyskuje smak po dobie — piecz dzień wcześniej!'
-      },
-      { name:'Box przekąskowy: polski', flag:'🇵🇱', type:'Kolacja serials box', box:true,
-        ingredients:[{q:'2 kromki',n:'chleb żytni'},{q:'80g',n:'szynka swojska'},{q:'50g',n:'ser żółty'},{q:'1 szt.',n:'ogórek kiszony'},{q:'1 szt.',n:'jajko na twardo'},{q:'liście',n:'sałata masłowa'},{q:'1 łyżka',n:'musztarda sarepska'}],
-        steps:['Chleb pokrój na małe kanapeczki.','Ułóż szynkę i ser.','Jajko pokrój w ósemki.','Ogórek w plasterki.','Zapakuj do boxu z musztardą oddzielnie.'],
-        tip:'Klasyczny polski box — prosty i sycący!'
-      },
-    ],
-    wedThu: [
-      { name:'Serek wiejski z rzodkiewką i szczypiorkiem', flag:'🇵🇱', type:'Lekkie śniadanie', box:false,
-        ingredients:[{q:'200g',n:'serek wiejski'},{q:'1 pęczek',n:'rzodkiewki'},{q:'1 pęczek',n:'szczypiorek'},{q:'2 łyżki',n:'jogurt grecki'},{q:'sól, pieprz',n:''},{q:'2 kromki',n:'pieczywo chrupkie'}],
-        steps:['Rzodkiewki pokrój w plasterki, szczypiorek posiekaj.','Wymieszaj serek z jogurtem, solą i pieprzem.','Dodaj warzywa.','Podaj z pieczywem chrupkim.'],
-        tip:'Do boxu w słoiczku — trwa cały dzień w lodówce!'
-      },
-      { name:'Quesadilla z kurczakiem i serem', flag:'🇲🇽', type:'Konkretne śniadanie', box:true,
-        ingredients:[{q:'2 szt.',n:'tortilla pszenna'},{q:'150g',n:'kurczak (resztkowy lub z puszki)'},{q:'100g',n:'ser żółty'},{q:'1 szt.',n:'papryka czerwona'},{q:'2 łyżki',n:'salsa pomidorowa'},{q:'1 łyżka',n:'kwaśna śmietana'}],
-        steps:['Na tortillę ułóż ser, kurczaka i paprykę.','Złóż na pół.','Smaż na suchej patelni po 2-3 min z każdej strony.','Pokrój w trójkąty.','Podaj z salsą i śmietaną.'],
-        tip:'Do boxu: zawiń w folię aluminiową — trzyma ciepło!'
-      },
-      { name:'Curry z ciecierzycą i ryżem', flag:'🌏', type:'Obiad', box:true,
-        ingredients:[{q:'2 puszki',n:'ciecierzyca'},{q:'1 puszka',n:'mleko kokosowe'},{q:'1 puszka',n:'pomidory krojone'},{q:'1 szt.',n:'cebula'},{q:'3 ząbki',n:'czosnek'},{q:'2 cm',n:'imbir'},{q:'2 łyżeczki',n:'curry w proszku'},{q:'1 łyżeczka',n:'kumin'},{q:'1 łyżeczka',n:'kurkuma'},{q:'200g',n:'ryż basmati'},{q:'garść',n:'kolendra'}],
-        steps:['Zeszklij cebulę, czosnek i imbir.','Dodaj przyprawy, smaż 1 min.','Wlej pomidory i mleko kokosowe.','Dodaj odsączoną ciecierzycę, gotuj 20 min.','Podaj z ryżem i kolendrą.'],
-        tip:'Curry jest lepsze na drugi dzień — smaki się przegryzają!'
-      },
-      { name:'Panna cotta z sosem truskawkowym', flag:'🇮🇹', type:'Podwieczorek / deser', box:true,
-        ingredients:[{q:'500ml',n:'śmietana 30%'},{q:'3 łyżki',n:'cukier'},{q:'2 łyżeczki',n:'żelatyna'},{q:'1 łyżeczka',n:'ekstrakt waniliowy'},{q:'200g',n:'truskawki (sos)'},{q:'2 łyżki',n:'cukier (do sosu)'}],
-        steps:['Żelatynę rozpuść w 3 łyżkach zimnej wody, odczekaj 5 min.','Śmietanę podgrzej z cukrem i wanilią (nie gotuj!).','Dodaj żelatynę, wymieszaj.','Przelej do słoiczków, wstaw na 4h do lodówki.','Sos: truskawki z cukrem zmiksuj.'],
-        tip:'Rób wieczorem — rano wyjmij i zabierz do boxu!'
-      },
-      { name:'Box przekąskowy: meksykański', flag:'🇲🇽', type:'Kolacja serials box', box:true,
-        ingredients:[{q:'garść',n:'nachos'},{q:'80g',n:'guacamole'},{q:'80g',n:'salsa pomidorowa'},{q:'50g',n:'ser żółty starty'},{q:'2 szt.',n:'papryczka jalapeño (łagodna)'},{q:'garść',n:'kukurydza z puszki'}],
-        steps:['Ułóż nachos w pudełku.','Guacamole i salsę daj w oddzielnych pojemniczkach.','Posyp serem i kukurydzą.','Jalapeño pokrój w plasterki.'],
-        tip:'Nachos do serialu = idealne połączenie weekendu!'
-      },
-    ],
-    friSat: [
-      { name:'Smoothie bowl z granolą', flag:'🌍', type:'Lekkie śniadanie', box:false,
-        ingredients:[{q:'2 banany',n:'(mrożone)'},{q:'150g',n:'mrożone maliny'},{q:'100ml',n:'mleko roślinne'},{q:'4 łyżki',n:'granola'},{q:'garść',n:'owoce świeże'},{q:'1 łyżka',n:'masło orzechowe'}],
-        steps:['Zmiksuj mrożone banany i maliny z mlekiem.','Przelej do miseczki.','Na wierzch granola, owoce, masło orzechowe.'],
-        tip:'Śniadanie gotowe w 5 minut, wygląda jak z restauracji!'
-      },
-      { name:'Bajgle z łososiem i twarogiem', flag:'🌍', type:'Konkretne śniadanie', box:true,
-        ingredients:[{q:'2 szt.',n:'bajgle'},{q:'100g',n:'łosoś wędzony'},{q:'100g',n:'twaróg śmietankowy'},{q:'½ szt.',n:'ogórek'},{q:'1 łyżka',n:'kaparów'},{q:'kilka gałązek',n:'koperek'},{q:'szczypta',n:'czarny pieprz'}],
-        steps:['Bajgle przekrój, lekko opiecz w tosterze.','Posmaruj twarogiem.','Ułóż łososia.','Dodaj ogórek, kapary, koperek.'],
-        tip:'Do boxu: twaróg osobno, łosoś osobno — złóż na miejscu.'
-      },
-      { name:'Risotto z grzybami i parmezanem', flag:'🇮🇹', type:'Obiad', box:true,
-        ingredients:[{q:'300g',n:'ryż arborio'},{q:'30g',n:'suszone grzyby'},{q:'200g',n:'pieczarki'},{q:'1 szt.',n:'cebula'},{q:'100ml',n:'białe wino'},{q:'800ml',n:'gorący bulion'},{q:'50g',n:'parmezan'},{q:'2 łyżki',n:'masło'},{q:'2 łyżki',n:'oliwa'},{q:'tymianek',n:''}],
-        steps:['Grzyby suszone namocz 20 min, odcedź zachowując wodę.','Zeszklij cebulę na oliwie i maśle.','Dodaj ryż, smaż 2 min.','Wlej wino, poczekaj aż wchłonie.','Dodawaj gorący bulion chochelka po chochelce mieszając.','Na końcu dodaj grzyby, parmezan i masło.'],
-        tip:'Risotto do boxu — dodaj łyżkę wody przy podgrzewaniu!'
-      },
-      { name:'Tiramisu', flag:'🇮🇹', type:'Podwieczorek / deser', box:true,
-        ingredients:[{q:'250g',n:'mascarpone'},{q:'3 szt.',n:'jajka'},{q:'3 łyżki',n:'cukier'},{q:'200ml',n:'kawa espresso (zimna)'},{q:'150g',n:'biszkopty ladyfingers'},{q:'2 łyżki',n:'kakao do posypania'},{q:'2 łyżki',n:'amaretto (opcjonalnie)'}],
-        steps:['Oddziel żółtka od białek.','Żółtka utrzyj z cukrem na jasną masę.','Dodaj mascarpone, mieszaj.','Ubij białka na sztywno, delikatnie złącz z masą.','Biszkopty maczaj w kawie, układaj warstwy.','Posyp kakao, wstaw na 4h do lodówki.'],
-        tip:'Rób w piątek wieczorem — w sobotę będzie idealne!'
-      },
-      { name:'Box przekąskowy: tapas', flag:'🇪🇸', type:'Kolacja serials box', box:true,
-        ingredients:[{q:'80g',n:'chorizo lub salami'},{q:'50g',n:'manchego lub inny twardy ser'},{q:'garść',n:'oliwki'},{q:'garść',n:'migdały prażone'},{q:'2 szt.',n:'chleb pita lub krakersy'},{q:'1 łyżka',n:'oliwa + paprika wędzona'}],
-        steps:['Chorizo pokrój w plasterki.','Ser w kostkę.','Ułóż wszystko w pojemniku.','Oliwę wymieszaj z papryką wędzoną.'],
-        tip:'Tapas-box to luksus na kanapie — polecamy z winem!'
-      },
-    ],
-    sunday: [
-      { name:'Jajka po florentyńsku', flag:'🇮🇹', type:'Lekkie śniadanie (niedziela)', box:false,
-        ingredients:[{q:'4 szt.',n:'jajka'},{q:'200g',n:'szpinak baby'},{q:'2 łyżki',n:'masło'},{q:'2 łyżki',n:'mąka'},{q:'200ml',n:'mleko'},{q:'szczypta',n:'gałka muszkatołowa'},{q:'2 kromki',n:'tost lub bagietka'}],
-        steps:['Zrób sos béchamel: roztop masło, dodaj mąkę, wlej mleko stopniowo mieszając.','Szpinak podsmaż chwilę na maśle.','Jajka posadź na pospanej solą wodzie (jajka w koszulce).','Na tosty nałóż szpinak, sos béchamel i jajko.'],
-        tip:'Jajka w koszulce: woda musi tylko lekko wrzeć, dodaj łyżkę octu!'
-      },
-      { name:'Racuchy z jabłkami', flag:'🇵🇱', type:'Konkretne śniadanie (niedziela)', box:false,
-        ingredients:[{q:'2 szt.',n:'jabłka'},{q:'200g',n:'mąka'},{q:'2 szt.',n:'jajka'},{q:'150ml',n:'kefir lub maślanka'},{q:'1 łyżka',n:'cukier'},{q:'1 łyżeczka',n:'proszek do pieczenia'},{q:'szczypta',n:'cynamon'},{q:'olej',n:'do smażenia'},{q:'3 łyżki',n:'cukier puder do posypania'}],
-        steps:['Jabłka obierz i zetrzyj na grubej tarce.','Wymieszaj mąkę, jajka, kefir, cukier, proszek.','Dodaj jabłka i cynamon.','Smaż łyżką na rozgrzanym oleju po 2-3 min.','Posyp cukrem pudrem.'],
-        tip:'Racuchy z jabłkami i kawa — idealna niedziela!'
-      },
-      { name:'Pieczeń wołowa z warzywami (Sunday roast)', flag:'🇬🇧', type:'Niedzielny obiad specjalny', box:false,
-        ingredients:[{q:'600g',n:'pieczeń wołowa'},{q:'4 szt.',n:'ziemniaki'},{q:'3 szt.',n:'marchewka'},{q:'2 szt.',n:'pasternak'},{q:'1 szt.',n:'cebula'},{q:'4 ząbki',n:'czosnek'},{q:'200ml',n:'czerwone wino'},{q:'400ml',n:'bulion wołowy'},{q:'2 gałązki',n:'rozmaryn i tymianek'},{q:'3 łyżki',n:'oliwa'}],
-        steps:['Mięso natrzyj solą, pieprzem i olejem. Obsmaż ze wszystkich stron.','Ułóż warzywa wokół mięsa w formie.','Wlej wino i bulion, dodaj zioła.','Piecz 180°C przez 1,5h.','Sos: płyn z pieczenia zagęść mąką.'],
-        tip:'Niedziela z pieczenią — dom wypełni zapach! Gotujcie razem.'
-      },
-      { name:'Szarlotka z lodami', flag:'🇵🇱', type:'Niedzielny deser', box:false,
-        ingredients:[{q:'300g',n:'mąka'},{q:'150g',n:'masło'},{q:'100g',n:'cukier'},{q:'2 szt.',n:'jajka'},{q:'1 kg',n:'jabłka'},{q:'4 łyżki',n:'cukier brązowy'},{q:'2 łyżeczki',n:'cynamon'},{q:'1 łyżeczka',n:'proszek do pieczenia'},{q:'gałka',n:'lodów waniliowych'}],
-        steps:['Zagnieć kruche ciasto (mąka, masło, cukier, jajka, proszek). Podziel na 2.','Jabłka obierz, zetrzyj, posyp cukrem i cynamonem.','Formę wyłóż ½ ciasta, wysyp jabłka.','Zetrzyj na tarce pozostałe ciasto.','Piecz 180°C przez 45 min.'],
-        tip:'Szarlotka na ciepło z lodami waniliowymi = perfekcja!'
-      },
-      { name:'Zupa krem z dyni', flag:'🇵🇱', type:'Niedzielna kolacja', box:false,
-        ingredients:[{q:'800g',n:'dynia piżmowa'},{q:'1 szt.',n:'cebula'},{q:'2 ząbki',n:'czosnek'},{q:'500ml',n:'bulion warzywny'},{q:'200ml',n:'mleko kokosowe'},{q:'1 łyżeczka',n:'imbir'},{q:'½ łyżeczki',n:'kurkuma'},{q:'2 łyżki',n:'oliwa'},{q:'pestki dyni',n:'do posypania'}],
-        steps:['Dynię obierz, pokrój, piecz z oliwą 200°C przez 30 min.','Zeszklij cebulę i czosnek.','Dodaj upieczoną dynię, imbir, kurkumę.','Zalej bulionem, gotuj 10 min, zmiksuj.','Dodaj mleko kokosowe, dopraw.','Posyp pestkami.'],
-        tip:'Krem z dyni wygląda jak z restauracji — zrób efekt oliwy na wierzchu!'
-      },
-    ],
-  },
+// ═══════════════════════════════════════════════
+// TYDZIEŃ 1
+// ═══════════════════════════════════════════════
+{
+  // Pon-Wt: śniadanie owsianka / bułki, obiad makaron, deser muffiny, kolacja deska włoska
+  monTue: [
+    { name:'Owsianka z jabłkiem i cynamonem', flag:'🇵🇱', type:'Lekkie śniadanie', box:false,
+      ingredients:[{q:'80g',n:'płatki owsiane'},{q:'200ml',n:'mleko'},{q:'1 szt.',n:'jabłko'},{q:'1 łyżeczka',n:'cynamon'},{q:'1 łyżka',n:'miód'},{q:'garść',n:'orzechy włoskie'}],
+      steps:['Zagotuj mleko, wsyp płatki, gotuj 3 min mieszając.','Jabłko zetrzyj na tarce lub pokrój w kostkę.','Dodaj jabłko, cynamon i miód do owsianki.','Posyp orzechami przed podaniem.'],
+      tip:'Overnight oats: zalej płatki mlekiem wieczorem — rano gotowe!'
+    },
+    { name:'Bułki z jajkiem sadzonym i awokado', flag:'🌍', type:'Konkretne śniadanie', box:true,
+      ingredients:[{q:'2 szt.',n:'bułki kajzerki'},{q:'2 szt.',n:'jajka'},{q:'1 szt.',n:'awokado'},{q:'1 szt.',n:'pomidor'},{q:'szczypta',n:'sól, pieprz, chili'},{q:'kilka liści',n:'roszponka'}],
+      steps:['Usmaż jajka sadzone na maśle.','Awokado rozgnieć widelcem, dopraw solą i cytryną.','Bułki przepół, posmaruj awokado.','Ułóż jajko, plasterki pomidora i roszponkę.'],
+      tip:'Do boxu: zawiń bułki osobno, awokado posmaruj na miejscu.'
+    },
+    { name:'Makaron z kurczakiem i pesto', flag:'🇮🇹', type:'Obiad', box:true,
+      ingredients:[{q:'300g',n:'makaron penne'},{q:'2 piersi',n:'filet z kurczaka'},{q:'3 łyżki',n:'pesto bazyliowe'},{q:'1 szt.',n:'cukinia'},{q:'100g',n:'pomidorki cherry'},{q:'2 łyżki',n:'parmezan'},{q:'2 łyżki',n:'oliwa z oliwek'},{q:'2 ząbki',n:'czosnek'}],
+      steps:['Ugotuj makaron al dente, odcedź zachowując szklankę wody.','Kurczaka pokrój w kostkę, usmaż na oliwie z czosnkiem 6-8 min.','Cukinię pokrój w półtalarki, dodaj do kurczaka, smaż 3 min.','Wymieszaj makaron z pesto, kurczakiem i warzywami.','Dodaj trochę wody z gotowania, posyp parmezanem.'],
+      tip:'Do boxu doskonały na zimno lub po podgrzaniu.'
+    },
+    { name:'Muffiny bananowe z orzechami', flag:'🌍', type:'Podwieczorek / deser', box:true,
+      ingredients:[{q:'3 szt.',n:'dojrzałe banany'},{q:'2 szt.',n:'jajka'},{q:'150g',n:'mąka'},{q:'50g',n:'cukier brązowy'},{q:'1 łyżeczka',n:'proszek do pieczenia'},{q:'50g',n:'orzechy włoskie'},{q:'4 łyżki',n:'olej'}],
+      steps:['Rozgrzej piekarnik 180°C.','Banany rozgnieć widelcem, wymieszaj z jajkami i olejem.','Dodaj mąkę, cukier, proszek do pieczenia — wymieszaj.','Dodaj posiekane orzechy.','Piecz 18-20 min.'],
+      tip:'Rób od razu 12 szt. — starczą na cały tydzień!'
+    },
+    { name:'Box przekąskowy: deska włoska', flag:'🇮🇹', type:'Kolacja serials box', box:true,
+      ingredients:[{q:'80g',n:'prosciutto lub salami'},{q:'80g',n:'mozzarella'},{q:'garść',n:'oliwki'},{q:'2 szt.',n:'chleb ciabatta'},{q:'kilka szt.',n:'pomidorki cherry'},{q:'1 łyżka',n:'oliwa + zioła'}],
+      steps:['Ułóż wszystko na desce lub do pojemnika.','Ciabattę potnij w kawałki.','Mozzarellę porwij na kawałki, skrop oliwą.','Posyp ziołami prowansalskimi.'],
+      tip:'Układaj w box warstwowo — wygląda pięknie i smakuje wyśmienicie!'
+    },
+  ],
+  // Śr-Cz: śniadanie kasza / kanapki z pastą, obiad bigos, deser sernik, kolacja box azjatycki
+  wedThu: [
+    { name:'Kasza manna z malinami i wanilią', flag:'🇵🇱', type:'Lekkie śniadanie', box:false,
+      ingredients:[{q:'4 łyżki',n:'kasza manna'},{q:'400ml',n:'mleko'},{q:'1 łyżeczka',n:'cukier waniliowy'},{q:'garść',n:'maliny (świeże lub mrożone)'},{q:'1 łyżeczka',n:'dżem malinowy'}],
+      steps:['Zagotuj mleko z cukrem waniliowym.','Wsyp kaszę mannę cienkim strumieniem, mieszając.','Gotuj 3 min na małym ogniu.','Podaj z malinami i dżemem.'],
+      tip:'Kaszy nie rób do pudełka — rozleje się. Zjedz rano w domu!'
+    },
+    { name:'Kanapki z pastą jajeczną i szczypiorkiem', flag:'🇵🇱', type:'Konkretne śniadanie', box:true,
+      ingredients:[{q:'4 szt.',n:'jajka'},{q:'2 łyżki',n:'majonez'},{q:'2 łyżki',n:'jogurt grecki'},{q:'1 pęczek',n:'szczypiorek'},{q:'sól, pieprz',n:''},{q:'4 kromki',n:'chleb żytni'}],
+      steps:['Ugotuj jajka na twardo (9 min), wystudź, obierz.','Posiekaj jajka drobno.','Wymieszaj z majonezem, jogurtem i szczypiorkiem.','Dopraw solą i pieprzem.','Posmaruj chleb, zawiń w folię.'],
+      tip:'Pasty nie dawaj na chleb do boxu — chleb się moczy. Daj oddzielnie!'
+    },
+    { name:'Bigos myśliwski (polska klasyka)', flag:'🇵🇱', type:'Obiad', box:true,
+      ingredients:[{q:'500g',n:'kapusta kiszona'},{q:'300g',n:'kiełbasa śląska'},{q:'200g',n:'mięso wieprzowe duszone'},{q:'1 puszka',n:'pomidory krojone'},{q:'1 szt.',n:'cebula'},{q:'2 ząbki',n:'czosnek'},{q:'2 liście',n:'laurowe'},{q:'5 ziaren',n:'ziela angielskiego'},{q:'1 łyżeczka',n:'majeranek'},{q:'150ml',n:'czerwone wino'}],
+      steps:['Kapustę odsącz, posiekaj.','Kiełbasę i mięso pokrój, obsmaż na złoto.','Zeszklij cebulę i czosnek.','Połącz wszystko, dodaj pomidory, wino, przyprawy.','Gotuj na małym ogniu 1,5 godz. mieszając.'],
+      tip:'Bigos smakuje najlepiej na 2-3 dzień — ugotuj w niedzielę!'
+    },
+    { name:'Sernik w kubku (5 minut)', flag:'🇵🇱', type:'Podwieczorek / deser', box:false,
+      ingredients:[{q:'200g',n:'twaróg sernikowy'},{q:'2 łyżki',n:'cukier'},{q:'1 szt.',n:'jajko'},{q:'1 łyżeczka',n:'skrobia ziemniaczana'},{q:'1 łyżeczka',n:'ekstrakt waniliowy'},{q:'kilka szt.',n:'jagody do podania'}],
+      steps:['Wymieszaj twaróg z cukrem, jajkiem, skrobią i wanilią.','Wlej do kubka odpowiedniego do mikrofalówki.','Gotuj w mikrofali 3-4 min (600W).','Ostudź 2 min, podaj z jagodami.'],
+      tip:'Rób wieczór wcześniej — wstaw do lodówki i rano zabierz do pracy!'
+    },
+    { name:'Box przekąskowy: azjatycki', flag:'🌏', type:'Kolacja serials box', box:true,
+      ingredients:[{q:'200g',n:'edamame (mrożone)'},{q:'4 szt.',n:'ryżowe crackersy'},{q:'1 szt.',n:'ogórek'},{q:'2 szt.',n:'marchewka baby'},{q:'2 łyżki',n:'sos sojowy'},{q:'hummus',n:'2 łyżki'}],
+      steps:['Edamame ugotuj 5 min, posoł.','Ogórek pokrój w słupki.','Ułóż wszystko w pojemniku.','Sos sojowy wlej do małego pojemnika.'],
+      tip:'Zdrowy i sycący box idealny na wieczór!'
+    },
+  ],
+  // Pt-Sb: śniadanie jogurt / tortilla z kurczakiem, obiad grillowana pierś kurczaka z ziemniakami, deser brownie, kolacja śródziemnomorski
+  friSat: [
+    { name:'Jogurt grecki z granolą i owocami', flag:'🌍', type:'Lekkie śniadanie', box:false,
+      ingredients:[{q:'2 kubki (400g)',n:'jogurt grecki'},{q:'4 łyżki',n:'granola'},{q:'garść',n:'borówki'},{q:'1 łyżka',n:'miód'},{q:'kilka szt.',n:'orzechy nerkowca'}],
+      steps:['Do miseczki nałóż jogurt.','Posyp granolą i borówkami.','Skrop miodem, posyp orzechami.'],
+      tip:'Do boxu: granola oddzielnie — żeby nie rozmiękła.'
+    },
+    { name:'Tortilla z kurczakiem i guacamole', flag:'🇲🇽', type:'Konkretne śniadanie', box:true,
+      ingredients:[{q:'2 szt.',n:'tortilla pszenna (duża)'},{q:'1 pierś',n:'filet z kurczaka (z obiadu)'},{q:'1 szt.',n:'awokado'},{q:'1 szt.',n:'limonka'},{q:'1 szt.',n:'pomidor'},{q:'garść',n:'liście sałaty'},{q:'2 łyżki',n:'śmietana 18%'},{q:'szczypta',n:'kuminu, papryki wędzonej'}],
+      steps:['Kurczaka (resztkę) pokrój w paski lub rozdrobnij widelcem.','Awokado rozgnieć z sokiem z limonki i solą.','Tortillę podgrzej chwilę na suchej patelni.','Posmaruj guacamole, ułóż kurczaka, pomidora, sałatę.','Zwiń ciasno, zawiń w papier śniadaniowy.'],
+      tip:'Świetny box — nie rozlewa się i jest pyszny!'
+    },
+    { name:'Grillowana pierś kurczaka z ziemniakami i szpinakiem', flag:'🇬🇷', type:'Obiad', box:true,
+      ingredients:[{q:'2 piersi',n:'filet z kurczaka'},{q:'4 szt.',n:'ziemniaki'},{q:'1 szt.',n:'cytryna'},{q:'3 łyżki',n:'oliwa z oliwek'},{q:'2 ząbki',n:'czosnek'},{q:'gałązki',n:'tymianek i oregano'},{q:'szczypta',n:'sól, pieprz'},{q:'200g',n:'szpinak baby'}],
+      steps:['Ziemniaki ugotuj lub upiecz w piekarniku z oliwą 200°C/35 min.','Kurczaka skrop oliwą, czosnkiem, cytryną i oregano.','Grilluj lub smaż 5-6 min z każdej strony.','Szpinak podsmaż chwilę na oliwie z czosnkiem.','Podaj razem, udekoruj cytryną.'],
+      tip:'Do boxu: kurczak świetnie smakuje na zimno z cytryną!'
+    },
+    { name:'Brownie czekoladowe', flag:'🇫🇷', type:'Podwieczorek / deser', box:true,
+      ingredients:[{q:'100g',n:'gorzka czekolada 70%'},{q:'80g',n:'masło'},{q:'2 szt.',n:'jajka'},{q:'100g',n:'cukier'},{q:'60g',n:'mąka'},{q:'2 łyżki',n:'kakao'},{q:'szczypta',n:'sól'}],
+      steps:['Rozpuść czekoladę z masłem w kąpieli wodnej.','Wymieszaj jajka z cukrem, dodaj czekoladę.','Dodaj przesianą mąkę, kakao i sól.','Piecz w formie 20x20 cm, 180°C, 20-22 min.','Studź i kroń w kwadraty.'],
+      tip:'Rób w piątek — starczy na cały weekend!'
+    },
+    { name:'Box przekąskowy: śródziemnomorski', flag:'🇬🇷', type:'Kolacja serials box', box:true,
+      ingredients:[{q:'80g',n:'hummus'},{q:'80g',n:'ser feta'},{q:'garść',n:'oliwki kalamata'},{q:'1 szt.',n:'pita lub chleb pita'},{q:'1 szt.',n:'ogórek'},{q:'garść',n:'pomidorki cherry'},{q:'1 łyżka',n:'oliwa + oregano'}],
+      steps:['Feta pokrusz do pojemnika.','Oliwki, pomidorki, ogórek w słupkach.','Hummus w osobnym pojemniku.','Pitę podgrzej i pokrój w trójkąty.'],
+      tip:'Ten box to festiwal smaków — idealny do serialu!'
+    },
+  ],
+  // Niedziela T1: śniadanie jajecznica / twarożek wytrawny, obiad roast chicken, deser crumble jabłkowy, kolacja rosół
+  sunday: [
+    { name:'Shakshuka (jajka w sosie pomidorowym)', flag:'🇮🇱', type:'Lekkie śniadanie (niedziela)', box:false,
+      ingredients:[{q:'4 szt.',n:'jajka'},{q:'400g',n:'pomidory krojone'},{q:'1 szt.',n:'cebula'},{q:'1 szt.',n:'papryka czerwona'},{q:'2 ząbki',n:'czosnek'},{q:'1 łyżeczka',n:'kumin'},{q:'1 łyżeczka',n:'papryka ostra'},{q:'2 łyżki',n:'oliwa'},{q:'bagietka',n:'do podania'},{q:'natka pietruszki',n:''}],
+      steps:['Zeszklij cebulę i czosnek na oliwie.','Dodaj paprykę, smaż 3 min.','Dodaj pomidory i przyprawy, gotuj 10 min.','Zrób wgłębienia łyżką, wbij jajka.','Przykryj, gotuj 5-8 min.','Posyp pietruszką, podaj z bagietką.'],
+      tip:'Shakshuka to niedzielny show — prosto na patelnię na stół!'
+    },
+    { name:'Twarożek z rzodkiewką i szczypiorkiem', flag:'🇵🇱', type:'Konkretne śniadanie (niedziela)', box:false,
+      ingredients:[{q:'250g',n:'twaróg półtłusty'},{q:'1 pęczek',n:'rzodkiewki'},{q:'1 pęczek',n:'szczypiorek'},{q:'2 łyżki',n:'śmietana 18%'},{q:'sól, pieprz',n:''},{q:'pieczywo',n:'do podania'}],
+      steps:['Twaróg rozgnieć widelcem lub zmiksuj z śmietaną.','Rzodkiewki pokrój w plasterki, szczypiorek posiekaj.','Wymieszaj wszystko, dopraw solą i pieprzem.','Podaj z pieczywem i kawą.'],
+      tip:'Wytrawne niedzielne śniadanie — proste i orzeźwiające!'
+    },
+    { name:'Roast chicken z ziołami (niedzielny ptak)', flag:'🇬🇧', type:'Niedzielny obiad specjalny', box:false,
+      ingredients:[{q:'1 szt.',n:'kurczak (ok. 1,5kg)'},{q:'4 ząbki',n:'czosnek'},{q:'1 cytryna',n:''},{q:'gałązki',n:'rozmarynu i tymianku'},{q:'3 łyżki',n:'masło'},{q:'sól, pieprz',n:''},{q:'500g',n:'ziemniaki (do pieczenia)'},{q:'3 szt.',n:'marchewka'}],
+      steps:['Kurczaka natrzyj solą, pieprzem i masłem ziołowym.','Do środka włóż cytrynę (nakłutą), czosnek i zioła.','Piecz w piekarniku 200°C przez 1h 15min.','Warzywa układaj wokół w połowie czasu.','Gotowy gdy soki są klarowne.'],
+      tip:'Niedzielny kurczak to tradycja — zapach wypełni cały dom!'
+    },
+    { name:'Crumble jabłkowy z lodami', flag:'🇬🇧', type:'Niedzielny deser', box:false,
+      ingredients:[{q:'4 szt.',n:'jabłka'},{q:'100g',n:'mąka owsiana lub zwykła'},{q:'80g',n:'masło zimne'},{q:'60g',n:'cukier brązowy'},{q:'40g',n:'płatki owsiane'},{q:'1 łyżeczka',n:'cynamon'},{q:'lody',n:'waniliowe do podania'}],
+      steps:['Jabłka obierz, pokrój, ułóż w naczyniu.','Posyp cynamonem i 2 łyżkami cukru.','Palcami połącz mąkę z masłem na kruszonkę.','Dodaj cukier i płatki.','Posyp jabłka.','Piecz 180°C przez 35 min.'],
+      tip:'Ciepłe crumble z lodami = comfort food nr 1!'
+    },
+    { name:'Rosół z kury z makaronem', flag:'🇵🇱', type:'Niedzielna kolacja', box:false,
+      ingredients:[{q:'1 szt.',n:'kura lub kurczak (tuszka)'},{q:'3 szt.',n:'marchewka'},{q:'1 szt.',n:'pietruszka'},{q:'1/4 szt.',n:'seler'},{q:'1 szt.',n:'cebula (przypalona)'},{q:'5 ziaren',n:'ziela angielskiego'},{q:'3 liście',n:'laurowe'},{q:'lubczyk, koperek, pietruszka',n:''},{q:'200g',n:'makaron zacierka lub nitki'}],
+      steps:['Kurczaka zalej zimną wodą (2L), gotuj powoli.','Zbieraj szumowiny z wierzchu.','Po 30 min dodaj warzywa i przyprawy.','Gotuj 1,5-2h na małym ogniu.','Odcedź, dopraw solą.','Podaj z ugotowanym makaronem i natką.'],
+      tip:'Prawdziwy rosół gotuje się wolno — nie spiesz się!'
+    },
+  ],
+},
 
-  // ═══ TYDZIEŃ 3 ═══
-  {
-    monTue: [
-      { name:'Owsianka z masłem orzechowym i bananem', flag:'🌍', type:'Lekkie śniadanie', box:false,
-        ingredients:[{q:'80g',n:'płatki owsiane'},{q:'200ml',n:'mleko'},{q:'1 szt.',n:'banan'},{q:'2 łyżki',n:'masło orzechowe'},{q:'1 łyżka',n:'miód'},{q:'szczypta',n:'sól'}],
-        steps:['Ugotuj płatki na mleku przez 4 min.','Banan pokrój w plasterki.','Nałóż owsiankę, ułóż banana.','Dodaj masło orzechowe i miód.'],
-        tip:'Wersja overnight: zalej płatki mlekiem wieczorem z masłem orzechowym!'
-      },
-      { name:'Zapiekane tosty z serem i pomidorem', flag:'🌍', type:'Konkretne śniadanie', box:true,
-        ingredients:[{q:'4 kromki',n:'chleb tostowy'},{q:'100g',n:'ser żółty starty'},{q:'2 szt.',n:'pomidor'},{q:'1 łyżka',n:'musztarda'},{q:'1 łyżka',n:'majonez'},{q:'bazylia',n:'świeża lub suszona'}],
-        steps:['Tosty posmaruj mieszanką musztardy i majonezu.','Ułóż plastry pomidora.','Posyp serem i bazylią.','Zapiekaj w piekarniku 200°C przez 8-10 min.'],
-        tip:'Do boxu: zawiń w papier, będą ciepłe przez 30 min!'
-      },
-      { name:'Bigos myśliwski (polska klasyka)', flag:'🇵🇱', type:'Obiad', box:true,
-        ingredients:[{q:'500g',n:'kapusta kiszona'},{q:'300g',n:'kiełbasa śląska'},{q:'200g',n:'mięso wieprzowe duszone'},{q:'1 puszka',n:'pomidory krojone'},{q:'1 szt.',n:'cebula'},{q:'2 ząbki',n:'czosnek'},{q:'2 liście',n:'laurowe'},{q:'5 ziaren',n:'ziela angielskiego'},{q:'1 łyżeczka',n:'majeranek'},{q:'150ml',n:'czerwone wino'}],
-        steps:['Kapustę odsącz, posiekaj.','Kiełbasę i mięso pokrój, obsmaż na złoto.','Zeszklij cebulę i czosnek.','Połącz wszystko, dodaj pomidory, wino, przyprawy.','Gotuj na małym ogniu 1,5 godz. mieszając.'],
-        tip:'Bigos smakuje najlepiej na 2-3 dzień — ugotuj w niedzielę!'
-      },
-      { name:'Rogaliki z dżemem (szybkie)', flag:'🇫🇷', type:'Podwieczorek / deser', box:true,
-        ingredients:[{q:'1 opakowanie',n:'ciasto croissant (z chłodziarki)'},{q:'4 łyżki',n:'dżem morelowy lub malinowy'},{q:'1 szt.',n:'jajko (do posmarowania)'},{q:'1 łyżka',n:'cukier puder'}],
-        steps:['Rozwiń ciasto croissant.','Na szerszy koniec nałóż łyżeczkę dżemu.','Zawiń w rogalik.','Posmaruj roztrzepanym jajkiem.','Piecz 200°C przez 12-15 min.'],
-        tip:'Gotowe w 20 minut — zaskocz partnera/partnerkę!'
-      },
-      { name:'Box przekąskowy: caprese', flag:'🇮🇹', type:'Kolacja serials box', box:true,
-        ingredients:[{q:'200g',n:'mozzarella'},{q:'2 szt.',n:'pomidor malinowy'},{q:'garść',n:'liście bazylii'},{q:'2 łyżki',n:'oliwa extra virgin'},{q:'1 łyżka',n:'ocet balsamiczny'},{q:'sól, pieprz',n:''},{q:'bagietka',n:'kilka kromek'}],
-        steps:['Mozzarellę i pomidora pokrój w plastry.','Układaj naprzemiennie.','Skrop oliwą i octem balsamicznym.','Posól, posyp bazylią.','Do boxu z kawałkami bagietki.'],
-        tip:'Najprostszy i najpiękniejszy box — jak w Toskanii!'
-      },
-    ],
-    wedThu: [
-      { name:'Jogurt z muesli i mango', flag:'🌍', type:'Lekkie śniadanie', box:false,
-        ingredients:[{q:'2 kubki',n:'jogurt naturalny'},{q:'4 łyżki',n:'muesli'},{q:'½ szt.',n:'mango'},{q:'1 łyżka',n:'wiórki kokosowe'},{q:'1 łyżeczka',n:'miód'}],
-        steps:['Mango obierz, pokrój w kostkę.','Nałóż jogurt do miseczki.','Na wierzch muesli, mango, kokos i miód.'],
-        tip:'Do boxu: jogurt i muesli osobno!'
-      },
-      { name:'Taco z wołowiną i salsą', flag:'🇲🇽', type:'Konkretne śniadanie', box:true,
-        ingredients:[{q:'200g',n:'mielona wołowina'},{q:'4 szt.',n:'twarde skorupki taco'},{q:'1 łyżeczka',n:'kumin'},{q:'1 łyżeczka',n:'papryka chili'},{q:'100g',n:'salsa pomidorowa'},{q:'50g',n:'ser cheddar starty'},{q:'2 liście',n:'sałata'},{q:'kwaśna śmietana',n:''}],
-        steps:['Podsmaż mieloną wołowinę z kuminem i chili.','Ogrzej skorupki taco w piekarniku 3 min.','Nałóż wołowinę, salsę, ser, sałatę.','Dodaj śmietanę.'],
-        tip:'Wszystko do boxu osobno — składaj taco na miejscu!'
-      },
-      { name:'Pad Thai z tofu lub kurczakiem', flag:'🌏', type:'Obiad', box:true,
-        ingredients:[{q:'200g',n:'makaron ryżowy'},{q:'200g',n:'tofu lub kurczak'},{q:'3 szt.',n:'jajka'},{q:'2 szt.',n:'dymka'},{q:'100g',n:'kiełki sojowe'},{q:'3 łyżki',n:'sos rybny'},{q:'2 łyżki',n:'sos ostrygowy'},{q:'1 łyżka',n:'cukier brązowy'},{q:'1 łyżka',n:'sok z limonki'},{q:'garść',n:'orzeszki ziemne prażone'},{q:'2 łyżki',n:'olej'}],
-        steps:['Makaron namocz w gorącej wodzie 8 min, odsącz.','Na woku smaż tofu/kurczaka, odstaw.','Wbij jajka na wok, przesmaż.','Dodaj makaron, sos rybny, ostrygowy, cukier.','Dodaj białko, kiełki, dymkę.','Skrop limonką, posyp orzeszkami.'],
-        tip:'Pad Thai to must-have w diecie pary — robi wrażenie!'
-      },
-      { name:'Crème brûlée w kubku', flag:'🇫🇷', type:'Podwieczorek / deser', box:false,
-        ingredients:[{q:'4 żółtka',n:''},{q:'60g',n:'cukier'},{q:'300ml',n:'śmietana 30%'},{q:'1 łyżeczka',n:'ekstrakt waniliowy'},{q:'4 łyżki',n:'cukier brązowy (do karmelizacji)'}],
-        steps:['Żółtka utrzyj z cukrem.','Śmietanę podgrzej z wanilią (nie gotuj).','Wlej śmietanę do żółtek mieszając.','Przelej do kokilek.','Piecz w kąpieli wodnej 160°C przez 45 min.','Przed podaniem posyp cukrem i karmelizuj palnikiem.'],
-        tip:'Bez palnika? Karmelizuj pod grillem w piekarniku!'
-      },
-      { name:'Box przekąskowy: azjatycki fusion', flag:'🌏', type:'Kolacja serials box', box:true,
-        ingredients:[{q:'8 szt.',n:'spring rolls (mrożone)'},{q:'3 łyżki',n:'sos słodko-kwaśny'},{q:'garść',n:'orzeszki ziemne'},{q:'1 szt.',n:'ogórek'},{q:'2 łyżki',n:'sos sojowy z imbirem'}],
-        steps:['Spring rolls upiecz w piekarniku 200°C przez 15 min.','Ogórek pokrój w słupki.','Sosy w małych pojemniczkach.'],
-        tip:'Imprezowy box do serialu azjatyckiego!'
-      },
-    ],
-    friSat: [
-      { name:'Chia pudding z mango', flag:'🌍', type:'Lekkie śniadanie', box:false,
-        ingredients:[{q:'6 łyżek',n:'nasiona chia'},{q:'400ml',n:'mleko kokosowe'},{q:'1 łyżka',n:'miód'},{q:'½ szt.',n:'mango'},{q:'1 łyżeczka',n:'ekstrakt waniliowy'}],
-        steps:['Wymieszaj chia z mlekiem, miodem i wanilią.','Wstaw na noc do lodówki.','Rano wymieszaj, dodaj mango.'],
-        tip:'Rób wieczorem — w lodówce stoi nawet 5 dni!'
-      },
-      { name:'Wrapy z tuńczykiem i awokado', flag:'🌍', type:'Konkretne śniadanie', box:true,
-        ingredients:[{q:'2 szt.',n:'tortilla'},{q:'1 puszka',n:'tuńczyk w oliwie'},{q:'1 szt.',n:'awokado'},{q:'½ szt.',n:'ogórek'},{q:'1 łyżka',n:'majonez'},{q:'1 łyżeczka',n:'musztarda'},{q:'sałata',n:'kilka liści'}],
-        steps:['Tuńczyka odsącz, wymieszaj z majonezem i musztardą.','Awokado rozgnieć.','Na tortillę nałóż awokado, tuńczyka, ogórek, sałatę.','Zwiń ciasno, zawiń w papier.'],
-        tip:'Do boxu — świetny na lunch lub śniadanie w pracy!'
-      },
-      { name:'Pizza domowa margherita z rukolą', flag:'🇮🇹', type:'Obiad', box:false,
-        ingredients:[{q:'500g',n:'mąka'},{q:'7g',n:'drożdże instant'},{q:'1 łyżeczka',n:'sól'},{q:'1 łyżeczka',n:'cukier'},{q:'300ml',n:'ciepła woda'},{q:'3 łyżki',n:'oliwa'},{q:'200g',n:'passata pomidorowa'},{q:'300g',n:'mozzarella'},{q:'garść',n:'rukola'},{q:'bazylia',n:''}],
-        steps:['Wymieszaj mąkę z drożdżami, solą, cukrem.','Dodaj wodę i oliwę, wyrabiaj 10 min.','Odstaw na 1h do wyrośnięcia.','Rozwałkuj cienko, nałóż passatę i ser.','Piecz 250°C przez 12 min.','Po wyjęciu ułóż rukolę i bazylię.'],
-        tip:'Pizza to niedzielny rytuał — ale w piątek wieczorem czemu nie?'
-      },
-      { name:'Cheesecake w słoiku (no-bake)', flag:'🇺🇸', type:'Podwieczorek / deser', box:true,
-        ingredients:[{q:'200g',n:'herbatniki digestive'},{q:'80g',n:'masło'},{q:'400g',n:'ser Philadelphia'},{q:'200ml',n:'śmietana 30%'},{q:'80g',n:'cukier puder'},{q:'1 łyżeczka',n:'ekstrakt waniliowy'},{q:'garść',n:'owoce do dekoracji'}],
-        steps:['Pokrusz herbatniki, wymieszaj z roztopionym masłem.','Ułóż na dnie słoiczków.','Ser wymieszaj z cukrem i wanilią.','Ubij śmietanę, delikatnie połącz z serem.','Nałóż na spód, udekoruj owocami.','Wstaw na 2h do lodówki.'],
-        tip:'Zrób 4-6 słoiczków — jeden na dziś, reszta na tydzień!'
-      },
-      { name:'Box przekąskowy: deska serów i wędlin', flag:'🌍', type:'Kolacja serials box', box:true,
-        ingredients:[{q:'40g',n:'ser brie lub camembert'},{q:'40g',n:'ser pleśniowy'},{q:'60g',n:'prosciutto'},{q:'garść',n:'winogrona'},{q:'garść',n:'orzechy mieszane'},{q:'krakersy',n:'lub pieczywo chrupkie'},{q:'2 łyżki',n:'dżem figowy'}],
-        steps:['Sery pokrój lub zostaw w kawałkach.','Prosciutto ułóż w fałdach.','Winogrona i orzechy dookoła.','Dżem w małym pojemniku.'],
-        tip:'Deska serów + wino + serial = idealna piątkowa noc!'
-      },
-    ],
-    sunday: [
-      { name:'Shakshuka (jajka w sosie pomidorowym)', flag:'🇮🇱', type:'Lekkie śniadanie (niedziela)', box:false,
-        ingredients:[{q:'4 szt.',n:'jajka'},{q:'400g',n:'pomidory krojone'},{q:'1 szt.',n:'cebula'},{q:'1 szt.',n:'papryka czerwona'},{q:'2 ząbki',n:'czosnek'},{q:'1 łyżeczka',n:'kumin'},{q:'1 łyżeczka',n:'papryka ostra'},{q:'2 łyżki',n:'oliwa'},{q:'bagietka',n:'do podania'},{q:'natka pietruszki',n:''}],
-        steps:['Zeszklij cebulę i czosnek na oliwie.','Dodaj paprykę, smaż 3 min.','Dodaj pomidory i przyprawy, gotuj 10 min.','Zrób wgłębienia łyżką, wbij jajka.','Przykryj, gotuj 5-8 min.','Posyp pietruszką, podaj z bagietką.'],
-        tip:'Shakshuka to niedzielny show — prosto na patelnię na stół!'
-      },
-      { name:'Bajeczne French toast (pain perdu)', flag:'🇫🇷', type:'Konkretne śniadanie (niedziela)', box:false,
-        ingredients:[{q:'4 grube kromki',n:'brioche lub chleb tostowy'},{q:'2 szt.',n:'jajka'},{q:'100ml',n:'mleko'},{q:'1 łyżka',n:'cukier'},{q:'1 łyżeczka',n:'cynamon'},{q:'2 łyżki',n:'masło'},{q:'syrop klonowy + owoce',n:'do podania'}],
-        steps:['Wymieszaj jajka, mleko, cukier, cynamon.','Maczaj kromki po 30 sek z każdej strony.','Smaż na maśle po 3 min z każdej strony.','Podaj z syropem i owocami.'],
-        tip:'Z brioche wychodzą nieziemskie — szukaj w piekarni!'
-      },
-      { name:'Roast chicken z ziołami (niedzielny ptak)', flag:'🇬🇧', type:'Niedzielny obiad specjalny', box:false,
-        ingredients:[{q:'1 szt.',n:'kurczak (ok. 1,5kg)'},{q:'4 ząbki',n:'czosnek'},{q:'1 cytryna',n:''},{q:'gałązki',n:'rozmarynu i tymianku'},{q:'3 łyżki',n:'masło'},{q:'sól, pieprz',n:''},{q:'500g',n:'ziemniaki (do pieczenia)'},{q:'3 szt.',n:'marchewka'}],
-        steps:['Kurczaka natrzyj solą, pieprzem i masłem ziołowym.','Do środka włóż cytrynę (nakłutą), czosnek i zioła.','Warz w piekarniku 200°C przez 1h 15min.','Warzywa układaj wokół w połowie czasu.','Gotowy gdy soki są klarowne.'],
-        tip:'Niedzielny kurczak to tradycja — zapach wypełni cały dom!'
-      },
-      { name:'Crumble jabłkowy z lodami', flag:'🇬🇧', type:'Niedzielny deser', box:false,
-        ingredients:[{q:'4 szt.',n:'jabłka'},{q:'100g',n:'mąka owsiana lub zwykła'},{q:'80g',n:'masło zimne'},{q:'60g',n:'cukier brązowy'},{q:'40g',n:'płatki owsiane'},{q:'1 łyżeczka',n:'cynamon'},{q:'lody',n:'waniliowe do podania'}],
-        steps:['Jabłka obierz, pokrój, ułóż w naczyniu.','Posyp cynamonem i 2 łyżkami cukru.','Palcami połącz mąkę z masłem na kruszonkę.','Dodaj cukier i płatki.','Posyp jabłka.','Piecz 180°C przez 35 min.'],
-        tip:'Ciepłe crumble z lodami = comfort food nr 1!'
-      },
-      { name:'Rosół z kury z makaronem (niedzielna zupa)', flag:'🇵🇱', type:'Niedzielna kolacja', box:false,
-        ingredients:[{q:'1 szt.',n:'kura lub kurczak (tuszka)'},{q:'3 szt.',n:'marchewka'},{q:'1 szt.',n:'pietruszka'},{q:'1/4 szt.',n:'seler'},{q:'1 szt.',n:'cebula (przypalona)'},{q:'5 ziaren',n:'ziela angielskiego'},{q:'3 liście',n:'laurowe'},{q:'lubczyk',n:'koperek, pietruszka'},{q:'200g',n:'makaron zacierka lub nitki'}],
-        steps:['Kurczaka zalej zimną wodą (2L), gotuj powoli.','Zbieraj szumowiny z wierzchu.','Po 30 min dodaj warzywa i przyprawy.','Gotuj 1,5-2h na małym ogniu.','Odcedź, dopraw solą.','Podaj z ugotowanym makaronem i natką.'],
-        tip:'Prawdziwy rosół gotuje się wolno — nie spiesz się!'
-      },
-    ],
-  },
+// ═══════════════════════════════════════════════
+// TYDZIEŃ 2
+// ═══════════════════════════════════════════════
+{
+  // Pon-Wt: śniadanie budyń / kanapki, obiad zupa pomidorowa (nie ryż!), deser ciasto marchewkowe, kolacja polski box
+  monTue: [
+    { name:'Budyń waniliowy z owocami', flag:'🌍', type:'Lekkie śniadanie', box:false,
+      ingredients:[{q:'500ml',n:'mleko'},{q:'2 łyżki',n:'budyń waniliowy (proszek)'},{q:'2 łyżki',n:'cukier'},{q:'garść',n:'maliny lub truskawki'},{q:'1 łyżeczka',n:'wiórki kokosowe'}],
+      steps:['Przygotuj budyń wg przepisu na opakowaniu.','Ostudź lekko, wlej do słoiczków.','Na wierzch ułóż owoce i wiórki kokosowe.','Do boxu: zakryj pokrywką — gotowe!'],
+      tip:'Rób 2 porcje wieczorem — śniadanie gotowe na 2 dni!'
+    },
+    { name:'Kanapki z pastą jajeczną i szczypiorkiem', flag:'🇵🇱', type:'Konkretne śniadanie', box:true,
+      ingredients:[{q:'4 szt.',n:'jajka'},{q:'2 łyżki',n:'majonez'},{q:'2 łyżki',n:'jogurt grecki'},{q:'1 pęczek',n:'szczypiorek'},{q:'sól, pieprz',n:''},{q:'4 kromki',n:'chleb żytni'}],
+      steps:['Ugotuj jajka na twardo (9 min), wystudź, obierz.','Posiekaj jajka drobno.','Wymieszaj z majonezem, jogurtem i szczypiorkiem.','Dopraw solą i pieprzem.','Posmaruj chleb, zawiń w folię.'],
+      tip:'Pasty nie dawaj na chleb do boxu — chleb się moczy. Daj oddzielnie!'
+    },
+    { name:'Zupa pomidorowa z makaronem', flag:'🇵🇱', type:'Obiad', box:true,
+      ingredients:[{q:'800g',n:'pomidory pelati (puszka)'},{q:'500ml',n:'bulion drobiowy'},{q:'2 łyżki',n:'przecier pomidorowy'},{q:'1 szt.',n:'cebula'},{q:'2 ząbki',n:'czosnek'},{q:'2 łyżki',n:'śmietana 18%'},{q:'200g',n:'makaron świderki'},{q:'2 łyżki',n:'masło'},{q:'bazylia, cukier, sól',n:'do smaku'}],
+      steps:['Cebulę zeszklij na maśle, dodaj czosnek.','Dodaj pomidory, przecier i bulion. Gotuj 20 min.','Zmiksuj blenderem na krem.','Dopraw cukrem, solą, bazylią, dodaj śmietanę.','Ugotuj makaron osobno, dodaj przed podaniem.'],
+      tip:'Zupa do termosu — przez 6h utrzyma temperaturę!'
+    },
+    { name:'Ciasto marchewkowe z lukrem', flag:'🇺🇸', type:'Podwieczorek / deser', box:true,
+      ingredients:[{q:'250g',n:'marchewka (starta)'},{q:'2 szt.',n:'jajka'},{q:'150g',n:'cukier brązowy'},{q:'150ml',n:'olej'},{q:'200g',n:'mąka'},{q:'1 łyżeczka',n:'proszek do pieczenia'},{q:'1 łyżeczka',n:'cynamon'},{q:'100g',n:'ser Philadelphia (do lukru)'},{q:'50g',n:'cukier puder'}],
+      steps:['Wymieszaj jajka z cukrem i olejem.','Dodaj marchewkę, mąkę, proszek, cynamon.','Piecz 180°C, 35 min w formie keksowej.','Ser Philadelphia wymieszaj z cukrem pudrem na lukier.','Posmaruj ostudzone ciasto.'],
+      tip:'Ciasto marchewkowe zyskuje smak po dobie — piecz dzień wcześniej!'
+    },
+    { name:'Box przekąskowy: polski', flag:'🇵🇱', type:'Kolacja serials box', box:true,
+      ingredients:[{q:'2 kromki',n:'chleb żytni'},{q:'80g',n:'szynka swojska'},{q:'50g',n:'ser żółty'},{q:'1 szt.',n:'ogórek kiszony'},{q:'1 szt.',n:'jajko na twardo'},{q:'liście',n:'sałata masłowa'},{q:'1 łyżka',n:'musztarda sarepska'}],
+      steps:['Chleb pokrój na małe kanapeczki.','Ułóż szynkę i ser.','Jajko pokrój w ósemki.','Ogórek w plasterki.','Zapakuj do boxu z musztardą oddzielnie.'],
+      tip:'Klasyczny polski box — prosty i sycący!'
+    },
+  ],
+  // Śr-Cz: śniadanie serek / quesadilla, obiad leczo z kiełbasą (brak ryżu!), deser panna cotta, kolacja meksykański box
+  wedThu: [
+    { name:'Serek wiejski z rzodkiewką i szczypiorkiem', flag:'🇵🇱', type:'Lekkie śniadanie', box:false,
+      ingredients:[{q:'200g',n:'serek wiejski'},{q:'1 pęczek',n:'rzodkiewki'},{q:'1 pęczek',n:'szczypiorek'},{q:'2 łyżki',n:'jogurt grecki'},{q:'sól, pieprz',n:''},{q:'2 kromki',n:'pieczywo chrupkie'}],
+      steps:['Rzodkiewki pokrój w plasterki, szczypiorek posiekaj.','Wymieszaj serek z jogurtem, solą i pieprzem.','Dodaj warzywa.','Podaj z pieczywem chrupkim.'],
+      tip:'Do boxu w słoiczku — trwa cały dzień w lodówce!'
+    },
+    { name:'Quesadilla z kurczakiem i serem', flag:'🇲🇽', type:'Konkretne śniadanie', box:true,
+      ingredients:[{q:'2 szt.',n:'tortilla pszenna'},{q:'150g',n:'kurczak (resztkowy lub z puszki)'},{q:'100g',n:'ser żółty'},{q:'1 szt.',n:'papryka czerwona'},{q:'2 łyżki',n:'salsa pomidorowa'},{q:'1 łyżka',n:'kwaśna śmietana'}],
+      steps:['Na tortillę ułóż ser, kurczaka i paprykę.','Złóż na pół.','Smaż na suchej patelni po 2-3 min z każdej strony.','Pokrój w trójkąty.','Podaj z salsą i śmietaną.'],
+      tip:'Do boxu: zawiń w folię aluminiową — trzyma ciepło!'
+    },
+    { name:'Leczo z kiełbasą i papryką', flag:'🇭🇺', type:'Obiad', box:true,
+      ingredients:[{q:'2 szt.',n:'kiełbasa śląska'},{q:'3 szt.',n:'papryka (czerwona, żółta, zielona)'},{q:'2 szt.',n:'cebula'},{q:'2 ząbki',n:'czosnek'},{q:'1 puszka',n:'pomidory krojone'},{q:'1 łyżeczka',n:'papryka słodka'},{q:'½ łyżeczki',n:'papryka ostra'},{q:'2 kromki',n:'chleb żytni do podania'}],
+      steps:['Kiełbasę pokrój w plasterki, obsmaż.','Cebulę i czosnek zeszklij.','Paprykę pokrój, dodaj do cebuli.','Dodaj pomidory, paprykę w proszku.','Dodaj kiełbasę, gotuj 20 min.'],
+      tip:'Leczo dobre przez 4 dni — idealne do boxu!'
+    },
+    { name:'Panna cotta z sosem truskawkowym', flag:'🇮🇹', type:'Podwieczorek / deser', box:true,
+      ingredients:[{q:'500ml',n:'śmietana 30%'},{q:'3 łyżki',n:'cukier'},{q:'2 łyżeczki',n:'żelatyna'},{q:'1 łyżeczka',n:'ekstrakt waniliowy'},{q:'200g',n:'truskawki (sos)'},{q:'2 łyżki',n:'cukier (do sosu)'}],
+      steps:['Żelatynę rozpuść w 3 łyżkach zimnej wody, odczekaj 5 min.','Śmietanę podgrzej z cukrem i wanilią (nie gotuj!).','Dodaj żelatynę, wymieszaj.','Przelej do słoiczków, wstaw na 4h do lodówki.','Sos: truskawki z cukrem zmiksuj.'],
+      tip:'Rób wieczorem — rano wyjmij i zabierz do boxu!'
+    },
+    { name:'Box przekąskowy: meksykański', flag:'🇲🇽', type:'Kolacja serials box', box:true,
+      ingredients:[{q:'garść',n:'nachos'},{q:'80g',n:'guacamole'},{q:'80g',n:'salsa pomidorowa'},{q:'50g',n:'ser żółty starty'},{q:'2 szt.',n:'papryczka jalapeño (łagodna)'},{q:'garść',n:'kukurydza z puszki'}],
+      steps:['Ułóż nachos w pudełku.','Guacamole i salsę daj w oddzielnych pojemniczkach.','Posyp serem i kukurydzą.','Jalapeño pokrój w plasterki.'],
+      tip:'Nachos do serialu = idealne połączenie weekendu!'
+    },
+  ],
+  // Pt-Sb: śniadanie chia pudding / bajgle z łososiem, obiad pizza domowa (piątek wieczór), deser cheesecake, kolacja deska serów
+  friSat: [
+    { name:'Chia pudding z mango', flag:'🌍', type:'Lekkie śniadanie', box:false,
+      ingredients:[{q:'6 łyżek',n:'nasiona chia'},{q:'400ml',n:'mleko kokosowe'},{q:'1 łyżka',n:'miód'},{q:'½ szt.',n:'mango'},{q:'1 łyżeczka',n:'ekstrakt waniliowy'}],
+      steps:['Wymieszaj chia z mlekiem, miodem i wanilią.','Wstaw na noc do lodówki.','Rano wymieszaj, dodaj mango.'],
+      tip:'Rób wieczorem — w lodówce stoi nawet 5 dni!'
+    },
+    { name:'Bajgle z łososiem wędzonym i twarożkiem', flag:'🌍', type:'Konkretne śniadanie', box:true,
+      ingredients:[{q:'2 szt.',n:'bajgle'},{q:'100g',n:'łosoś wędzony'},{q:'100g',n:'twaróg śmietankowy'},{q:'½ szt.',n:'ogórek'},{q:'1 łyżka',n:'kaparów'},{q:'kilka gałązek',n:'koperek'},{q:'szczypta',n:'czarny pieprz'}],
+      steps:['Bajgle przekrój, lekko opiecz w tosterze.','Posmaruj twarożkiem.','Ułóż łososia.','Dodaj ogórek, kapary, koperek.'],
+      tip:'Do boxu: twaróg osobno, łosoś osobno — złóż na miejscu.'
+    },
+    { name:'Pizza domowa margherita z rukolą', flag:'🇮🇹', type:'Obiad', box:false,
+      ingredients:[{q:'500g',n:'mąka'},{q:'7g',n:'drożdże instant'},{q:'1 łyżeczka',n:'sól'},{q:'1 łyżeczka',n:'cukier'},{q:'300ml',n:'ciepła woda'},{q:'3 łyżki',n:'oliwa'},{q:'200g',n:'passata pomidorowa'},{q:'300g',n:'mozzarella'},{q:'garść',n:'rukola'},{q:'bazylia',n:''}],
+      steps:['Wymieszaj mąkę z drożdżami, solą, cukrem.','Dodaj wodę i oliwę, wyrabiaj 10 min.','Odstaw na 1h do wyrośnięcia.','Rozwałkuj cienko, nałóż passatę i ser.','Piecz 250°C przez 12 min.','Po wyjęciu ułóż rukolę i bazylię.'],
+      tip:'Pizza domowa w piątek wieczorem — idealny rytuał dla pary!'
+    },
+    { name:'Cheesecake w słoiku (no-bake)', flag:'🇺🇸', type:'Podwieczorek / deser', box:true,
+      ingredients:[{q:'200g',n:'herbatniki digestive'},{q:'80g',n:'masło'},{q:'400g',n:'ser Philadelphia'},{q:'200ml',n:'śmietana 30%'},{q:'80g',n:'cukier puder'},{q:'1 łyżeczka',n:'ekstrakt waniliowy'},{q:'garść',n:'owoce do dekoracji'}],
+      steps:['Pokrusz herbatniki, wymieszaj z roztopionym masłem.','Ułóż na dnie słoiczków.','Ser wymieszaj z cukrem i wanilią.','Ubij śmietanę, delikatnie połącz z serem.','Nałóż na spód, udekoruj owocami.','Wstaw na 2h do lodówki.'],
+      tip:'Zrób 4-6 słoiczków — jeden na dziś, reszta na tydzień!'
+    },
+    { name:'Box przekąskowy: deska serów i wędlin', flag:'🌍', type:'Kolacja serials box', box:true,
+      ingredients:[{q:'40g',n:'ser brie lub camembert'},{q:'40g',n:'ser pleśniowy'},{q:'60g',n:'prosciutto'},{q:'garść',n:'winogrona'},{q:'garść',n:'orzechy mieszane'},{q:'krakersy',n:'lub pieczywo chrupkie'},{q:'2 łyżki',n:'dżem figowy'}],
+      steps:['Sery pokrój lub zostaw w kawałkach.','Prosciutto ułóż w fałdach.','Winogrona i orzechy dookoła.','Dżem w małym pojemniku.'],
+      tip:'Deska serów + wino + serial = idealna piątkowa noc!'
+    },
+  ],
+  // Niedziela T2: śniadanie jajka po florentyńsku / sycąca jajecznica z warzywami (wytrawne!), obiad pieczeń wołowa, deser szarlotka, kolacja zupa dyniowa
+  sunday: [
+    { name:'Jajka po florentyńsku ze szpinakiem', flag:'🇮🇹', type:'Lekkie śniadanie (niedziela)', box:false,
+      ingredients:[{q:'4 szt.',n:'jajka'},{q:'200g',n:'szpinak baby'},{q:'2 łyżki',n:'masło'},{q:'2 łyżki',n:'mąka'},{q:'200ml',n:'mleko'},{q:'szczypta',n:'gałka muszkatołowa'},{q:'2 kromki',n:'tost lub bagietka'}],
+      steps:['Zrób sos béchamel: roztop masło, dodaj mąkę, wlej mleko stopniowo mieszając.','Szpinak podsmaż chwilę na maśle.','Jajka posadź na lekko osolonej wodzie z octem.','Na tosty nałóż szpinak, sos béchamel i jajko.'],
+      tip:'Jajka w koszulce: woda musi tylko lekko wrzeć, dodaj łyżkę octu!'
+    },
+    { name:'Jajecznica z boczkiem i pieczarkami', flag:'🇵🇱', type:'Konkretne śniadanie (niedziela)', box:false,
+      ingredients:[{q:'4 szt.',n:'jajka'},{q:'100g',n:'boczek wędzony'},{q:'150g',n:'pieczarki'},{q:'1 szt.',n:'cebula'},{q:'1 łyżka',n:'masło'},{q:'sól, pieprz, szczypiorek',n:''},{q:'pieczywo',n:'do podania'}],
+      steps:['Boczek podsmaż na suchej patelni aż będzie chrupiący.','Cebulę zeszklij, dodaj pokrojone pieczarki.','Wbij jajka, mieszaj delikatnie.','Dopraw solą i pieprzem, posyp szczypiorkiem.','Podaj z pieczywem.'],
+      tip:'Klasyczne wytrawne niedzielne śniadanie — rozbudza apetyt!'
+    },
+    { name:'Pieczeń wołowa z warzywami (Sunday roast)', flag:'🇬🇧', type:'Niedzielny obiad specjalny', box:false,
+      ingredients:[{q:'600g',n:'pieczeń wołowa'},{q:'4 szt.',n:'ziemniaki'},{q:'3 szt.',n:'marchewka'},{q:'2 szt.',n:'pasternak'},{q:'1 szt.',n:'cebula'},{q:'4 ząbki',n:'czosnek'},{q:'200ml',n:'czerwone wino'},{q:'400ml',n:'bulion wołowy'},{q:'2 gałązki',n:'rozmaryn i tymianek'},{q:'3 łyżki',n:'oliwa'}],
+      steps:['Mięso natrzyj solą, pieprzem i olejem. Obsmaż ze wszystkich stron.','Ułóż warzywa wokół mięsa w formie.','Wlej wino i bulion, dodaj zioła.','Piecz 180°C przez 1,5h.','Sos: płyn z pieczenia zagęść mąką.'],
+      tip:'Niedziela z pieczenią — dom wypełni zapach! Gotujcie razem.'
+    },
+    { name:'Szarlotka z lodami', flag:'🇵🇱', type:'Niedzielny deser', box:false,
+      ingredients:[{q:'300g',n:'mąka'},{q:'150g',n:'masło'},{q:'100g',n:'cukier'},{q:'2 szt.',n:'jajka'},{q:'1 kg',n:'jabłka'},{q:'4 łyżki',n:'cukier brązowy'},{q:'2 łyżeczki',n:'cynamon'},{q:'1 łyżeczka',n:'proszek do pieczenia'},{q:'gałka',n:'lodów waniliowych'}],
+      steps:['Zagnieć kruche ciasto (mąka, masło, cukier, jajka, proszek). Podziel na 2.','Jabłka obierz, zetrzyj, posyp cukrem i cynamonem.','Formę wyłóż ½ ciasta, wysyp jabłka.','Zetrzyj na tarce pozostałe ciasto.','Piecz 180°C przez 45 min.'],
+      tip:'Szarlotka na ciepło z lodami waniliowymi = perfekcja!'
+    },
+    { name:'Zupa krem z dyni', flag:'🇵🇱', type:'Niedzielna kolacja', box:false,
+      ingredients:[{q:'800g',n:'dynia piżmowa'},{q:'1 szt.',n:'cebula'},{q:'2 ząbki',n:'czosnek'},{q:'500ml',n:'bulion warzywny'},{q:'200ml',n:'mleko kokosowe'},{q:'1 łyżeczka',n:'imbir'},{q:'½ łyżeczki',n:'kurkuma'},{q:'2 łyżki',n:'oliwa'},{q:'pestki dyni',n:'do posypania'}],
+      steps:['Dynię obierz, pokrój, piecz z oliwą 200°C przez 30 min.','Zeszklij cebulę i czosnek.','Dodaj upieczoną dynię, imbir, kurkumę.','Zalej bulionem, gotuj 10 min, zmiksuj.','Dodaj mleko kokosowe, dopraw.','Posyp pestkami.'],
+      tip:'Krem z dyni wygląda jak z restauracji — zrób efekt oliwy na wierzchu!'
+    },
+  ],
+},
 
-  // ═══ TYDZIEŃ 4 ═══
-  {
-    monTue: [
-      { name:'Overnight oats z orzechami i figami', flag:'🌍', type:'Lekkie śniadanie', box:false,
-        ingredients:[{q:'80g',n:'płatki owsiane'},{q:'200ml',n:'mleko migdałowe'},{q:'1 łyżka',n:'nasiona chia'},{q:'2 szt.',n:'figi świeże lub suszone'},{q:'garść',n:'orzechy włoskie'},{q:'1 łyżka',n:'miód'}],
-        steps:['Wymieszaj płatki z mlekiem i chia.','Wstaw do lodówki na noc.','Rano wymieszaj, dodaj figi i orzechy.','Skrop miodem.'],
-        tip:'Gotowe śniadanie na 2 dni — rób podwójną porcję!'
-      },
-      { name:'Jajka bénédikt z boczkiem', flag:'🇺🇸', type:'Konkretne śniadanie', box:true,
-        ingredients:[{q:'4 szt.',n:'jajka'},{q:'4 plast.',n:'boczek lub szynka'},{q:'2 szt.',n:'English muffin lub bułka'},{q:'3 żółtka',n:''},{q:'100g',n:'masło'},{q:'1 łyżka',n:'sok z cytryny'},{q:'szczypta',n:'cayenne, sól'}],
-        steps:['Sos hollandaise: żółtka ubij w kąpieli wodnej, powoli dodaj rozpuszczone masło.','Dopraw cytryną i cayenne.','Boczek podsmaż chrupko.','Jajka posadź w lekko osolonej wodzie.','Muffiny podpiecz, ułóż boczek, jajko, sos.'],
-        tip:'Do boxu: sos hollandaise osobno w pojemniku!'
-      },
-      { name:'Leczo z kiełbasą i papryką', flag:'🇭🇺', type:'Obiad', box:true,
-        ingredients:[{q:'2 szt.',n:'kiełbasa śląska'},{q:'3 szt.',n:'papryka (czerwona, żółta, zielona)'},{q:'2 szt.',n:'cebula'},{q:'2 ząbki',n:'czosnek'},{q:'1 puszka',n:'pomidory krojone'},{q:'1 łyżeczka',n:'papryka słodka'},{q:'½ łyżeczki',n:'papryka ostra'},{q:'300g',n:'ryż lub chleb do podania'}],
-        steps:['Kiełbasę pokrój w plasterki, obsmaż.','Cebulę i czosnek zeszklij.','Paprykę pokrój, dodaj do cebuli.','Dodaj pomidory, paprykę w proszku.','Dodaj kiełbasę, gotuj 20 min.'],
-        tip:'Leczo dobre przez 4 dni — idealne do boxu!'
-      },
-      { name:'Makowiec zwijany (szybki)', flag:'🇵🇱', type:'Podwieczorek / deser', box:true,
-        ingredients:[{q:'1 opakowanie',n:'ciasto drożdżowe gotowe (chłodnica)'},{q:'200g',n:'masa makowa (ze słoika)'},{q:'2 łyżki',n:'rodzynek'},{q:'1 łyżka',n:'skórka pomarańczowa'},{q:'lukier',n:'cukier puder + sok z cytryny'}],
-        steps:['Rozwałkuj ciasto drożdżowe.','Posmaruj masą makową.','Dodaj rodzynki i skórkę.','Zwiń ciasno w rulon.','Piecz 190°C przez 25 min.','Polej lukrem.'],
-        tip:'Z gotowego ciasta wychodzi piękny makowiec w 30 min!'
-      },
-      { name:'Box przekąskowy: grecki', flag:'🇬🇷', type:'Kolacja serials box', box:true,
-        ingredients:[{q:'80g',n:'ser feta'},{q:'garść',n:'oliwki kalamata'},{q:'1 szt.',n:'ogórek'},{q:'garść',n:'pomidorki cherry'},{q:'4 szt.',n:'chleb pita'},{q:'80g',n:'tzatziki'},{q:'1 łyżka',n:'oliwa + oregano'}],
-        steps:['Fetę pokrusz lub pokrój w kostkę.','Ogórek i pomidorki w kawałki.','Pitę podgrzej, pokrój w trójkąty.','Tzatziki w osobnym pojemniku.'],
-        tip:'Grecki box na wieczór z serialem — lato na talerzu!'
-      },
-    ],
-    wedThu: [
-      { name:'Twarożek z miodem i orzechami', flag:'🇵🇱', type:'Lekkie śniadanie', box:false,
-        ingredients:[{q:'200g',n:'twaróg sernikowy'},{q:'2 łyżki',n:'miód'},{q:'garść',n:'orzechy włoskie lub pekan'},{q:'szczypta',n:'cynamon'},{q:'½ szt.',n:'gruszka'},{q:'2 szt.',n:'pieczywo chrupkie'}],
-        steps:['Twaróg przełóż do miseczki.','Gruszka w cienkich plastrach.','Ułóż na twarogu, skrop miodem.','Posyp orzechami i cynamonem.'],
-        tip:'Eleganckie śniadanie w 5 minut!'
-      },
-      { name:'Chorizo con huevos (jajka z chorizo)', flag:'🇪🇸', type:'Konkretne śniadanie', box:true,
-        ingredients:[{q:'80g',n:'chorizo (kiełbaska hiszpańska)'},{q:'3 szt.',n:'jajka'},{q:'1 szt.',n:'papryka'},{q:'1 szt.',n:'cebula'},{q:'½ łyżeczki',n:'papryka wędzona'},{q:'2 łyżki',n:'oliwa'},{q:'1 szt.',n:'bagietka lub tortilla'}],
-        steps:['Chorizo pokrój, usmaż na suchej patelni.','Cebulę i paprykę dodaj, smaż 3 min.','Dodaj paprykę wędzoną.','Wbij jajka, mieszaj jak jajecznicę.','Podaj z bagietką.'],
-        tip:'Intensywny smak chorizo robi całe danie!'
-      },
-      { name:'Ramen domowy z jajkiem', flag:'🇯🇵', type:'Obiad', box:true,
-        ingredients:[{q:'200g',n:'makaron ramen lub soba'},{q:'2 piersi',n:'filet z kurczaka'},{q:'1L',n:'bulion drobiowy'},{q:'3 łyżki',n:'sos sojowy'},{q:'1 łyżka',n:'miso'},{q:'2 cm',n:'imbir'},{q:'2 ząbki',n:'czosnek'},{q:'2 szt.',n:'jajka (marynowane)'},{q:'dymka, nori',n:'do podania'},{q:'1 łyżka',n:'olej sezamowy'}],
-        steps:['Bulion zagotuj z imbirem, czosnkiem, sosem sojowym i miso.','Kurczaka ugotuj w bulionie (15 min), pokrój.','Jajka ugotuj 7 min, obierz, zalej mieszanką sosu sojowego i wody.','Ugotuj makaron.','Złóż: makaron, bulion, kurczak, jajko, dymka, nori.'],
-        tip:'Do boxu: bulion w termosie, reszta osobno!'
-      },
-      { name:'Éclair czekoladowy (z gotowego ciasta)', flag:'🇫🇷', type:'Podwieczorek / deser', box:true,
-        ingredients:[{q:'1 opak.',n:'gotowe ciasto ptysiowe'},{q:'250ml',n:'śmietana 30%'},{q:'2 łyżki',n:'cukier puder'},{q:'1 łyżeczka',n:'wanilia'},{q:'100g',n:'czekolada gorzka'},{q:'50ml',n:'śmietana (do polewy)'}],
-        steps:['Uformuj eklery z ciasta, piecz 200°C przez 25 min.','Ostudź.','Ubij śmietanę z cukrem i wanilią.','Napełnij eklery kremem.','Czekoladę rozpuść ze śmietaną — polej ekler.'],
-        tip:'Gotowe ciasto ptysiowe skraca pracę o połowę!'
-      },
-      { name:'Box przekąskowy: japoński', flag:'🇯🇵', type:'Kolacja serials box', box:true,
-        ingredients:[{q:'4 szt.',n:'onigiri (trójkąty ryżowe z nori)'},{q:'2 łyżki',n:'sos teriyaki'},{q:'edamame',n:'garść'},{q:'1 szt.',n:'ogórek'},{q:'wasabi i imbir',n:'(opcjonalnie)'}],
-        steps:['Onigiri kup gotowe lub zrób z ryżu z nadzieniem.','Ogórek pokrój.','Edamame ugotuj, posoł.','Wszystko ułóż w boxie.'],
-        tip:'Japoński box — lekki, piękny i pyszny!'
-      },
-    ],
-    friSat: [
-      { name:'Açaí bowl', flag:'🌏', type:'Lekkie śniadanie', box:false,
-        ingredients:[{q:'200g',n:'mrożone açaí lub mrożone maliny'},{q:'1 banan',n:'(mrożony)'},{q:'100ml',n:'mleko kokosowe'},{q:'4 łyżki',n:'granola'},{q:'garść',n:'owoce świeże'},{q:'1 łyżka',n:'masło orzechowe'},{q:'wiórki kokosowe',n:''}],
-        steps:['Zmiksuj açaí/maliny z bananem i mlekiem.','Przelej do miseczki.','Udekoruj granolą, owocami, masłem orzechowym.'],
-        tip:'Instagram-worthy śniadanie — zrób zdjęcie przed jedzeniem!'
-      },
-      { name:'Tosty z ricottą i figami', flag:'🇮🇹', type:'Konkretne śniadanie', box:true,
-        ingredients:[{q:'4 kromki',n:'chleb na zakwasie'},{q:'150g',n:'ricotta'},{q:'2 szt.',n:'figi'},{q:'2 łyżki',n:'miód'},{q:'garść',n:'orzechy włoskie'},{q:'gałązka',n:'tymianku'}],
-        steps:['Chleb opiecz w tosterze.','Posmaruj ricottą.','Figi pokrój w plasterki, ułóż na ricotcie.','Skrop miodem, posyp orzechami.','Udekoruj tymiankiem.'],
-        tip:'Wyszukane śniadanie w 10 min — idealne na piątek!'
-      },
-      { name:'Burrito meksykańskie z fasolą', flag:'🇲🇽', type:'Obiad', box:true,
-        ingredients:[{q:'4 szt.',n:'duże tortille'},{q:'1 puszka',n:'fasola czarna'},{q:'200g',n:'ryż meksykański'},{q:'150g',n:'mielona wołowina lub kurczak'},{q:'100g',n:'ser cheddar'},{q:'salsa',n:'guacamole, śmietana'},{q:'1 łyżeczka',n:'kumin, papryka wędzona'},{q:'sałata, pomidor',n:''}],
-        steps:['Ryż ugotuj z cebulą i przyprawami.','Mięso usmaż z kuminem i papryką.','Fasolę odsącz, lekko podgrzej z przyprawami.','Na tortillę nałóż wszystko.','Zwiń ciasno, zawiń w folię aluminiową.'],
-        tip:'Burrito to mega-box — sycący na cały dzień pracy!'
-      },
-      { name:'Pavlova z owocami', flag:'🇦🇺', type:'Podwieczorek / deser', box:false,
-        ingredients:[{q:'4 białka',n:''},{q:'200g',n:'cukier'},{q:'1 łyżeczka',n:'ocet winny'},{q:'1 łyżeczka',n:'skrobia ziemniaczana'},{q:'300ml',n:'śmietana 30%'},{q:'garść',n:'truskawki, kiwi, maliny'}],
-        steps:['Ubij białka na sztywno, stopniowo dodając cukier.','Dodaj ocet i skrobię.','Uformuj okrąg na papierze.','Piecz 130°C przez 1h 20 min — nie otwieraj piekarnika!','Studź w piekarniku.','Na wierzch ubita śmietana i owoce.'],
-        tip:'Pavlova to finałowy deser weekendu — robi wrażenie!'
-      },
-      { name:'Box przekąskowy: mix smaków świata', flag:'🌍', type:'Kolacja serials box', box:true,
-        ingredients:[{q:'garść',n:'popcorn solony'},{q:'40g',n:'czekolada gorzka'},{q:'garść',n:'suszone mango lub morele'},{q:'garść',n:'migdały i orzechy'},{q:'2 szt.',n:'ciastka owsiane'},{q:'2 łyżki',n:'dip serowy lub hummus'}],
-        steps:['Ułóż wszystko w pojemniku kompartmentowym.','Czekoladę połam na kawałki.','Dip w osobnym pojemniku.'],
-        tip:'Trail-mix box = najlepszy box do maratonu serialowego!'
-      },
-    ],
-    sunday: [
-      { name:'Eggs royale (łosoś)', flag:'🇬🇧', type:'Lekkie śniadanie (niedziela)', box:false,
-        ingredients:[{q:'4 szt.',n:'jajka'},{q:'100g',n:'łosoś wędzony'},{q:'2 szt.',n:'English muffin lub bułka'},{q:'3 żółtka',n:''},{q:'100g',n:'masło'},{q:'sok z cytryny',n:''},{q:'koperek',n:''}],
-        steps:['Zrób sos hollandaise (patrz: tydzień 4 pn).','Muffiny podpiecz.','Jajka posadź (7 min na lekkim wrzeniu).','Ułóż łososia, jajko, sos.','Udekoruj koperkiem.'],
-        tip:'Luksusowe niedzielne śniadanie — warte wysiłku!'
-      },
-      { name:'Crepes Suzette', flag:'🇫🇷', type:'Konkretne śniadanie (niedziela)', box:false,
-        ingredients:[{q:'150g',n:'mąka'},{q:'2 szt.',n:'jajka'},{q:'300ml',n:'mleko'},{q:'30g',n:'masło'},{q:'skórka',n:'z 1 pomarańczy'},{q:'sok',n:'z 2 pomarańczy'},{q:'50g',n:'masło (do sosu)'},{q:'50g',n:'cukier'},{q:'2 łyżki',n:'Grand Marnier lub sok pomarańczowy'}],
-        steps:['Zrób ciasto naleśnikowe, usmaż cienkie naleśniki.','Sos: masło z cukrem na patelni, dodaj sok i skórkę pomarańczy.','Naleśniki składaj w ćwiartki, wkładaj do sosu.','Opcjonalnie: polej alkoholem i podpal.'],
-        tip:'Crepes Suzette to klasyk — efekt gwarantowany!'
-      },
-      { name:'Beef bourguignon (wołowina po burgundzku)', flag:'🇫🇷', type:'Niedzielny obiad specjalny', box:false,
-        ingredients:[{q:'800g',n:'wołowina (łopatka lub kark)'},{q:'1 butelka',n:'czerwone wino (burgundzkie)'},{q:'200g',n:'boczek wędzony'},{q:'250g',n:'pieczarki'},{q:'1 szt.',n:'cebula'},{q:'3 szt.',n:'marchewka'},{q:'3 ząbki',n:'czosnek'},{q:'2 łyżki',n:'koncentrat pomidorowy'},{q:'bouquet garni',n:'(tymianek, laur, pietruszka)'},{q:'500g',n:'ziemniaki lub makaron szeroki'}],
-        steps:['Wołowinę pokrój w duże kawałki, obsmaż na złoto.','Boczek i cebulę podsmaż osobno.','Wszystko przełóż do garnka, zalej winem.','Dodaj warzywa, czosnek, koncentrat, zioła.','Duś pod przykryciem 2,5-3 godz. na małym ogniu.','Podaj z ziemniakami lub makaronem.'],
-        tip:'Danie na cały dzień — gotujcie razem i cieszcie się zapachem!'
-      },
-      { name:'Crème caramel', flag:'🇫🇷', type:'Niedzielny deser', box:false,
-        ingredients:[{q:'4 szt.',n:'jajka'},{q:'500ml',n:'mleko'},{q:'100g',n:'cukier (do kremu)'},{q:'1 łyżeczka',n:'wanilia'},{q:'120g',n:'cukier (do karmelu)'},{q:'3 łyżki',n:'woda'}],
-        steps:['Karmel: cukier z wodą podgrzewaj aż do złotego koloru, wlej do foremek.','Jajka utrzyj z cukrem i wanilią.','Dodaj ciepłe mleko cienkim strumieniem.','Przelej do foremek z karmelem.','Piecz w kąpieli wodnej 160°C przez 45 min.','Studź, wstaw do lodówki, podaj odwrócone.'],
-        tip:'Efekt WOW gwarantowany — karmel spływa jak z reklamy!'
-      },
-      { name:'Żurek z białą kiełbasą (niedziela)', flag:'🇵🇱', type:'Niedzielna kolacja', box:false,
-        ingredients:[{q:'500ml',n:'zakwas na żurek (słoik)'},{q:'500ml',n:'bulion'},{q:'2 szt.',n:'biała kiełbasa'},{q:'4 szt.',n:'jajka na twardo'},{q:'200ml',n:'śmietana 18%'},{q:'2 ząbki',n:'czosnek'},{q:'1 łyżka',n:'chrzan'},{q:'majeranek',n:'sól, pieprz'}],
-        steps:['Bulion zagotuj z czosnkiem.','Wlej zakwas na żurek, zagotuj.','Kiełbasę ugotuj osobno (15 min).','Dodaj śmietanę, chrzan, majeranek.','Podaj z jajkiem i kiełbasą.'],
-        tip:'Żurek to polskie comfort food — niedzielna tradycja!'
-      },
-    ],
-  },
+// ═══════════════════════════════════════════════
+// TYDZIEŃ 3
+// ═══════════════════════════════════════════════
+{
+  // Pon-Wt: śniadanie owsianka z bananem / tosty zapiekane, obiad kurczak po chińsku (ale BEZ ryżu — z makaronem), deser rogaliki, kolacja caprese
+  monTue: [
+    { name:'Owsianka z masłem orzechowym i bananem', flag:'🌍', type:'Lekkie śniadanie', box:false,
+      ingredients:[{q:'80g',n:'płatki owsiane'},{q:'200ml',n:'mleko'},{q:'1 szt.',n:'banan'},{q:'2 łyżki',n:'masło orzechowe'},{q:'1 łyżka',n:'miód'},{q:'szczypta',n:'sól'}],
+      steps:['Ugotuj płatki na mleku przez 4 min.','Banan pokrój w plasterki.','Nałóż owsiankę, ułóż banana.','Dodaj masło orzechowe i miód.'],
+      tip:'Wersja overnight: zalej płatki mlekiem wieczorem z masłem orzechowym!'
+    },
+    { name:'Zapiekane tosty z serem i pomidorem', flag:'🌍', type:'Konkretne śniadanie', box:true,
+      ingredients:[{q:'4 kromki',n:'chleb tostowy'},{q:'100g',n:'ser żółty starty'},{q:'2 szt.',n:'pomidor'},{q:'1 łyżka',n:'musztarda'},{q:'1 łyżka',n:'majonez'},{q:'bazylia',n:'świeża lub suszona'}],
+      steps:['Tosty posmaruj mieszanką musztardy i majonezu.','Ułóż plastry pomidora.','Posyp serem i bazylią.','Zapiekaj w piekarniku 200°C przez 8-10 min.'],
+      tip:'Do boxu: zawiń w papier, będą ciepłe przez 30 min!'
+    },
+    { name:'Kurczak po chińsku z makaronem soba i warzywami', flag:'🇨🇳', type:'Obiad', box:true,
+      ingredients:[{q:'2 piersi',n:'filet z kurczaka'},{q:'200g',n:'makaron soba lub ryżowy'},{q:'1 szt.',n:'papryka czerwona'},{q:'1 szt.',n:'marchewka'},{q:'2 szt.',n:'cebula dymka'},{q:'3 łyżki',n:'sos sojowy'},{q:'1 łyżka',n:'miód'},{q:'1 łyżka',n:'ocet ryżowy'},{q:'2 cm',n:'imbir świeży'},{q:'2 ząbki',n:'czosnek'},{q:'1 łyżka',n:'olej sezamowy'}],
+      steps:['Ugotuj makaron wg przepisu, odsącz.','Kurczaka pokrój w paski, zamarynuj w sosie sojowym, miodzie i imbirze 15 min.','Na rozgrzanym woku smaż kurczaka 5-6 min.','Dodaj warzywa pokrojone w julienne, smaż 3 min.','Wymieszaj z makaronem, dopraw olejem sezamowym.'],
+      tip:'Makaron soba zamiast ryżu — lżejszy i szybszy w przygotowaniu!'
+    },
+    { name:'Rogaliki z dżemem (szybkie)', flag:'🇫🇷', type:'Podwieczorek / deser', box:true,
+      ingredients:[{q:'1 opakowanie',n:'ciasto croissant (z chłodziarki)'},{q:'4 łyżki',n:'dżem morelowy lub malinowy'},{q:'1 szt.',n:'jajko (do posmarowania)'},{q:'1 łyżka',n:'cukier puder'}],
+      steps:['Rozwiń ciasto croissant.','Na szerszy koniec nałóż łyżeczkę dżemu.','Zawiń w rogalik.','Posmaruj roztrzepanym jajkiem.','Piecz 200°C przez 12-15 min.'],
+      tip:'Gotowe w 20 minut — zaskocz partnera/partnerkę!'
+    },
+    { name:'Box przekąskowy: caprese', flag:'🇮🇹', type:'Kolacja serials box', box:true,
+      ingredients:[{q:'200g',n:'mozzarella'},{q:'2 szt.',n:'pomidor malinowy'},{q:'garść',n:'liście bazylii'},{q:'2 łyżki',n:'oliwa extra virgin'},{q:'1 łyżka',n:'ocet balsamiczny'},{q:'sól, pieprz',n:''},{q:'bagietka',n:'kilka kromek'}],
+      steps:['Mozzarellę i pomidora pokrój w plastry.','Układaj naprzemiennie.','Skrop oliwą i octem balsamicznym.','Posól, posyp bazylią.','Do boxu z kawałkami bagietki.'],
+      tip:'Najprostszy i najpiękniejszy box — jak w Toskanii!'
+    },
+  ],
+  // Śr-Cz: śniadanie jogurt z mango / taco z wołowiną, obiad Pad Thai z kurczakiem (zamiast tofu+ryż), deser crème brûlée, kolacja tapas
+  wedThu: [
+    { name:'Jogurt z muesli i mango', flag:'🌍', type:'Lekkie śniadanie', box:false,
+      ingredients:[{q:'2 kubki',n:'jogurt naturalny'},{q:'4 łyżki',n:'muesli'},{q:'½ szt.',n:'mango'},{q:'1 łyżka',n:'wiórki kokosowe'},{q:'1 łyżeczka',n:'miód'}],
+      steps:['Mango obierz, pokrój w kostkę.','Nałóż jogurt do miseczki.','Na wierzch muesli, mango, kokos i miód.'],
+      tip:'Do boxu: jogurt i muesli osobno!'
+    },
+    { name:'Taco z mieloną wołowiną i salsą', flag:'🇲🇽', type:'Konkretne śniadanie', box:true,
+      ingredients:[{q:'200g',n:'mielona wołowina'},{q:'4 szt.',n:'twarde skorupki taco'},{q:'1 łyżeczka',n:'kumin'},{q:'1 łyżeczka',n:'papryka chili'},{q:'100g',n:'salsa pomidorowa'},{q:'50g',n:'ser cheddar starty'},{q:'2 liście',n:'sałata'},{q:'kwaśna śmietana',n:''}],
+      steps:['Podsmaż mieloną wołowinę z kuminem i chili.','Ogrzej skorupki taco w piekarniku 3 min.','Nałóż wołowinę, salsę, ser, sałatę.','Dodaj śmietanę.'],
+      tip:'Wszystko do boxu osobno — składaj taco na miejscu!'
+    },
+    { name:'Pad Thai z kurczakiem', flag:'🌏', type:'Obiad', box:true,
+      ingredients:[{q:'200g',n:'makaron ryżowy'},{q:'300g',n:'filet z kurczaka'},{q:'3 szt.',n:'jajka'},{q:'2 szt.',n:'dymka'},{q:'100g',n:'kiełki sojowe'},{q:'3 łyżki',n:'sos rybny'},{q:'2 łyżki',n:'sos ostrygowy'},{q:'1 łyżka',n:'cukier brązowy'},{q:'1 łyżka',n:'sok z limonki'},{q:'garść',n:'orzeszki ziemne prażone'},{q:'2 łyżki',n:'olej'}],
+      steps:['Makaron namocz w gorącej wodzie 8 min, odsącz.','Na woku smaż kurczaka pokrojonego w paski, odstaw.','Wbij jajka na wok, przesmaż.','Dodaj makaron, sos rybny, ostrygowy, cukier.','Dodaj kurczaka, kiełki, dymkę.','Skrop limonką, posyp orzeszkami.'],
+      tip:'Pad Thai to must-have — robi wrażenie i jest gotowy w 20 min!'
+    },
+    { name:'Crème brûlée w kubku', flag:'🇫🇷', type:'Podwieczorek / deser', box:false,
+      ingredients:[{q:'4 żółtka',n:''},{q:'60g',n:'cukier'},{q:'300ml',n:'śmietana 30%'},{q:'1 łyżeczka',n:'ekstrakt waniliowy'},{q:'4 łyżki',n:'cukier brązowy (do karmelizacji)'}],
+      steps:['Żółtka utrzyj z cukrem.','Śmietanę podgrzej z wanilią (nie gotuj).','Wlej śmietanę do żółtek mieszając.','Przelej do kokilek.','Piecz w kąpieli wodnej 160°C przez 45 min.','Przed podaniem posyp cukrem i karmelizuj palnikiem.'],
+      tip:'Bez palnika? Karmelizuj pod grillem w piekarniku!'
+    },
+    { name:'Box przekąskowy: tapas', flag:'🇪🇸', type:'Kolacja serials box', box:true,
+      ingredients:[{q:'80g',n:'chorizo lub salami'},{q:'50g',n:'manchego lub inny twardy ser'},{q:'garść',n:'oliwki'},{q:'garść',n:'migdały prażone'},{q:'2 szt.',n:'chleb pita lub krakersy'},{q:'1 łyżka',n:'oliwa + paprika wędzona'}],
+      steps:['Chorizo pokrój w plasterki.','Ser w kostkę.','Ułóż wszystko w pojemniku.','Oliwę wymieszaj z papryką wędzoną.'],
+      tip:'Tapas-box to luksus na kanapie — polecamy z winem!'
+    },
+  ],
+  // Pt-Sb: śniadanie smoothie bowl / tosty z ricottą, obiad burrito z wołowiną (zamiast ryżu w środku!), deser pavlova, kolacja mix smaków
+  friSat: [
+    { name:'Smoothie bowl z granolą', flag:'🌍', type:'Lekkie śniadanie', box:false,
+      ingredients:[{q:'2 banany',n:'(mrożone)'},{q:'150g',n:'mrożone maliny'},{q:'100ml',n:'mleko roślinne'},{q:'4 łyżki',n:'granola'},{q:'garść',n:'owoce świeże'},{q:'1 łyżka',n:'masło orzechowe'}],
+      steps:['Zmiksuj mrożone banany i maliny z mlekiem.','Przelej do miseczki.','Na wierzch granola, owoce, masło orzechowe.'],
+      tip:'Śniadanie gotowe w 5 minut, wygląda jak z restauracji!'
+    },
+    { name:'Tosty z ricottą i figami', flag:'🇮🇹', type:'Konkretne śniadanie', box:true,
+      ingredients:[{q:'4 kromki',n:'chleb na zakwasie'},{q:'150g',n:'ricotta'},{q:'2 szt.',n:'figi'},{q:'2 łyżki',n:'miód'},{q:'garść',n:'orzechy włoskie'},{q:'gałązka',n:'tymianku'}],
+      steps:['Chleb opiecz w tosterze.','Posmaruj ricottą.','Figi pokrój w plasterki, ułóż na ricotcie.','Skrop miodem, posyp orzechami.','Udekoruj tymiankiem.'],
+      tip:'Wyszukane śniadanie w 10 min — idealne na piątek!'
+    },
+    { name:'Burrito meksykańskie z mieloną wołowiną i fasolą', flag:'🇲🇽', type:'Obiad', box:true,
+      ingredients:[{q:'4 szt.',n:'duże tortille'},{q:'250g',n:'mielona wołowina'},{q:'1 puszka',n:'fasola czarna'},{q:'100g',n:'ser cheddar'},{q:'salsa',n:'guacamole, śmietana'},{q:'1 łyżeczka',n:'kumin, papryka wędzona'},{q:'sałata, pomidor',n:''}],
+      steps:['Wołowinę usmaż z kuminem i papryką.','Fasolę odsącz, lekko podgrzej z przyprawami.','Na tortillę nałóż wołowinę, fasolę, ser.','Dodaj salsę, guacamole, sałatę.','Zwiń ciasno, zawiń w folię aluminiową.'],
+      tip:'Burrito to mega-box — sycący na cały dzień pracy!'
+    },
+    { name:'Pavlova z owocami', flag:'🇦🇺', type:'Podwieczorek / deser', box:false,
+      ingredients:[{q:'4 białka',n:''},{q:'200g',n:'cukier'},{q:'1 łyżeczka',n:'ocet winny'},{q:'1 łyżeczka',n:'skrobia ziemniaczana'},{q:'300ml',n:'śmietana 30%'},{q:'garść',n:'truskawki, kiwi, maliny'}],
+      steps:['Ubij białka na sztywno, stopniowo dodając cukier.','Dodaj ocet i skrobię.','Uformuj okrąg na papierze.','Piecz 130°C przez 1h 20 min — nie otwieraj piekarnika!','Studź w piekarniku.','Na wierzch ubita śmietana i owoce.'],
+      tip:'Pavlova to finałowy deser weekendu — robi wrażenie!'
+    },
+    { name:'Box przekąskowy: mix smaków świata', flag:'🌍', type:'Kolacja serials box', box:true,
+      ingredients:[{q:'garść',n:'popcorn solony'},{q:'40g',n:'czekolada gorzka'},{q:'garść',n:'suszone mango lub morele'},{q:'garść',n:'migdały i orzechy'},{q:'2 szt.',n:'ciastka owsiane'},{q:'2 łyżki',n:'dip serowy lub hummus'}],
+      steps:['Ułóż wszystko w pojemniku kompartmentowym.','Czekoladę połam na kawałki.','Dip w osobnym pojemniku.'],
+      tip:'Trail-mix box = najlepszy box do maratonu serialowego!'
+    },
+  ],
+  // Niedziela T3: śniadanie jajka bénédikt z boczkiem / jajecznica ze szparagami (wytrawne!), obiad Beef bourguignon, deser tarta cytrynowa, kolacja zupa cebulowa
+  sunday: [
+    { name:'Jajka Bénédikt z boczkiem i sosem hollandaise', flag:'🇺🇸', type:'Lekkie śniadanie (niedziela)', box:false,
+      ingredients:[{q:'4 szt.',n:'jajka'},{q:'4 plast.',n:'boczek lub szynka'},{q:'2 szt.',n:'English muffin lub bułka'},{q:'3 żółtka',n:''},{q:'100g',n:'masło'},{q:'1 łyżka',n:'sok z cytryny'},{q:'szczypta',n:'cayenne, sól'}],
+      steps:['Sos hollandaise: żółtka ubij w kąpieli wodnej, powoli dodaj rozpuszczone masło.','Dopraw cytryną i cayenne.','Boczek podsmaż chrupko.','Jajka posadź w lekko osolonej wodzie.','Muffiny podpiecz, ułóż boczek, jajko, sos.'],
+      tip:'Luksusowe niedzielne śniadanie — warte każdej minuty!'
+    },
+    { name:'Omlet z pieczarkami i serem', flag:'🇫🇷', type:'Konkretne śniadanie (niedziela)', box:false,
+      ingredients:[{q:'4 szt.',n:'jajka'},{q:'150g',n:'pieczarki'},{q:'60g',n:'ser żółty lub gruyère'},{q:'1 szt.',n:'cebula dymka'},{q:'1 łyżka',n:'masło'},{q:'sól, pieprz, tymianek',n:''}],
+      steps:['Pieczarki pokrój i podsmaż na maśle z czosnkiem.','Jajka roztrzep z solą i pieprzem.','Na rozgrzaną patelnię wlej jajka.','Kiedy brzegi zaczynają tężeć, dodaj pieczarki i ser.','Złóż omlet na pół i podaj.'],
+      tip:'Omlet po francusku — delikatny, kremowy w środku!'
+    },
+    { name:'Beef Bourguignon (wołowina po burgundzku)', flag:'🇫🇷', type:'Niedzielny obiad specjalny', box:false,
+      ingredients:[{q:'800g',n:'wołowina (łopatka lub kark)'},{q:'1 butelka',n:'czerwone wino burgundzkie'},{q:'200g',n:'boczek wędzony'},{q:'250g',n:'pieczarki'},{q:'1 szt.',n:'cebula'},{q:'3 szt.',n:'marchewka'},{q:'3 ząbki',n:'czosnek'},{q:'2 łyżki',n:'koncentrat pomidorowy'},{q:'bouquet garni',n:'tymianek, laur, pietruszka'},{q:'500g',n:'ziemniaki lub makaron szeroki'}],
+      steps:['Wołowinę pokrój w duże kawałki, obsmaż na złoto.','Boczek i cebulę podsmaż osobno.','Wszystko przełóż do garnka, zalej winem.','Dodaj warzywa, czosnek, koncentrat, zioła.','Duś pod przykryciem 2,5-3 godz. na małym ogniu.','Podaj z ziemniakami lub makaronem.'],
+      tip:'Danie na cały dzień — gotujcie razem i cieszcie się zapachem!'
+    },
+    { name:'Tarta cytrynowa', flag:'🇫🇷', type:'Niedzielny deser', box:false,
+      ingredients:[{q:'150g',n:'mąka'},{q:'80g',n:'masło zimne'},{q:'2 łyżki',n:'cukier puder'},{q:'1 szt.',n:'jajko (do ciasta)'},{q:'3 szt.',n:'jajka (do kremu)'},{q:'150g',n:'cukier'},{q:'3 szt.',n:'cytryny (sok i skórka)'},{q:'100g',n:'masło (do kremu)'},{q:'100ml',n:'śmietana 30%'}],
+      steps:['Posiekaj mąkę z masłem, dodaj cukier i jajko — zagnieć kruche ciasto.','Wstaw na 30 min do lodówki, wyłóż formę, piecz 15 min (180°C) z obciążnikiem.','Krem: sok cytrynowy, jajka, cukier i masło gotuj w kąpieli wodnej mieszając aż zgęstnieje.','Wlej krem do upieczonego spodu.','Wstaw na 2 godz. do lodówki.'],
+      tip:'Niedzielna tarta to show — podaj z kawą i delektujcie się!'
+    },
+    { name:'Zupa cebulowa po francusku', flag:'🇫🇷', type:'Niedzielna kolacja', box:false,
+      ingredients:[{q:'6 szt.',n:'cebule'},{q:'2 łyżki',n:'masło'},{q:'150ml',n:'białe wino wytrawne'},{q:'1L',n:'bulion wołowy'},{q:'2 gałązki',n:'tymianek'},{q:'4 kromki',n:'bagietka'},{q:'100g',n:'ser Gruyère lub żółty'}],
+      steps:['Cebulę pokrój w cienkie krążki. Smaż na maśle na małym ogniu 40 min aż skarmelizuje.','Wlej wino, gotuj 2 min.','Dodaj bulion i tymianek, gotuj 20 min.','Zupę przelej do żaroodpornych misek.','Na wierzch połóż grzankę z bagietki, posyp serem.','Zapiekaj w piekarniku 200°C przez 10 min aż ser się roztopi.'],
+      tip:'Klasyk! Przy odrobinie cierpliwości (karmelizacja) wychodzi magicznie.'
+    },
+  ],
+},
+
+// ═══════════════════════════════════════════════
+// TYDZIEŃ 4
+// ═══════════════════════════════════════════════
+{
+  // Pon-Wt: śniadanie overnight oats / jajka bénédikt, obiad ramen z kurczakiem (makaron, nie ryż), deser makowiec, kolacja grecki box
+  monTue: [
+    { name:'Overnight oats z orzechami i figami', flag:'🌍', type:'Lekkie śniadanie', box:false,
+      ingredients:[{q:'80g',n:'płatki owsiane'},{q:'200ml',n:'mleko migdałowe'},{q:'1 łyżka',n:'nasiona chia'},{q:'2 szt.',n:'figi świeże lub suszone'},{q:'garść',n:'orzechy włoskie'},{q:'1 łyżka',n:'miód'}],
+      steps:['Wymieszaj płatki z mlekiem i chia.','Wstaw do lodówki na noc.','Rano wymieszaj, dodaj figi i orzechy.','Skrop miodem.'],
+      tip:'Gotowe śniadanie na 2 dni — rób podwójną porcję!'
+    },
+    { name:'Jajka Bénédikt z szynką', flag:'🇺🇸', type:'Konkretne śniadanie', box:true,
+      ingredients:[{q:'4 szt.',n:'jajka'},{q:'4 plast.',n:'szynka gotowana'},{q:'2 szt.',n:'English muffin lub bułka'},{q:'3 żółtka',n:''},{q:'100g',n:'masło'},{q:'1 łyżka',n:'sok z cytryny'},{q:'szczypta',n:'cayenne, sól'}],
+      steps:['Sos hollandaise: żółtka ubij w kąpieli wodnej, powoli dodaj rozpuszczone masło.','Dopraw cytryną i cayenne.','Szynkę lekko podgrzej.','Jajka posadź w lekko osolonej wodzie.','Muffiny podpiecz, ułóż szynkę, jajko, sos.'],
+      tip:'Do boxu: sos hollandaise osobno w pojemniku!'
+    },
+    { name:'Ramen domowy z kurczakiem', flag:'🇯🇵', type:'Obiad', box:true,
+      ingredients:[{q:'200g',n:'makaron ramen lub soba'},{q:'2 piersi',n:'filet z kurczaka'},{q:'1L',n:'bulion drobiowy'},{q:'3 łyżki',n:'sos sojowy'},{q:'1 łyżka',n:'miso'},{q:'2 cm',n:'imbir'},{q:'2 ząbki',n:'czosnek'},{q:'2 szt.',n:'jajka (marynowane)'},{q:'dymka, nori',n:'do podania'},{q:'1 łyżka',n:'olej sezamowy'}],
+      steps:['Bulion zagotuj z imbirem, czosnkiem, sosem sojowym i miso.','Kurczaka ugotuj w bulionie (15 min), pokrój.','Jajka ugotuj 7 min, obierz, zalej mieszanką sosu sojowego i wody.','Ugotuj makaron.','Złóż: makaron, bulion, kurczak, jajko, dymka, nori.'],
+      tip:'Do boxu: bulion w termosie, reszta osobno!'
+    },
+    { name:'Makowiec zwijany (szybki)', flag:'🇵🇱', type:'Podwieczorek / deser', box:true,
+      ingredients:[{q:'1 opakowanie',n:'ciasto drożdżowe gotowe (chłodnica)'},{q:'200g',n:'masa makowa (ze słoika)'},{q:'2 łyżki',n:'rodzynek'},{q:'1 łyżka',n:'skórka pomarańczowa'},{q:'lukier',n:'cukier puder + sok z cytryny'}],
+      steps:['Rozwałkuj ciasto drożdżowe.','Posmaruj masą makową.','Dodaj rodzynki i skórkę.','Zwiń ciasno w rulon.','Piecz 190°C przez 25 min.','Polej lukrem.'],
+      tip:'Z gotowego ciasta wychodzi piękny makowiec w 30 min!'
+    },
+    { name:'Box przekąskowy: grecki', flag:'🇬🇷', type:'Kolacja serials box', box:true,
+      ingredients:[{q:'80g',n:'ser feta'},{q:'garść',n:'oliwki kalamata'},{q:'1 szt.',n:'ogórek'},{q:'garść',n:'pomidorki cherry'},{q:'4 szt.',n:'chleb pita'},{q:'80g',n:'tzatziki'},{q:'1 łyżka',n:'oliwa + oregano'}],
+      steps:['Fetę pokrusz lub pokrój w kostkę.','Ogórek i pomidorki w kawałki.','Pitę podgrzej, pokrój w trójkąty.','Tzatziki w osobnym pojemniku.'],
+      tip:'Grecki box na wieczór z serialem — lato na talerzu!'
+    },
+  ],
+  // Śr-Cz: śniadanie twarożek z gruszką / chorizo con huevos, obiad risotto z grzybami (nie ryż!...ok, risotto to ryż ale inne danie!), deser éclair, kolacja japoński box
+  wedThu: [
+    { name:'Twarożek z miodem i orzechami', flag:'🇵🇱', type:'Lekkie śniadanie', box:false,
+      ingredients:[{q:'200g',n:'twaróg sernikowy'},{q:'2 łyżki',n:'miód'},{q:'garść',n:'orzechy włoskie lub pekan'},{q:'szczypta',n:'cynamon'},{q:'½ szt.',n:'gruszka'},{q:'2 szt.',n:'pieczywo chrupkie'}],
+      steps:['Twaróg przełóż do miseczki.','Gruszka w cienkich plastrach.','Ułóż na twarogu, skrop miodem.','Posyp orzechami i cynamonem.'],
+      tip:'Eleganckie śniadanie w 5 minut!'
+    },
+    { name:'Chorizo con huevos (jajka z chorizo)', flag:'🇪🇸', type:'Konkretne śniadanie', box:true,
+      ingredients:[{q:'80g',n:'chorizo (kiełbaska hiszpańska)'},{q:'3 szt.',n:'jajka'},{q:'1 szt.',n:'papryka'},{q:'1 szt.',n:'cebula'},{q:'½ łyżeczki',n:'papryka wędzona'},{q:'2 łyżki',n:'oliwa'},{q:'1 szt.',n:'bagietka lub tortilla'}],
+      steps:['Chorizo pokrój, usmaż na suchej patelni.','Cebulę i paprykę dodaj, smaż 3 min.','Dodaj paprykę wędzoną.','Wbij jajka, mieszaj jak jajecznicę.','Podaj z bagietką.'],
+      tip:'Intensywny smak chorizo robi całe danie!'
+    },
+    { name:'Risotto z grzybami i parmezanem', flag:'🇮🇹', type:'Obiad', box:true,
+      ingredients:[{q:'300g',n:'ryż arborio'},{q:'30g',n:'suszone grzyby'},{q:'200g',n:'pieczarki'},{q:'1 szt.',n:'cebula'},{q:'100ml',n:'białe wino'},{q:'800ml',n:'gorący bulion'},{q:'50g',n:'parmezan'},{q:'2 łyżki',n:'masło'},{q:'2 łyżki',n:'oliwa'},{q:'tymianek',n:''}],
+      steps:['Grzyby suszone namocz 20 min, odcedź zachowując wodę.','Zeszklij cebulę na oliwie i maśle.','Dodaj ryż, smaż 2 min.','Wlej wino, poczekaj aż wchłonie.','Dodawaj gorący bulion chochelka po chochelce mieszając.','Na końcu dodaj grzyby, parmezan i masło.'],
+      tip:'Risotto do boxu — dodaj łyżkę wody przy podgrzewaniu!'
+    },
+    { name:'Éclair czekoladowy (z gotowego ciasta)', flag:'🇫🇷', type:'Podwieczorek / deser', box:true,
+      ingredients:[{q:'1 opak.',n:'gotowe ciasto ptysiowe'},{q:'250ml',n:'śmietana 30%'},{q:'2 łyżki',n:'cukier puder'},{q:'1 łyżeczka',n:'wanilia'},{q:'100g',n:'czekolada gorzka'},{q:'50ml',n:'śmietana (do polewy)'}],
+      steps:['Uformuj eklery z ciasta, piecz 200°C przez 25 min.','Ostudź.','Ubij śmietanę z cukrem i wanilią.','Napełnij eklery kremem.','Czekoladę rozpuść ze śmietaną — polej ekler.'],
+      tip:'Gotowe ciasto ptysiowe skraca pracę o połowę!'
+    },
+    { name:'Box przekąskowy: japoński', flag:'🇯🇵', type:'Kolacja serials box', box:true,
+      ingredients:[{q:'4 szt.',n:'onigiri (trójkąty ryżowe z nori)'},{q:'2 łyżki',n:'sos teriyaki'},{q:'garść',n:'edamame'},{q:'1 szt.',n:'ogórek'},{q:'wasabi i imbir',n:'(opcjonalnie)'}],
+      steps:['Onigiri kup gotowe lub zrób z ryżu z nadzieniem.','Ogórek pokrój.','Edamame ugotuj, posoł.','Wszystko ułóż w boxie.'],
+      tip:'Japoński box — lekki, piękny i pyszny!'
+    },
+  ],
+  // Pt-Sb: śniadanie açaí bowl / tosty z ricottą i figami, obiad gulasz wołowy z ziemniakami (zamiast burrito z ryżem — inne danie!), deser tiramisu, kolacja tapas z chorizo
+  friSat: [
+    { name:'Açaí bowl z granolą', flag:'🌏', type:'Lekkie śniadanie', box:false,
+      ingredients:[{q:'200g',n:'mrożone açaí lub mrożone maliny'},{q:'1 banan',n:'(mrożony)'},{q:'100ml',n:'mleko kokosowe'},{q:'4 łyżki',n:'granola'},{q:'garść',n:'owoce świeże'},{q:'1 łyżka',n:'masło orzechowe'},{q:'wiórki kokosowe',n:''}],
+      steps:['Zmiksuj açaí/maliny z bananem i mlekiem.','Przelej do miseczki.','Udekoruj granolą, owocami, masłem orzechowym.'],
+      tip:'Instagram-worthy śniadanie — zrób zdjęcie przed jedzeniem!'
+    },
+    { name:'Wrapy z grillowanym kurczakiem i awokado', flag:'🌍', type:'Konkretne śniadanie', box:true,
+      ingredients:[{q:'2 szt.',n:'tortilla pszenna'},{q:'1 pierś',n:'filet z kurczaka'},{q:'1 szt.',n:'awokado'},{q:'½ szt.',n:'ogórek'},{q:'1 łyżka',n:'majonez'},{q:'1 łyżeczka',n:'musztarda'},{q:'sałata',n:'kilka liści'},{q:'szczypta',n:'sól, pieprz, papryka wędzona'}],
+      steps:['Kurczaka usmaż na patelni grillowej lub zwykłej, pokrój w paski.','Awokado rozgnieć z solą.','Na tortillę nałóż awokado, kurczaka, ogórek, sałatę.','Zwiń ciasno, zawiń w papier.'],
+      tip:'Do boxu — świetny na lunch lub śniadanie w pracy!'
+    },
+    { name:'Gulasz wołowy z ziemniakami po węgiersku', flag:'🇭🇺', type:'Obiad', box:true,
+      ingredients:[{q:'500g',n:'wołowina (łopatka lub kark)'},{q:'600g',n:'ziemniaki'},{q:'2 szt.',n:'cebula'},{q:'3 ząbki',n:'czosnek'},{q:'2 łyżki',n:'papryka słodka'},{q:'1 łyżeczka',n:'papryka ostra'},{q:'1 puszka',n:'pomidory krojone'},{q:'500ml',n:'bulion wołowy'},{q:'2 łyżki',n:'olej'},{q:'majeranek, kminek',n:''}],
+      steps:['Wołowinę pokrój w kostkę, obsmaż na złoto.','Cebulę zeszklij, dodaj czosnek i paprykę w proszku.','Połącz mięso z cebulą, dodaj pomidory i bulion.','Gotuj 45 min pod przykryciem.','Dodaj ziemniaki, gotuj kolejne 20 min.','Dopraw solą, pieprzem, majerankiem.'],
+      tip:'Gulasz smakuje lepiej na drugi dzień — idealne do boxu!'
+    },
+    { name:'Tiramisu', flag:'🇮🇹', type:'Podwieczorek / deser', box:true,
+      ingredients:[{q:'250g',n:'mascarpone'},{q:'3 szt.',n:'jajka'},{q:'3 łyżki',n:'cukier'},{q:'200ml',n:'kawa espresso (zimna)'},{q:'150g',n:'biszkopty ladyfingers'},{q:'2 łyżki',n:'kakao do posypania'},{q:'2 łyżki',n:'amaretto (opcjonalnie)'}],
+      steps:['Oddziel żółtka od białek.','Żółtka utrzyj z cukrem na jasną masę.','Dodaj mascarpone, mieszaj.','Ubij białka na sztywno, delikatnie złącz z masą.','Biszkopty maczaj w kawie, układaj warstwy.','Posyp kakao, wstaw na 4h do lodówki.'],
+      tip:'Rób w piątek wieczorem — w sobotę będzie idealne!'
+    },
+    { name:'Box przekąskowy: mix ibero-grecki', flag:'🇪🇸', type:'Kolacja serials box', box:true,
+      ingredients:[{q:'60g',n:'chorizo w plastrach'},{q:'50g',n:'ser manchego'},{q:'garść',n:'oliwki mieszane'},{q:'garść',n:'migdały prażone'},{q:'2 szt.',n:'krakersy lub chleb pita'},{q:'80g',n:'tzatziki'}],
+      steps:['Chorizo i ser ułóż w pojemniku.','Oliwki i migdały dookoła.','Tzatziki w oddzielnym pojemniku.','Krakersy zapakuj osobno — żeby nie rozmiękły.'],
+      tip:'Idealny box do piątkowego lub sobotniego serialu!'
+    },
+  ],
+  // Niedziela T4: śniadanie pancakes / jajecznica z kiełbasą (wytrawne!), obiad pieczeń wołowa z warzywami, deser crème caramel, kolacja żurek
+  sunday: [
+    { name:'Pancakes z owocami sezonowymi', flag:'🇺🇸', type:'Lekkie śniadanie (niedziela)', box:false,
+      ingredients:[{q:'200g',n:'mąka pszenna'},{q:'2 szt.',n:'jajka'},{q:'250ml',n:'maślanka'},{q:'1 łyżeczka',n:'proszek do pieczenia'},{q:'½ łyżeczki',n:'soda'},{q:'1 łyżka',n:'cukier'},{q:'30g',n:'masło'},{q:'garść',n:'owoce sezonowe'},{q:'3 łyżki',n:'syrop klonowy'}],
+      steps:['Wymieszaj suche składniki osobno.','Jajka, maślankę i rozpuszczone masło wymieszaj.','Połącz obie mieszanki — nie mieszaj za długo!','Smaż małe placki na średnim ogniu po 2 min.','Podaj z owocami i syropem klonowym.'],
+      tip:'Niedziela = czas dla Was. Wstańcie i ugotujcie razem!'
+    },
+    { name:'Jajecznica z kiełbasą i cebulą', flag:'🇵🇱', type:'Konkretne śniadanie (niedziela)', box:false,
+      ingredients:[{q:'4 szt.',n:'jajka'},{q:'100g',n:'kiełbasa śląska lub biała'},{q:'1 szt.',n:'cebula'},{q:'1 łyżka',n:'masło'},{q:'sól, pieprz',n:''},{q:'pieczywo',n:'do podania'}],
+      steps:['Kiełbasę pokrój w plasterki, obsmaż na suchej patelni.','Cebulę zeszklij osobno na maśle.','Dodaj cebulę do kiełbasy.','Wbij jajka, mieszaj delikatnie.','Dopraw i podaj z pieczywem.'],
+      tip:'Sycące wytrawne śniadanie — idealne po porannym spacerze!'
+    },
+    { name:'Pieczeń wieprzowa z jabłkami i ziemniakami', flag:'🇵🇱', type:'Niedzielny obiad specjalny', box:false,
+      ingredients:[{q:'800g',n:'schab lub łopatka wieprzowa'},{q:'3 szt.',n:'jabłka'},{q:'600g',n:'ziemniaki'},{q:'2 szt.',n:'cebula'},{q:'4 ząbki',n:'czosnek'},{q:'2 łyżeczki',n:'majeranek'},{q:'1 łyżeczka',n:'tymianek'},{q:'3 łyżki',n:'olej'},{q:'sól, pieprz',n:''}],
+      steps:['Mięso natrzyj solą, pieprzem, czosnkiem i majerankiem.','Obsmaż ze wszystkich stron na złoto.','Jabłka obierz, pokrój w ćwiartki.','Ułóż mięso w formie, dookoła jabłka, ziemniaki i cebulę.','Piecz 180°C przez 1h 20min — polewaj sosem.'],
+      tip:'Polskie comfort food — zapach podbije cały dom!'
+    },
+    { name:'Crème caramel', flag:'🇫🇷', type:'Niedzielny deser', box:false,
+      ingredients:[{q:'4 szt.',n:'jajka'},{q:'500ml',n:'mleko'},{q:'100g',n:'cukier (do kremu)'},{q:'1 łyżeczka',n:'wanilia'},{q:'120g',n:'cukier (do karmelu)'},{q:'3 łyżki',n:'woda'}],
+      steps:['Karmel: cukier z wodą podgrzewaj aż do złotego koloru, wlej do foremek.','Jajka utrzyj z cukrem i wanilią.','Dodaj ciepłe mleko cienkim strumieniem.','Przelej do foremek z karmelem.','Piecz w kąpieli wodnej 160°C przez 45 min.','Studź, wstaw do lodówki, podaj odwrócone.'],
+      tip:'Efekt WOW gwarantowany — karmel spływa jak z reklamy!'
+    },
+    { name:'Żurek z białą kiełbasą (niedziela)', flag:'🇵🇱', type:'Niedzielna kolacja', box:false,
+      ingredients:[{q:'500ml',n:'zakwas na żurek (słoik)'},{q:'500ml',n:'bulion'},{q:'2 szt.',n:'biała kiełbasa'},{q:'4 szt.',n:'jajka na twardo'},{q:'200ml',n:'śmietana 18%'},{q:'2 ząbki',n:'czosnek'},{q:'1 łyżka',n:'chrzan'},{q:'majeranek, sól, pieprz',n:''}],
+      steps:['Bulion zagotuj z czosnkiem.','Wlej zakwas na żurek, zagotuj.','Kiełbasę ugotuj osobno (15 min).','Dodaj śmietanę, chrzan, majeranek.','Podaj z jajkiem i kiełbasą.'],
+      tip:'Żurek to polskie comfort food — niedzielna tradycja!'
+    },
+  ],
+},
+
 ];
 
 // ═══════════════ SHOPPING LISTS ═══════════════
@@ -695,11 +707,13 @@ const SHOP = [
   // Tydzień 1
   {
     categories: [
-      { name:'🥩 Mięso i ryby', cls:'hm', items:[
-        {n:'Filet z kurczaka (4 piersi)',q:'ok. 700g',p:'18,00 zł'},
-        {n:'Łosoś (filety)',q:'300g',p:'22,00 zł'},
+      { name:'🥩 Mięso i wędliny', cls:'hm', items:[
+        {n:'Filet z kurczaka (piersi)',q:'ok. 800g',p:'22,00 zł'},
+        {n:'Kurczak cały (do rosołu)',q:'ok. 1,5kg',p:'19,99 zł'},
         {n:'Prosciutto lub salami',q:'80g',p:'8,50 zł'},
-        {n:'Owoce morza mix (mrożone)',q:'400g',p:'19,00 zł'},
+        {n:'Boczek wędzony',q:'100g',p:'5,99 zł'},
+        {n:'Kiełbasa śląska (do bigosu)',q:'300g',p:'7,99 zł'},
+        {n:'Mięso wieprzowe (do bigosu)',q:'200g',p:'9,99 zł'},
       ]},
       { name:'🥛 Nabiał i jaja', cls:'hd', items:[
         {n:'Jajka (klasa L)',q:'12 szt.',p:'9,99 zł'},
@@ -707,6 +721,7 @@ const SHOP = [
         {n:'Mozzarella',q:'250g',p:'9,00 zł'},
         {n:'Parmezan (starty)',q:'100g',p:'8,50 zł'},
         {n:'Twaróg półtłusty',q:'500g',p:'5,99 zł'},
+        {n:'Twaróg sernikowy',q:'200g',p:'3,99 zł'},
         {n:'Śmietana 30%',q:'500ml',p:'6,99 zł'},
         {n:'Masło',q:'200g',p:'5,49 zł'},
         {n:'Mleko 3,2%',q:'1L',p:'3,49 zł'},
@@ -714,37 +729,40 @@ const SHOP = [
       { name:'🥦 Warzywa i owoce', cls:'hv', items:[
         {n:'Cukinia',q:'1 szt.',p:'2,99 zł'},
         {n:'Pomidorki cherry',q:'250g',p:'5,99 zł'},
-        {n:'Brokuły',q:'1 szt.',p:'3,99 zł'},
-        {n:'Awokado',q:'3 szt.',p:'8,97 zł'},
         {n:'Szpinak baby',q:'150g',p:'4,99 zł'},
+        {n:'Kapusta kiszona',q:'500g',p:'3,99 zł'},
+        {n:'Awokado',q:'3 szt.',p:'8,97 zł'},
         {n:'Banan',q:'4 szt.',p:'2,40 zł'},
         {n:'Borówki',q:'250g',p:'7,99 zł'},
-        {n:'Jabłka',q:'4 szt.',p:'3,99 zł'},
-        {n:'Truskawki (lub mrożone)',q:'300g',p:'6,99 zł'},
+        {n:'Jabłka (4 szt. do crumble)',q:'ok. 600g',p:'3,99 zł'},
         {n:'Maliny (mrożone)',q:'300g',p:'5,99 zł'},
         {n:'Cytryna',q:'3 szt.',p:'2,49 zł'},
         {n:'Czosnek',q:'1 główka',p:'1,99 zł'},
+        {n:'Marchewka',q:'1 kg',p:'3,99 zł'},
+        {n:'Ziemniaki',q:'600g',p:'2,99 zł'},
       ]},
       { name:'🌾 Produkty zbożowe i makarony', cls:'hg', items:[
         {n:'Makaron penne',q:'500g',p:'4,99 zł'},
-        {n:'Ryż jaśminowy',q:'500g',p:'4,99 zł'},
         {n:'Płatki owsiane górskie',q:'500g',p:'3,49 zł'},
         {n:'Granola',q:'300g',p:'8,99 zł'},
         {n:'Chleb pełnoziarnisty',q:'1 bochenek',p:'5,99 zł'},
-        {n:'Ciabatta',q:'2 szt.',p:'4,99 zł'},
+        {n:'Chleb żytni',q:'1 bochenek',p:'5,99 zł'},
+        {n:'Bułki kajzerki',q:'4 szt.',p:'3,60 zł'},
         {n:'Bagietka',q:'1 szt.',p:'2,49 zł'},
+        {n:'Makaron zacierka lub nitki (do rosołu)',q:'200g',p:'3,49 zł'},
       ]},
       { name:'🫙 Przetwory i przyprawy', cls:'ho', items:[
         {n:'Pesto bazyliowe (słoik)',q:'190g',p:'7,99 zł'},
         {n:'Oliwki (słoik)',q:'200g',p:'6,99 zł'},
         {n:'Oliwa extra virgin',q:'500ml',p:'14,99 zł'},
-        {n:'Sos sojowy',q:'150ml',p:'4,99 zł'},
-        {n:'Ocet ryżowy',q:'150ml',p:'5,99 zł'},
+        {n:'Pomidory krojone (puszka)',q:'1 szt.',p:'2,99 zł'},
         {n:'Miód',q:'słoik 250g',p:'7,99 zł'},
         {n:'Masło orzechowe naturalne',q:'340g',p:'14,99 zł'},
         {n:'Orzechy włoskie',q:'150g',p:'8,99 zł'},
-        {n:'Kaparów słoiczek',q:'100g',p:'5,99 zł'},
-        {n:'Sos holendeski (opcja gotowa)',q:'',p:'-'},
+        {n:'Czerwone wino (do bigosu)',q:'150ml/butelka',p:'14,99 zł'},
+        {n:'Hummus (gotowy)',q:'200g',p:'5,99 zł'},
+        {n:'Ser feta',q:'200g',p:'8,99 zł'},
+        {n:'Pita chlebki',q:'4 szt.',p:'4,99 zł'},
       ]},
       { name:'🍰 Wypieki i słodycze', cls:'hc', items:[
         {n:'Dojrzałe banany (na muffiny)',q:'4 szt.',p:'2,40 zł'},
@@ -754,173 +772,200 @@ const SHOP = [
         {n:'Kakao',q:'100g',p:'4,99 zł'},
         {n:'Masło do pieczenia',q:'200g',p:'5,49 zł'},
         {n:'Proszek do pieczenia',q:'2 opak.',p:'2,98 zł'},
+        {n:'Lody waniliowe',q:'500ml',p:'8,99 zł'},
       ]},
     ]
   },
   // Tydzień 2
   {
     categories: [
-      { name:'🥩 Mięso i ryby', cls:'hm', items:[
+      { name:'🥩 Mięso i wędliny', cls:'hm', items:[
         {n:'Szynka swojska (plasterki)',q:'200g',p:'9,99 zł'},
         {n:'Mięso wieprzowe do bigosu',q:'300g',p:'14,99 zł'},
         {n:'Kiełbasa śląska',q:'500g',p:'12,99 zł'},
         {n:'Łosoś wędzony',q:'100g',p:'11,99 zł'},
         {n:'Boczek wędzony',q:'200g',p:'8,99 zł'},
+        {n:'Pieczeń wołowa (na sunday roast)',q:'600g',p:'39,99 zł'},
       ]},
       { name:'🥛 Nabiał i jaja', cls:'hd', items:[
-        {n:'Jajka (klasa L)',q:'12 szt.',p:'9,99 zł'},
+        {n:'Jajka (klasa L)',q:'16 szt.',p:'13,29 zł'},
         {n:'Ser Philadelphia',q:'200g',p:'7,99 zł'},
-        {n:'Mascarpone',q:'250g',p:'9,99 zł'},
         {n:'Twaróg sernikowy',q:'500g',p:'7,99 zł'},
+        {n:'Twaróg śmietankowy',q:'100g',p:'3,99 zł'},
         {n:'Śmietana 30%',q:'500ml',p:'6,99 zł'},
+        {n:'Śmietana 18%',q:'400ml',p:'5,98 zł'},
         {n:'Ser żółty (plasterki)',q:'150g',p:'5,99 zł'},
         {n:'Masło',q:'200g',p:'5,49 zł'},
         {n:'Mleko 3,2%',q:'1L',p:'3,49 zł'},
         {n:'Majonez',q:'200g',p:'4,99 zł'},
+        {n:'Jogurt grecki',q:'400g',p:'7,00 zł'},
       ]},
       { name:'🥦 Warzywa i owoce', cls:'hv', items:[
         {n:'Marchewka',q:'1 kg',p:'3,99 zł'},
         {n:'Dynia piżmowa',q:'800g',p:'5,99 zł'},
         {n:'Cebula',q:'5 szt.',p:'3,49 zł'},
-        {n:'Kapusta kiszona',q:'500g',p:'3,99 zł'},
-        {n:'Pomidory krojone (puszka)',q:'2 szt.',p:'5,98 zł'},
-        {n:'Edamame (mrożone)',q:'300g',p:'7,99 zł'},
-        {n:'Truskawki (mrożone)',q:'300g',p:'5,99 zł'},
+        {n:'Papryka czerwona',q:'3 szt.',p:'7,47 zł'},
+        {n:'Papryka żółta i zielona',q:'2 szt.',p:'4,98 zł'},
+        {n:'Szpinak baby',q:'200g',p:'5,99 zł'},
+        {n:'Pieczarki',q:'150g',p:'2,99 zł'},
+        {n:'Truskawki (mrożone do sosu)',q:'200g',p:'3,99 zł'},
         {n:'Jabłka (do szarlotki)',q:'1,5 kg',p:'5,99 zł'},
         {n:'Cytryny',q:'3 szt.',p:'2,49 zł'},
         {n:'Czosnek',q:'1 główka',p:'1,99 zł'},
+        {n:'Pasternak',q:'2 szt.',p:'3,99 zł'},
+        {n:'Ziemniaki',q:'1,5 kg',p:'4,99 zł'},
       ]},
       { name:'🌾 Produkty zbożowe', cls:'hg', items:[
         {n:'Makaron świderki',q:'500g',p:'3,99 zł'},
         {n:'Chleb żytni',q:'1 bochenek',p:'6,99 zł'},
-        {n:'Biszkopty ladyfingers',q:'200g',p:'7,99 zł'},
-        {n:'Ryż arborio (do risotto)',q:'400g',p:'7,99 zł'},
+        {n:'Bajgle',q:'2 szt.',p:'3,98 zł'},
         {n:'Bagietka',q:'2 szt.',p:'4,98 zł'},
-        {n:'Grzyby suszone (do risotto)',q:'30g',p:'6,99 zł'},
-        {n:'Pieczarki',q:'300g',p:'4,99 zł'},
+        {n:'Tortille pszenne',q:'4 szt.',p:'5,99 zł'},
+        {n:'Nachos',q:'200g',p:'5,99 zł'},
       ]},
-      { name:'🫙 Przetwory i słodkie', cls:'ho', items:[
-        {n:'Koncentrat pomidorowy',q:'2 łyżki',p:'2,99 zł'},
-        {n:'Wino białe wytrawne',q:'750ml',p:'19,99 zł'},
-        {n:'Espresso (kawa mielona)',q:'250g',p:'12,99 zł'},
-        {n:'Amaretto (opcjonalnie)',q:'',p:'opcja'},
-        {n:'Kakao do posypania',q:'100g',p:'4,99 zł'},
+      { name:'🫙 Przetwory i alkohole', cls:'ho', items:[
+        {n:'Nasiona chia',q:'150g',p:'7,99 zł'},
+        {n:'Mleko kokosowe (puszka)',q:'1 szt.',p:'4,99 zł'},
+        {n:'Koncentrat pomidorowy',q:'słoik',p:'2,99 zł'},
+        {n:'Wino czerwone (do pieczeni)',q:'200ml/butelka',p:'14,99 zł'},
+        {n:'Mango świeże lub mrożone',q:'2 szt.',p:'9,98 zł'},
+        {n:'Bulion wołowy (tetrapak)',q:'1L',p:'5,99 zł'},
+        {n:'Kaparów słoiczek',q:'100g',p:'5,99 zł'},
+        {n:'Żelatyna',q:'1 opak.',p:'2,99 zł'},
+        {n:'Guacamole (gotowe)',q:'150g',p:'6,99 zł'},
+        {n:'Salsa pomidorowa',q:'200g',p:'5,99 zł'},
       ]},
       { name:'🍰 Wypieki', cls:'hc', items:[
+        {n:'Herbatniki digestive',q:'200g',p:'4,99 zł'},
         {n:'Mąka pszenna',q:'1 kg',p:'3,99 zł'},
         {n:'Cukier brązowy',q:'500g',p:'4,49 zł'},
         {n:'Proszek do pieczenia',q:'2 opak.',p:'2,98 zł'},
         {n:'Cynamon mielony',q:'20g',p:'3,49 zł'},
         {n:'Cukier puder',q:'200g',p:'2,99 zł'},
+        {n:'Ekstrakt waniliowy',q:'30ml',p:'4,99 zł'},
       ]},
     ]
   },
   // Tydzień 3
   {
     categories: [
-      { name:'🥩 Mięso i ryby', cls:'hm', items:[
-        {n:'Filet z kurczaka (4 piersi)',q:'ok. 700g',p:'18,00 zł'},
-        {n:'Tuńczyk w oliwie (puszka)',q:'2 szt.',p:'9,98 zł'},
-        {n:'Prosciutto',q:'80g',p:'8,50 zł'},
+      { name:'🥩 Mięso i wędliny', cls:'hm', items:[
+        {n:'Filet z kurczaka (piersi)',q:'ok. 700g',p:'18,00 zł'},
+        {n:'Mielona wołowina',q:'400g',p:'18,99 zł'},
+        {n:'Boczek wędzony',q:'200g',p:'8,99 zł'},
         {n:'Chorizo lub salami',q:'100g',p:'9,99 zł'},
+        {n:'Prosciutto',q:'80g',p:'8,50 zł'},
       ]},
       { name:'🥛 Nabiał i jaja', cls:'hd', items:[
-        {n:'Jajka (klasa L)',q:'12 szt.',p:'9,99 zł'},
+        {n:'Jajka (klasa L)',q:'14 szt.',p:'11,69 zł'},
         {n:'Mozzarella',q:'250g',p:'9,00 zł'},
         {n:'Ricotta',q:'250g',p:'8,99 zł'},
-        {n:'Ser Philadelphia',q:'200g',p:'7,99 zł'},
-        {n:'Mascarpone',q:'250g',p:'9,99 zł'},
-        {n:'Śmietana 30%',q:'500ml',p:'6,99 zł'},
+        {n:'Śmietana 30%',q:'600ml',p:'8,99 zł'},
         {n:'Jogurt naturalny',q:'2 kubki',p:'5,98 zł'},
+        {n:'Ser cheddar starty',q:'150g',p:'6,99 zł'},
         {n:'Masło',q:'200g',p:'5,49 zł'},
+        {n:'Mascarpone',q:'250g',p:'9,99 zł'},
       ]},
       { name:'🥦 Warzywa i owoce', cls:'hv', items:[
         {n:'Pomidory malinowe',q:'3 szt.',p:'6,99 zł'},
-        {n:'Rukola',q:'100g',p:'4,99 zł'},
         {n:'Bazylia świeża',q:'1 doniczka',p:'5,99 zł'},
         {n:'Awokado',q:'2 szt.',p:'5,98 zł'},
-        {n:'Mango',q:'2 szt.',p:'9,98 zł'},
+        {n:'Mango',q:'1 szt.',p:'4,99 zł'},
         {n:'Figi świeże',q:'4 szt.',p:'5,99 zł'},
-        {n:'Banan (mrożony)',q:'4 szt.',p:'2,40 zł'},
+        {n:'Banany mrożone',q:'4 szt.',p:'2,40 zł'},
         {n:'Kiełki sojowe',q:'100g',p:'3,99 zł'},
+        {n:'Marchewka',q:'500g',p:'2,99 zł'},
+        {n:'Papryka czerwona',q:'2 szt.',p:'4,98 zł'},
         {n:'Czosnek',q:'1 główka',p:'1,99 zł'},
         {n:'Cytryna + limonka',q:'3+1 szt.',p:'4,48 zł'},
+        {n:'Truskawki + maliny',q:'300g',p:'7,99 zł'},
+        {n:'Kiwi',q:'2 szt.',p:'2,98 zł'},
       ]},
       { name:'🌾 Produkty zbożowe i inne', cls:'hg', items:[
-        {n:'Makaron ryżowy',q:'200g',p:'5,99 zł'},
-        {n:'Ryż do sushi/paelli',q:'400g',p:'6,99 zł'},
-        {n:'Herbatniki digestive',q:'200g',p:'4,99 zł'},
+        {n:'Makaron soba',q:'200g',p:'6,99 zł'},
+        {n:'Makaron ryżowy (do Pad Thai)',q:'200g',p:'5,99 zł'},
+        {n:'Ciasto croissant (chłodnia)',q:'1 opak.',p:'6,99 zł'},
+        {n:'Tortille duże',q:'4 szt.',p:'6,99 zł'},
         {n:'Orzeszki ziemne prażone',q:'150g',p:'4,99 zł'},
-        {n:'Nasiona chia',q:'150g',p:'7,99 zł'},
         {n:'Chleb na zakwasie',q:'1 bochenek',p:'8,99 zł'},
+        {n:'Bagietka',q:'1 szt.',p:'2,49 zł'},
+        {n:'Krakersy lub pita',q:'1 opak.',p:'4,99 zł'},
       ]},
       { name:'🫙 Przetwory i przyprawy', cls:'ho', items:[
-        {n:'Mleko kokosowe (puszka)',q:'2 szt.',p:'9,98 zł'},
         {n:'Sos rybny',q:'150ml',p:'6,99 zł'},
         {n:'Sos ostrygowy',q:'150ml',p:'7,99 zł'},
         {n:'Ocet balsamiczny',q:'250ml',p:'8,99 zł'},
-        {n:'Dżem figowy',q:'słoiczek',p:'8,99 zł'},
+        {n:'Dżem morelowy',q:'słoik',p:'6,99 zł'},
         {n:'Oliwki kalamata',q:'200g',p:'7,99 zł'},
-        {n:'Spring rolls (mrożone)',q:'8 szt.',p:'9,99 zł'},
+        {n:'Olej sezamowy',q:'100ml',p:'8,99 zł'},
+        {n:'Fasola czarna (puszka)',q:'1 szt.',p:'2,99 zł'},
+        {n:'Kawa espresso mielona',q:'250g',p:'12,99 zł'},
+        {n:'Biszkopty ladyfingers',q:'200g',p:'7,99 zł'},
+        {n:'Kakao do posypania',q:'100g',p:'4,99 zł'},
+        {n:'Migdały prażone',q:'100g',p:'6,99 zł'},
+        {n:'Bulion wołowy (do bourguignon)',q:'500ml',p:'4,99 zł'},
+        {n:'Czerwone wino (do bourguignon)',q:'1 butelka',p:'19,99 zł'},
+        {n:'Koncentrat pomidorowy',q:'słoik',p:'2,99 zł'},
       ]},
       { name:'🍰 Wypieki i słodkości', cls:'hc', items:[
-        {n:'Ciasto croissant (chłodnia)',q:'1 opak.',p:'6,99 zł'},
-        {n:'Dżem morelowy',q:'słoik',p:'6,99 zł'},
-        {n:'Cukier brązowy',q:'500g',p:'4,49 zł'},
         {n:'Mąka pszenna',q:'1 kg',p:'3,99 zł'},
-        {n:'Czekolada gorzka 70%',q:'200g',p:'9,99 zł'},
+        {n:'Cukier brązowy',q:'500g',p:'4,49 zł'},
+        {n:'Masło (do ciast)',q:'300g',p:'8,22 zł'},
+        {n:'Popcorn',q:'100g',p:'3,99 zł'},
+        {n:'Suszone mango lub morele',q:'100g',p:'6,99 zł'},
+        {n:'Orzechy mieszane',q:'150g',p:'9,99 zł'},
       ]},
     ]
   },
   // Tydzień 4
   {
     categories: [
-      { name:'🥩 Mięso i ryby', cls:'hm', items:[
-        {n:'Wołowina na pieczeń (łopatka)',q:'600g',p:'39,99 zł'},
-        {n:'Wołowina na bourguignon',q:'800g',p:'52,00 zł'},
-        {n:'Kiełbasa śląska',q:'400g',p:'10,99 zł'},
-        {n:'Boczek wędzony',q:'200g',p:'8,99 zł'},
-        {n:'Łosoś wędzony',q:'100g',p:'11,99 zł'},
+      { name:'🥩 Mięso i wędliny', cls:'hm', items:[
+        {n:'Wołowina na gulasz (łopatka)',q:'500g',p:'29,99 zł'},
+        {n:'Schab lub łopatka (na pieczeń)',q:'800g',p:'26,99 zł'},
         {n:'Biała kiełbasa',q:'4 szt.',p:'9,99 zł'},
-        {n:'Chorizo (kiełbaska)',q:'100g',p:'9,99 zł'},
-        {n:'Filet z kurczaka (na ramen)',q:'300g',p:'9,00 zł'},
+        {n:'Kiełbasa śląska',q:'100g',p:'3,99 zł'},
+        {n:'Boczek wędzony',q:'200g',p:'8,99 zł'},
+        {n:'Szynka gotowana (do jajek bénédikt)',q:'4 plast.',p:'4,99 zł'},
+        {n:'Chorizo',q:'100g',p:'9,99 zł'},
+        {n:'Filet z kurczaka (do ramenu)',q:'300g',p:'9,00 zł'},
       ]},
       { name:'🥛 Nabiał i jaja', cls:'hd', items:[
         {n:'Jajka (klasa L)',q:'18 szt.',p:'14,99 zł'},
         {n:'Śmietana 30%',q:'500ml',p:'6,99 zł'},
         {n:'Śmietana 18%',q:'200ml',p:'3,99 zł'},
-        {n:'Ricotta',q:'250g',p:'8,99 zł'},
         {n:'Ser manchego lub żółty',q:'200g',p:'9,99 zł'},
         {n:'Twaróg sernikowy',q:'400g',p:'6,99 zł'},
         {n:'Masło',q:'400g',p:'10,98 zł'},
         {n:'Mleko 3,2%',q:'1L',p:'3,49 zł'},
+        {n:'Maślanka (do pancakes)',q:'250ml',p:'2,99 zł'},
       ]},
       { name:'🥦 Warzywa i owoce', cls:'hv', items:[
         {n:'Ziemniaki',q:'1,5 kg',p:'4,99 zł'},
         {n:'Marchewka',q:'1 kg',p:'3,99 zł'},
         {n:'Cebula',q:'6 szt.',p:'3,99 zł'},
         {n:'Papryka (mix kolorów)',q:'4 szt.',p:'9,96 zł'},
-        {n:'Szpinak baby',q:'150g',p:'4,99 zł'},
+        {n:'Jabłka (do pieczeni)',q:'3 szt.',p:'2,99 zł'},
         {n:'Ogórek',q:'2 szt.',p:'3,98 zł'},
         {n:'Pomidorki cherry',q:'250g',p:'5,99 zł'},
         {n:'Gruszka',q:'2 szt.',p:'3,99 zł'},
-        {n:'Figi (świeże lub suszone)',q:'4 szt.',p:'5,99 zł'},
+        {n:'Figi suszone',q:'4 szt.',p:'5,99 zł'},
         {n:'Cytryna + pomarańcza',q:'3+2 szt.',p:'6,48 zł'},
         {n:'Czosnek',q:'2 główki',p:'3,98 zł'},
-        {n:'Pasternak',q:'2 szt.',p:'3,99 zł'},
-        {n:'Truskawki + kiwi (na pavlovę)',q:'200g+2szt.',p:'8,99 zł'},
+        {n:'Owoce sezonowe (do pancakes)',q:'200g',p:'5,99 zł'},
+        {n:'Maliny lub truskawki',q:'200g',p:'4,99 zł'},
       ]},
       { name:'🌾 Produkty zbożowe', cls:'hg', items:[
-        {n:'Ryż basmati',q:'500g',p:'5,99 zł'},
         {n:'Makaron ramen lub soba',q:'200g',p:'7,99 zł'},
         {n:'Tortille duże',q:'4 szt.',p:'6,99 zł'},
         {n:'Chleb na zakwasie',q:'1 bochenek',p:'8,99 zł'},
         {n:'Pieczywo chrupkie',q:'1 opak.',p:'3,99 zł'},
         {n:'Ciasto drożdżowe (chłodnia)',q:'1 opak.',p:'5,99 zł'},
+        {n:'Pita chlebki',q:'4 szt.',p:'4,99 zł'},
+        {n:'Ryż arborio (do risotto)',q:'400g',p:'7,99 zł'},
+        {n:'English muffin lub bułki',q:'4 szt.',p:'5,99 zł'},
       ]},
       { name:'🫙 Przetwory i alkohole', cls:'ho', items:[
-        {n:'Czerwone wino wytrawne',q:'1 butelka',p:'24,99 zł'},
-        {n:'Fasola czarna (puszka)',q:'2 szt.',p:'5,98 zł'},
         {n:'Zakwas na żurek (słoik)',q:'500ml',p:'5,99 zł'},
         {n:'Chrzan tarty',q:'słoiczek',p:'3,99 zł'},
         {n:'Masa makowa (słoik)',q:'1 szt.',p:'8,99 zł'},
@@ -929,16 +974,25 @@ const SHOP = [
         {n:'Nori (arkusze)',q:'1 opak.',p:'5,99 zł'},
         {n:'Migdały prażone',q:'100g',p:'6,99 zł'},
         {n:'Sos teriyaki',q:'150ml',p:'6,99 zł'},
+        {n:'Oliwki mieszane',q:'200g',p:'7,99 zł'},
+        {n:'Tzatziki (gotowe)',q:'200g',p:'5,99 zł'},
+        {n:'Grzyby suszone',q:'30g',p:'6,99 zł'},
+        {n:'Pieczarki',q:'250g',p:'4,99 zł'},
+        {n:'Bulion drobiowy (tetrapak)',q:'1L',p:'4,99 zł'},
+        {n:'Sos sojowy',q:'150ml',p:'4,99 zł'},
       ]},
       { name:'🍰 Wypieki i słodkości', cls:'hc', items:[
         {n:'Mąka pszenna',q:'1 kg',p:'3,99 zł'},
         {n:'Cukier biały',q:'500g',p:'2,99 zł'},
         {n:'Cukier brązowy',q:'500g',p:'4,49 zł'},
         {n:'Proszek do pieczenia',q:'2 opak.',p:'2,98 zł'},
-        {n:'Popcorn (do popkornowania)',q:'100g',p:'3,99 zł'},
-        {n:'Suszone mango lub morele',q:'100g',p:'6,99 zł'},
-        {n:'Orzechy mieszane',q:'150g',p:'9,99 zł'},
-        {n:'Ciastka owsiane',q:'1 opak.',p:'4,99 zł'},
+        {n:'Biszkopty ladyfingers (tiramisu)',q:'200g',p:'7,99 zł'},
+        {n:'Kawa espresso mielona',q:'250g',p:'12,99 zł'},
+        {n:'Amaretto (opcjonalnie)',q:'',p:'opcja'},
+        {n:'Kakao do posypania',q:'100g',p:'4,99 zł'},
+        {n:'Krakersy',q:'1 opak.',p:'4,99 zł'},
+        {n:'Czekolada gorzka (do eclair)',q:'100g',p:'6,99 zł'},
+        {n:'Rodzynki',q:'100g',p:'3,99 zł'},
       ]},
     ]
   }
@@ -967,19 +1021,17 @@ function getWeekData(w) {
 
 // ═══════════════ RENDER JADŁOSPIS ═══════════════
 function renderJadlospis() {
-  // Week selector
   const wsel = document.getElementById('week-sel');
   wsel.innerHTML = [0,1,2,3].map(i =>
     `<button class="wsb${i===currentWeek?' active':''}" onclick="setWeek(${i})">Tydzień ${i+1}</button>`
   ).join('');
   document.getElementById('week-chip').textContent = `Tydzień ${currentWeek+1}`;
 
-  // Days
   const days = getWeekData(currentWeek);
   const container = document.getElementById('days-container');
   container.innerHTML = days.map((d, di) => {
     const dayId = `day-${di}`;
-    const headerColor = d.home ? 'style="background:#2a7a4f"' : '';
+    const headerColor = d.home ? 'style="background:linear-gradient(135deg,#1a4a2a,#2a7a4f)"' : '';
     const meals = d.meals.map((m, mi) => `
       <div class="meal-row" onclick="openModal(${currentWeek},'${d.day}',${mi})">
         <div class="meal-icon ${MI[mi]}">${['☀️','🍳','🍽️','🍰','📺'][mi]}</div>
@@ -1054,7 +1106,7 @@ function openModal(week, day, mealIdx) {
     <div class="ingredients-list">${ings}</div>
     <div class="section-title">Przepis</div>
     <div class="recipe-steps">${steps}</div>
-    ${m.tip ? `<div class="tip-box"><strong>💡 Wskazówka:</strong>${m.tip}</div>` : ''}
+    ${m.tip ? `<div class="tip-box"><strong>💡 Wskazówka:</strong> ${m.tip}</div>` : ''}
   `;
 
   document.getElementById('modal-overlay').classList.add('show');
@@ -1084,7 +1136,7 @@ function renderShopping() {
   let total = 0, done = 0, sumAll = 0, sumLeft = 0;
   data.categories.forEach(c => c.items.forEach(it => {
     total++;
-    const price = parseFloat((it.p || '0').replace(',','.').replace(' zł','').replace('-','0'));
+    const price = parseFloat((it.p || '0').replace(',','.').replace(' zł','').replace('-','0').replace('opcja','0'));
     if (!isNaN(price)) sumAll += price;
     if (checkedItems[key][c.name + it.n]) {
       done++;
@@ -1153,7 +1205,6 @@ function goTab(name) {
 // ═══════════════ INIT ═══════════════
 renderJadlospis();
 
-// PWA Service Worker
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('./sw.js').catch(() => {});
 }
