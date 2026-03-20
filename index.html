@@ -176,7 +176,7 @@ html, body { height: 100%; overflow: hidden; font-family: 'Nunito', sans-serif; 
     <div class="logo-icon">🍽️</div>
     <div class="logo-text">
       <h1>Jadłospis dla Pary</h1>
-      <span>4 tygodnie · 5 posiłków</span>
+      <span>5 tygodni · 5 posiłków</span>
     </div>
   </div>
   <button class="week-chip" id="week-chip" onclick="cycleWeek()">Tydzień 1</button>
@@ -287,10 +287,10 @@ const WEEKS = [
       steps:['Wymieszaj twaróg z cukrem, jajkiem, skrobią i wanilią.','Wlej do kubka odpowiedniego do mikrofalówki.','Gotuj w mikrofali 3-4 min (600W).','Ostudź 2 min, podaj z jagodami.'],
       tip:'Rób wieczór wcześniej — wstaw do lodówki i rano zabierz do pracy!'
     },
-    { name:'Box przekąskowy: azjatycki', flag:'🌏', type:'Kolacja serials box', box:false,
-      ingredients:[{q:'200g',n:'edamame (mrożone)'},{q:'4 szt.',n:'ryżowe crackersy'},{q:'1 szt.',n:'ogórek'},{q:'2 szt.',n:'marchewka baby'},{q:'2 łyżki',n:'sos sojowy'},{q:'hummus',n:'2 łyżki'}],
-      steps:['Edamame ugotuj 5 min, posoł.','Ogórek pokrój w słupki.','Ułóż wszystko w pojemniku.','Sos sojowy wlej do małego pojemnika.'],
-      tip:'Zdrowy i sycący box idealny na wieczór!'
+    { name:'Box warzywny z hummusem i pieczonymi warzywami', flag:'🇬🇷', type:'Kolacja serials box', box:false,
+      ingredients:[{q:'80g',n:'hummus'},{q:'1 szt.',n:'papryka czerwona'},{q:'1 szt.',n:'ogórek'},{q:'2 szt.',n:'marchewka baby'},{q:'garść',n:'pomidorki cherry'},{q:'4 szt.',n:'krakersy pełnoziarniste'},{q:'1 łyżka',n:'oliwa + zioła prowansalskie'}],
+      steps:['Paprykę i ogórek pokrój w słupki.','Marchewki zostaw w całości lub pokrój.','Hummus przełóż do pojemniczka.','Ułóż wszystkie warzywa i krakersy w boxie.','Skrop oliwą i posyp ziołami.'],
+      tip:'Kolorowy i zdrowy box — idealne chrupki do serialu!'
     },
   ],
   // Pt-Sb: śniadanie jogurt / tortilla z kurczakiem, obiad grillowana pierś kurczaka z ziemniakami, deser brownie, kolacja śródziemnomorski
@@ -423,10 +423,10 @@ const WEEKS = [
       steps:['Bajgle przekrój, lekko opiecz w tosterze.','Posmaruj twarożkiem.','Ułóż łososia.','Dodaj ogórek, kapary, koperek.'],
       tip:'Do boxu: twaróg osobno, łosoś osobno — złóż na miejscu.'
     },
-    { name:'Pizza domowa margherita z rukolą', flag:'🇮🇹', type:'Obiad', box:false,
-      ingredients:[{q:'500g',n:'mąka'},{q:'7g',n:'drożdże instant'},{q:'1 łyżeczka',n:'sól'},{q:'1 łyżeczka',n:'cukier'},{q:'300ml',n:'ciepła woda'},{q:'3 łyżki',n:'oliwa'},{q:'200g',n:'passata pomidorowa'},{q:'300g',n:'mozzarella'},{q:'garść',n:'rukola'},{q:'bazylia',n:''}],
-      steps:['Wymieszaj mąkę z drożdżami, solą, cukrem.','Dodaj wodę i oliwę, wyrabiaj 10 min.','Odstaw na 1h do wyrośnięcia.','Rozwałkuj cienko, nałóż passatę i ser.','Piecz 250°C przez 12 min.','Po wyjęciu ułóż rukolę i bazylię.'],
-      tip:'Pizza domowa w piątek wieczorem — idealny rytuał dla pary!'
+    { name:'Spaghetti Bolognese', flag:'🇮🇹', type:'Obiad', box:false,
+      ingredients:[{q:'300g',n:'spaghetti'},{q:'400g',n:'mielona wołowina'},{q:'1 szt.',n:'cebula'},{q:'2 ząbki',n:'czosnek'},{q:'1 szt.',n:'marchewka'},{q:'1 łodyga',n:'seler naciowy'},{q:'200ml',n:'czerwone wino wytrawne'},{q:'400g',n:'pomidory krojone (puszka)'},{q:'2 łyżki',n:'koncentrat pomidorowy'},{q:'2 łyżki',n:'oliwa'},{q:'bazylia, sól, pieprz',n:''},{q:'parmezan',n:'do podania'}],
+      steps:['Cebulę, marchewkę i seler pokrój drobno, zeszklij na oliwie 5 min.','Dodaj mielone, obsmaż rozbijając grudki aż będzie złote.','Wlej wino, gotuj aż odparuje (3 min).','Dodaj pomidory, koncentrat, sól, pieprz.','Gotuj na małym ogniu minimum 45 min — im dłużej, tym lepiej.','Podaj z ugotowanym spaghetti i parmezanem.'],
+      tip:'Bolognese smakuje jeszcze lepiej na drugi dzień — ugotuj podwójną porcję!'
     },
     { name:'Cheesecake w słoiku (no-bake)', flag:'🇺🇸', type:'Podwieczorek / deser', box:false,
       ingredients:[{q:'200g',n:'herbatniki digestive'},{q:'80g',n:'masło'},{q:'400g',n:'ser Philadelphia'},{q:'200ml',n:'śmietana 30%'},{q:'80g',n:'cukier puder'},{q:'1 łyżeczka',n:'ekstrakt waniliowy'},{q:'garść',n:'owoce do dekoracji'}],
@@ -705,6 +705,124 @@ const WEEKS = [
   ],
 },
 
+// ═══════════════════════════════════════════════
+// TYDZIEŃ 5
+// ═══════════════════════════════════════════════
+{
+  // Pon-Wt: śniadanie owsianka z gruszką / jajka z łososiem, obiad Spaghetti Carbonara, deser panna cotta, kolacja caprese box
+  monTue: [
+    { name:'Owsianka z gruszką i kardamonem', flag:'🇵🇱', type:'Lekkie śniadanie', box:false,
+      ingredients:[{q:'80g',n:'płatki owsiane'},{q:'200ml',n:'mleko'},{q:'1 szt.',n:'gruszka'},{q:'1 łyżka',n:'miód'},{q:'szczypta',n:'kardamon'},{q:'garść',n:'orzechy pekan lub włoskie'}],
+      steps:['Zagotuj mleko, wsyp płatki, gotuj 3 min.','Gruszkę pokrój w kostkę lub zetrzyj.','Dodaj do owsianki z kardamonem i miodem.','Posyp orzechami przed podaniem.'],
+      tip:'Kardamon zamiast cynamonu — subtelna zmiana, zupełnie nowy smak!'
+    },
+    { name:'Tost z wędzonym łososiem i jajkiem sadzonym', flag:'🌍', type:'Konkretne śniadanie', box:false,
+      ingredients:[{q:'4 kromki',n:'chleb na zakwasie'},{q:'100g',n:'łosoś wędzony'},{q:'2 szt.',n:'jajka'},{q:'100g',n:'twaróg śmietankowy'},{q:'½ szt.',n:'ogórek'},{q:'szczypta',n:'koper, sól, pieprz'},{q:'1 łyżeczka',n:'sok z cytryny'}],
+      steps:['Chleb opiecz w tosterze.','Posmaruj twarożkiem wymieszanym z koperkiem.','Usmaż jajka sadzone.','Ułóż łososia, ogórek i jajko.','Skrop sokiem z cytryny.'],
+      tip:'Eleganckie śniadanie gotowe w 10 minut!'
+    },
+    { name:'Spaghetti Carbonara', flag:'🇮🇹', type:'Obiad', box:false,
+      ingredients:[{q:'300g',n:'spaghetti'},{q:'150g',n:'guanciale lub boczek wędzony'},{q:'4 żółtka',n:''},{q:'1 całe jajko',n:''},{q:'80g',n:'Pecorino Romano (lub parmezan)'},{q:'2 ząbki',n:'czosnek'},{q:'sól, pieprz czarny',n:'świeżo mielony'}],
+      steps:['Ugotuj spaghetti al dente, zachowaj szklankę wody z gotowania.','Guanciale pokrój w kostkę, obsmaż na suchej patelni z czosnkiem aż chrupiące, zdejmij czosnek.','Żółtka i całe jajko wymieszaj z tartym Pecorino, obficie popieprz.','Gorący makaron przełóż do miski, dodaj tłuszcz z patelni — wymieszaj.','Zdejmij z ognia, dodaj masę jajeczną i tłuszcz z guanciale, mieszaj intensywnie dodając wodę z gotowania aż powstanie kremowy sos.','Podaj natychmiast z dodatkowym Pecorino i pieprzem.'],
+      tip:'Klucz: nigdy nie gotuj jajek bezpośrednio na ogniu — tylko ciepło makaronu tworzy sos!'
+    },
+    { name:'Panna cotta z sosem malinowym', flag:'🇮🇹', type:'Podwieczorek / deser', box:false,
+      ingredients:[{q:'500ml',n:'śmietana 30%'},{q:'3 łyżki',n:'cukier'},{q:'2 łyżeczki',n:'żelatyna w proszku'},{q:'1 łyżeczka',n:'ekstrakt waniliowy'},{q:'200g',n:'maliny (świeże lub mrożone)'},{q:'2 łyżki',n:'cukier (do sosu)'}],
+      steps:['Żelatynę namocz w 3 łyżkach zimnej wody na 5 min.','Śmietanę z cukrem i wanilią podgrzej do prawie wrzenia — nie gotuj.','Dodaj żelatynę, mieszaj do rozpuszczenia.','Przelej do słoiczków, ostudź, wstaw na 4h do lodówki.','Sos: maliny z cukrem podgrzej i zmiksuj.','Polej pannę cottę sosem przed podaniem.'],
+      tip:'Rób wieczorem — rano gotowe na cały dzień!'
+    },
+    { name:'Box przekąskowy: caprese z bagietką', flag:'🇮🇹', type:'Kolacja serials box', box:false,
+      ingredients:[{q:'200g',n:'mozzarella'},{q:'2 szt.',n:'pomidor malinowy'},{q:'garść',n:'liście bazylii'},{q:'2 łyżki',n:'oliwa extra virgin'},{q:'1 łyżka',n:'ocet balsamiczny'},{q:'sól, pieprz',n:''},{q:'kilka kromek',n:'bagietka'}],
+      steps:['Mozzarellę i pomidory pokrój w plastry.','Układaj naprzemiennie.','Skrop oliwą i octem balsamicznym.','Posól, posyp bazylią.','Do boxu z kawałkami bagietki.'],
+      tip:'Klasyczny włoski box — prosty i nie do pobicia!'
+    },
+  ],
+  // Śr-Cz: śniadanie jogurt z figami / wrapy z awokado, obiad Pizza domowa margherita, deser brownie, kolacja grecki box
+  wedThu: [
+    { name:'Jogurt grecki z figami i miodem', flag:'🌍', type:'Lekkie śniadanie', box:false,
+      ingredients:[{q:'400g',n:'jogurt grecki'},{q:'3 szt.',n:'figi świeże lub suszone'},{q:'2 łyżki',n:'miód'},{q:'garść',n:'orzechy włoskie'},{q:'szczypta',n:'cynamon'}],
+      steps:['Jogurt nałóż do miseczki.','Figi pokrój na ćwiartki.','Ułóż na jogurcie, skrop miodem.','Posyp orzechami i cynamonem.'],
+      tip:'Figi + miód + jogurt = śniadanie jak z greckiej wyspy!'
+    },
+    { name:'Wrapy z awokado, kurczakiem i rukolą', flag:'🌍', type:'Konkretne śniadanie', box:false,
+      ingredients:[{q:'2 szt.',n:'tortilla pszenna'},{q:'1 pierś',n:'filet z kurczaka'},{q:'1 szt.',n:'awokado'},{q:'garść',n:'rukola'},{q:'1 łyżka',n:'majonez'},{q:'1 łyżeczka',n:'musztarda'},{q:'szczypta',n:'sól, pieprz, papryka wędzona'}],
+      steps:['Kurczaka usmaż na patelni, pokrój w paski.','Awokado rozgnieć z solą i pieprzem.','Na tortillę nałóż majonez z musztardą, awokado, kurczaka i rukolę.','Zwiń ciasno, zawiń w papier.'],
+      tip:'Świetny box do pracy — nie rozlewa się i jest pyszny na zimno!'
+    },
+    { name:'Pizza domowa margherita z rukolą', flag:'🇮🇹', type:'Obiad', box:false,
+      ingredients:[{q:'500g',n:'mąka'},{q:'7g',n:'drożdże instant'},{q:'1 łyżeczka',n:'sól'},{q:'1 łyżeczka',n:'cukier'},{q:'300ml',n:'ciepła woda'},{q:'3 łyżki',n:'oliwa'},{q:'200g',n:'passata pomidorowa'},{q:'300g',n:'mozzarella'},{q:'garść',n:'rukola'},{q:'bazylia',n:''}],
+      steps:['Wymieszaj mąkę z drożdżami, solą, cukrem.','Dodaj wodę i oliwę, wyrabiaj 10 min.','Odstaw na 1h do wyrośnięcia.','Rozwałkuj cienko, nałóż passatę i ser.','Piecz 250°C przez 12 min.','Po wyjęciu ułóż rukolę i bazylię.'],
+      tip:'Pizza domowa w środę wieczorem — idealny rytuał dla pary!'
+    },
+    { name:'Brownie z orzechami włoskimi', flag:'🇫🇷', type:'Podwieczorek / deser', box:false,
+      ingredients:[{q:'100g',n:'gorzka czekolada 70%'},{q:'80g',n:'masło'},{q:'2 szt.',n:'jajka'},{q:'100g',n:'cukier'},{q:'60g',n:'mąka'},{q:'2 łyżki',n:'kakao'},{q:'50g',n:'orzechy włoskie'},{q:'szczypta',n:'sól'}],
+      steps:['Czekoladę z masłem rozpuść w kąpieli wodnej.','Jajka z cukrem ubij, dodaj czekoladę.','Wsyp mąkę, kakao, sól — wymieszaj.','Dodaj posiekane orzechy.','Piecz w formie 20x20 cm, 180°C przez 20 min.','Studź i kroń w kwadraty.'],
+      tip:'Lekko niedopieczne brownie = mokre wnętrze — nie bój się wyjąć wcześniej!'
+    },
+    { name:'Box przekąskowy: grecki', flag:'🇬🇷', type:'Kolacja serials box', box:false,
+      ingredients:[{q:'80g',n:'ser feta'},{q:'garść',n:'oliwki kalamata'},{q:'1 szt.',n:'ogórek'},{q:'garść',n:'pomidorki cherry'},{q:'4 szt.',n:'chleb pita'},{q:'80g',n:'tzatziki'},{q:'1 łyżka',n:'oliwa + oregano'}],
+      steps:['Fetę pokrusz lub pokrój w kostkę.','Ogórek i pomidorki w kawałki.','Pitę podgrzej, pokrój w trójkąty.','Tzatziki w osobnym pojemniku.'],
+      tip:'Grecki box — lato na talerzu przez cały rok!'
+    },
+  ],
+  // Pt-Sb: śniadanie smoothie bowl / tosty z ricottą, obiad łosoś z warzywami, deser tarta czekoladowa, kolacja tapas
+  friSat: [
+    { name:'Smoothie bowl z jagodami', flag:'🌍', type:'Lekkie śniadanie', box:false,
+      ingredients:[{q:'2 szt.',n:'banany mrożone'},{q:'150g',n:'jagody mrożone'},{q:'100ml',n:'mleko migdałowe'},{q:'4 łyżki',n:'granola'},{q:'garść',n:'owoce świeże'},{q:'1 łyżka',n:'masło orzechowe'}],
+      steps:['Zmiksuj banany i jagody z mlekiem na gładkie purée.','Przelej do miseczki.','Na wierzch granola, owoce, masło orzechowe.'],
+      tip:'Fioletowy kolor robi wrażenie — zrób zdjęcie przed zjedzeniem!'
+    },
+    { name:'Tosty z ricottą i figami', flag:'🇮🇹', type:'Konkretne śniadanie', box:false,
+      ingredients:[{q:'4 kromki',n:'chleb na zakwasie'},{q:'150g',n:'ricotta'},{q:'3 szt.',n:'figi'},{q:'2 łyżki',n:'miód'},{q:'garść',n:'orzechy włoskie'},{q:'gałązka',n:'tymianku'}],
+      steps:['Chleb opiecz w tosterze.','Posmaruj ricottą.','Figi pokrój w plasterki, ułóż na ricotcie.','Skrop miodem, posyp orzechami.','Udekoruj tymiankiem.'],
+      tip:'Wyszukane śniadanie w 10 minut — idealne na piątek!'
+    },
+    { name:'Łosoś pieczony z warzywami i cytryną', flag:'🇬🇷', type:'Obiad', box:false,
+      ingredients:[{q:'2 filety',n:'łosoś (ok. 300g)'},{q:'1 szt.',n:'cukinia'},{q:'1 szt.',n:'papryka czerwona'},{q:'1 szt.',n:'cytryna'},{q:'3 łyżki',n:'oliwa z oliwek'},{q:'2 ząbki',n:'czosnek'},{q:'gałązki',n:'tymianek i koper'},{q:'sól, pieprz',n:''}],
+      steps:['Rozgrzej piekarnik do 200°C.','Warzywa pokrój, ułóż na blasze, skrop oliwą.','Łososia połóż na warzywach, skrop oliwą i cytryną.','Posyp czosnkiem, tymiankiem i koprem.','Piecz 18-20 min.'],
+      tip:'Do boxu: łosoś świetnie smakuje na zimno z cytryną!'
+    },
+    { name:'Tarta czekoladowa (bez pieczenia)', flag:'🇫🇷', type:'Podwieczorek / deser', box:false,
+      ingredients:[{q:'200g',n:'herbatniki digestive'},{q:'80g',n:'masło'},{q:'200g',n:'gorzka czekolada 70%'},{q:'200ml',n:'śmietana 30%'},{q:'2 łyżki',n:'cukier'},{q:'1 łyżeczka',n:'ekstrakt waniliowy'},{q:'szczypta',n:'sól morska'}],
+      steps:['Herbatniki zmiksuj na proszek, wymieszaj z roztopionym masłem.','Wylep dno formy na tartę, wstaw na 20 min do lodówki.','Czekoladę posiekaj, zalej gorącą śmietaną z cukrem.','Mieszaj do gładkości, dodaj wanilię i sól.','Wylej ganache na spód, wstaw na 2h do lodówki.'],
+      tip:'Zero pieczenia, zero stresu — a efekt jak z cukierni!'
+    },
+    { name:'Box przekąskowy: tapas ibero', flag:'🇪🇸', type:'Kolacja serials box', box:false,
+      ingredients:[{q:'80g',n:'chorizo w plastrach'},{q:'50g',n:'ser manchego'},{q:'garść',n:'oliwki mieszane'},{q:'garść',n:'migdały prażone'},{q:'2 szt.',n:'krakersy lub chleb pita'},{q:'80g',n:'tzatziki'}],
+      steps:['Chorizo i ser ułóż w pojemniku.','Oliwki i migdały dookoła.','Tzatziki w oddzielnym pojemniku.','Krakersy zapakuj osobno — żeby nie rozmiękły.'],
+      tip:'Idealne do piątkowego lub sobotniego serialu z kieliszkiem wina!'
+    },
+  ],
+  // Niedziela T5: śniadanie pancakes / jajecznica z boczkiem, obiad pieczeń jagnięca, deser sernik nowojorski, kolacja zupa minestrone
+  sunday: [
+    { name:'Pancakes z bananem i orzechami', flag:'🇺🇸', type:'Lekkie śniadanie (niedziela)', box:false,
+      ingredients:[{q:'200g',n:'mąka pszenna'},{q:'2 szt.',n:'jajka'},{q:'250ml',n:'maślanka'},{q:'1 łyżeczka',n:'proszek do pieczenia'},{q:'½ łyżeczki',n:'soda'},{q:'1 łyżka',n:'cukier'},{q:'30g',n:'masło'},{q:'2 szt.',n:'banany'},{q:'garść',n:'orzechy włoskie'},{q:'3 łyżki',n:'syrop klonowy'}],
+      steps:['Wymieszaj suche składniki osobno.','Jajka, maślankę i rozpuszczone masło wymieszaj.','Połącz obie mieszanki — nie mieszaj za długo!','Smaż małe placki po 2 min z każdej strony.','Podaj z bananem, orzechami i syropem klonowym.'],
+      tip:'Niedziela = gotujcie razem i cieszcie się porankiem!'
+    },
+    { name:'Jajecznica z boczkiem i grzybami', flag:'🇵🇱', type:'Konkretne śniadanie (niedziela)', box:false,
+      ingredients:[{q:'4 szt.',n:'jajka'},{q:'100g',n:'boczek wędzony'},{q:'150g',n:'pieczarki'},{q:'1 szt.',n:'cebula'},{q:'1 łyżka',n:'masło'},{q:'sól, pieprz, tymianek',n:''}],
+      steps:['Boczek pokrój, obsmaż na suchej patelni do chrupkości.','Pieczarki i cebulę podsmaż na maśle.','Połącz boczek z pieczarkami.','Wbij jajka, mieszaj delikatnie do ścięcia.','Dopraw i podaj z pieczywem.'],
+      tip:'Niedziela bez pośpiechu — powolna jajecznica smakuje najlepiej!'
+    },
+    { name:'Udka jagnięce duszone z warzywami', flag:'🇬🇷', type:'Niedzielny obiad specjalny', box:false,
+      ingredients:[{q:'4 szt.',n:'udka jagnięce (ok. 1 kg)'},{q:'3 szt.',n:'ziemniaki'},{q:'2 szt.',n:'marchewka'},{q:'1 szt.',n:'cebula'},{q:'4 ząbki',n:'czosnek'},{q:'200ml',n:'czerwone wino'},{q:'400g',n:'pomidory krojone'},{q:'gałązki',n:'rozmarynu i tymianku'},{q:'3 łyżki',n:'oliwa'},{q:'sól, pieprz',n:''}],
+      steps:['Udka natrzyj solą, pieprzem i czosnkiem, obsmaż na złoto.','Cebulę zeszklij, dodaj warzywa.','Wszystko przełóż do żaroodpornego naczynia.','Zalej winem i pomidorami, dodaj zioła.','Przykryj folią i piecz 180°C przez 2 godz.','Zdejmij folię na ostatnie 20 min.'],
+      tip:'Jagnięcina odpada od kości — mięso topi się w ustach!'
+    },
+    { name:'Sernik nowojorski', flag:'🇺🇸', type:'Niedzielny deser', box:false,
+      ingredients:[{q:'500g',n:'ser Philadelphia'},{q:'3 szt.',n:'jajka'},{q:'150g',n:'cukier'},{q:'200ml',n:'śmietana 30%'},{q:'1 łyżeczka',n:'ekstrakt waniliowy'},{q:'200g',n:'herbatniki digestive'},{q:'80g',n:'masło (do spodu)'}],
+      steps:['Spód: herbatniki zmiksuj, wymieszaj z masłem, wyłóż dno formy.','Wstaw na 15 min do lodówki.','Philadelphia z cukrem wymieszaj, dodaj jajka jedno po jednym.','Dodaj śmietanę i wanilię, mieszaj gładko.','Piecz w kąpieli wodnej 160°C przez 60 min.','Studź w piekarniku (drzwi uchylone), potem 4h w lodówce.'],
+      tip:'Kąpiel wodna = brak pęknięć! Piecz w piątek — w niedzielę idealne.'
+    },
+    { name:'Zupa minestrone z makaronem', flag:'🇮🇹', type:'Niedzielna kolacja', box:false,
+      ingredients:[{q:'1 szt.',n:'cebula'},{q:'2 ząbki',n:'czosnek'},{q:'2 szt.',n:'marchewka'},{q:'2 łodygi',n:'seler naciowy'},{q:'1 szt.',n:'cukinia'},{q:'1 puszka',n:'fasola biała'},{q:'1 puszka',n:'pomidory krojone'},{q:'1L',n:'bulion warzywny'},{q:'100g',n:'makaron małe muszelki lub penne'},{q:'2 łyżki',n:'oliwa'},{q:'bazylia, oregano, sól, pieprz',n:''},{q:'parmezan',n:'do podania'}],
+      steps:['Cebulę i czosnek zeszklij na oliwie.','Dodaj marchewkę i seler, smaż 3 min.','Dodaj cukinię, pomidory i bulion.','Gotuj 20 min na średnim ogniu.','Dodaj fasolę i makaron, gotuj kolejne 10 min.','Dopraw, posyp parmezanem przed podaniem.'],
+      tip:'Minestrone to włoska zupa-spiżarnia — wrzuć co masz w lodówce!'
+    },
+  ],
+},
+
 ];
 
 // ═══════════════ SHOPPING LISTS ═══════════════
@@ -729,6 +847,8 @@ const SHOP = [
         {n:'Śmietana 30%',q:'500ml',p:'6,99 zł'},
         {n:'Masło',q:'200g',p:'5,49 zł'},
         {n:'Mleko 3,2%',q:'1L',p:'3,49 zł'},
+        {n:'Majonez',q:'200g',p:'4,99 zł'},
+        {n:'Musztarda',q:'słoiczek',p:'3,49 zł'},
       ]},
       { name:'🥦 Warzywa i owoce', cls:'hv', items:[
         {n:'Cukinia',q:'1 szt.',p:'2,99 zł'},
@@ -752,6 +872,7 @@ const SHOP = [
         {n:'Roszponka (do bułek z jajkiem)',q:'1 opak.',p:'2,99 zł'},
         {n:'Limonka (do burrito)',q:'1 szt.',p:'1,49 zł'},
         {n:'Pietruszka + seler (do rosołu)',q:'po 1 szt.',p:'2,99 zł'},
+        {n:'Rozmaryn i tymianek (do roast chicken)',q:'po 1 gałązce',p:'3,99 zł'},
       ]},
       { name:'🌾 Produkty zbożowe i makarony', cls:'hg', items:[
         {n:'Makaron penne',q:'500g',p:'4,99 zł'},
@@ -765,6 +886,8 @@ const SHOP = [
         {n:'Ciabatta (do deski włoskiej)',q:'1 szt.',p:'3,49 zł'},
         {n:'Makaron zacierka lub nitki (do rosołu)',q:'200g',p:'3,49 zł'},
         {n:'Mąka owsiana lub zwykła (do crumble)',q:'200g',p:'2,99 zł'},
+        {n:'Krakersy pełnoziarniste (do boxu warzywnego)',q:'1 opak.',p:'3,99 zł'},
+        {n:'Tortille pszenne duże (do wrapów i śniadania Pt-Sb)',q:'4 szt.',p:'5,99 zł'},
       ]},
       { name:'🫙 Przetwory i przyprawy', cls:'ho', items:[
         {n:'Pesto bazyliowe (słoik)',q:'190g',p:'7,99 zł'},
@@ -779,6 +902,10 @@ const SHOP = [
         {n:'Hummus (gotowy)',q:'200g',p:'5,99 zł'},
         {n:'Ser feta',q:'200g',p:'8,99 zł'},
         {n:'Pita chlebki',q:'4 szt.',p:'4,99 zł'},
+        {n:'Olej słonecznikowy (do muffin i bigosu)',q:'500ml',p:'5,99 zł'},
+        {n:'Cynamon mielony',q:'20g',p:'3,49 zł'},
+        {n:'Kumin mielony',q:'małe opak.',p:'2,99 zł'},
+        {n:'Skrobia ziemniaczana (do sernika w kubku)',q:'100g',p:'2,49 zł'},
       ]},
       { name:'🍰 Wypieki i słodycze', cls:'hc', items:[
         {n:'Dojrzałe banany (na muffiny)',q:'4 szt.',p:'2,40 zł'},
@@ -799,6 +926,7 @@ const SHOP = [
         {n:'Szynka swojska (plasterki)',q:'200g',p:'9,99 zł'},
         {n:'Mięso wieprzowe do bigosu',q:'300g',p:'14,99 zł'},
         {n:'Kiełbasa śląska (do bigosu i leczo)',q:'500g',p:'12,99 zł'},
+        {n:'Mielona wołowina (do bolognese)',q:'400g',p:'18,99 zł'},
         {n:'Łosoś wędzony (do bajgli)',q:'100g',p:'11,99 zł'},
         {n:'Boczek wędzony (do niedzieli)',q:'200g',p:'8,99 zł'},
         {n:'Pieczeń wołowa (niedzielny roast)',q:'600g',p:'39,99 zł'},
@@ -837,12 +965,17 @@ const SHOP = [
         {n:'Pasternak (do sunday roast)',q:'2 szt.',p:'3,99 zł'},
         {n:'Ziemniaki (do sunday roast)',q:'1,5 kg',p:'4,99 zł'},
         {n:'Rzodkiewki + szczypiorek (do serka)',q:'1 pęczek',p:'2,49 zł'},
-        {n:'Rukola (do pizzy margherity)',q:'1 opak.',p:'3,49 zł'},
+        {n:'Rukola (do deski serów)',q:'1 opak.',p:'3,49 zł'},
+        {n:'Seler naciowy (do bolognese)',q:'1 łodyga',p:'2,99 zł'},
+        {n:'Ogórek kiszony (do polskiego boxu)',q:'2 szt.',p:'2,49 zł'},
+        {n:'Sałata masłowa (do polskiego boxu)',q:'1 główka',p:'2,99 zł'},
+        {n:'Pestki dyni (do zupy kremowej)',q:'50g',p:'3,99 zł'},
+        {n:'Koperek świeży (do bajgli z łososiem)',q:'1 pęczek',p:'1,99 zł'},
         {n:'Papryczka jalapeño (do meksykańskiego boxu)',q:'1 szt.',p:'1,99 zł'},
       ]},
       { name:'🌾 Produkty zbożowe', cls:'hg', items:[
         {n:'Makaron świderki',q:'500g',p:'3,99 zł'},
-        {n:'Drożdże instant (do pizzy)',q:'7g',p:'1,49 zł'},
+        {n:'Spaghetti (do bolognese)',q:'300g',p:'2,99 zł'},
         {n:'Chleb żytni',q:'1 bochenek',p:'6,99 zł'},
         {n:'Bajgle',q:'2 szt.',p:'3,98 zł'},
         {n:'Bagietka',q:'2 szt.',p:'4,98 zł'},
@@ -852,10 +985,9 @@ const SHOP = [
       { name:'🫙 Przetwory i alkohole', cls:'ho', items:[
         {n:'Nasiona chia (do chia pudding)',q:'150g',p:'7,99 zł'},
         {n:'Mleko kokosowe (do chia i zupy dyniowej)',q:'1 szt.',p:'4,99 zł'},
-        {n:'Pomidory krojone (do leczo i sosu)',q:'2 puszki',p:'5,98 zł'},
-        {n:'Koncentrat pomidorowy',q:'słoik',p:'2,99 zł'},
-        {n:'Passata pomidorowa (do pizzy)',q:'200g',p:'3,99 zł'},
-        {n:'Wino czerwone (do pieczeni)',q:'200ml/butelka',p:'14,99 zł'},
+        {n:'Pomidory krojone (do leczo, bolognese i sosu)',q:'3 puszki',p:'8,97 zł'},
+        {n:'Koncentrat pomidorowy (do bolognese)',q:'słoik',p:'2,99 zł'},
+        {n:'Czerwone wino wytrawne (do pieczeni i bolognese)',q:'400ml/butelka',p:'14,99 zł'},
         {n:'Białe wino wytrawne (do zupy cebulowej)',q:'150ml',p:'5,99 zł'},
         {n:'Mango świeże lub mrożone',q:'2 szt.',p:'9,98 zł'},
         {n:'Bulion wołowy (tetrapak)',q:'1L',p:'5,99 zł'},
@@ -867,8 +999,11 @@ const SHOP = [
         {n:'Oliwki (do deski serów)',q:'100g',p:'5,99 zł'},
         {n:'Dżem figowy (do deski serów)',q:'słoik',p:'6,99 zł'},
         {n:'Winogrona (do deski serów)',q:'garść',p:'4,99 zł'},
+        {n:'Kukurydza z puszki (do meksykańskiego boxu)',q:'1 szt.',p:'2,99 zł'},
       ]},
       { name:'🍰 Wypieki i słodycze', cls:'hc', items:[
+        {n:'Budyń waniliowy (proszek, do śniadania Pn-Wt)',q:'2 opak.',p:'2,98 zł'},
+        {n:'Wiórki kokosowe (do budyniu)',q:'50g',p:'2,99 zł'},
         {n:'Herbatniki digestive',q:'200g',p:'4,99 zł'},
         {n:'Orzechy mieszane (do deski serów)',q:'150g',p:'9,99 zł'},
         {n:'Lody waniliowe (do szarlotki)',q:'500ml',p:'8,99 zł'},
@@ -897,9 +1032,11 @@ const SHOP = [
         {n:'Mozzarella (do caprese i pizzy)',q:'250g',p:'9,00 zł'},
         {n:'Ricotta (do tostów)',q:'250g',p:'8,99 zł'},
         {n:'Śmietana 30%',q:'600ml',p:'8,99 zł'},
+        {n:'Śmietana 18% (do taco i wrapów)',q:'200ml',p:'3,99 zł'},
         {n:'Jogurt naturalny (do kanapek)',q:'2 kubki',p:'5,98 zł'},
         {n:'Ser cheddar starty (do taco i burrito)',q:'150g',p:'6,99 zł'},
         {n:'Ser gruyère lub żółty (do zupy cebulowej)',q:'100g',p:'5,99 zł'},
+        {n:'Ser żółty starty (do tostów zapiekanych)',q:'100g',p:'4,99 zł'},
         {n:'Masło',q:'300g',p:'8,22 zł'},
         {n:'Mascarpone (do tiramisù)',q:'250g',p:'9,99 zł'},
         {n:'Mleko 3,2% (do kaszy manny i innych)',q:'1L',p:'3,49 zł'},
@@ -912,6 +1049,8 @@ const SHOP = [
         {n:'Figi świeże',q:'4 szt.',p:'5,99 zł'},
         {n:'Banany mrożone',q:'4 szt.',p:'2,40 zł'},
         {n:'Kiełki sojowe',q:'100g',p:'3,99 zł'},
+        {n:'Cebula dymka',q:'1 pęczek',p:'2,49 zł'},
+        {n:'Tymianek i rozmaryn świeży (do Bourguignon)',q:'po 1 gałązce',p:'3,99 zł'},
         {n:'Marchewka',q:'500g',p:'2,99 zł'},
         {n:'Papryka czerwona',q:'2 szt.',p:'4,98 zł'},
         {n:'Czosnek',q:'1 główka',p:'1,99 zł'},
@@ -922,8 +1061,10 @@ const SHOP = [
       { name:'🌾 Produkty zbożowe i inne', cls:'hg', items:[
         {n:'Makaron soba',q:'200g',p:'6,99 zł'},
         {n:'Makaron ryżowy (do Pad Thai)',q:'200g',p:'5,99 zł'},
+        {n:'Chleb tostowy (do tostów zapiekanych Pn-Wt)',q:'1 opak.',p:'3,49 zł'},
         {n:'Ciasto croissant (chłodnia)',q:'1 opak.',p:'6,99 zł'},
         {n:'Tortille duże',q:'4 szt.',p:'6,99 zł'},
+        {n:'Twarde skorupki taco',q:'1 opak.',p:'5,99 zł'},
         {n:'Orzeszki ziemne prażone',q:'150g',p:'4,99 zł'},
         {n:'Chleb na zakwasie',q:'1 bochenek',p:'8,99 zł'},
         {n:'Bagietka (do zup cebulowej i dań)',q:'2 szt.',p:'4,98 zł'},
@@ -936,10 +1077,15 @@ const SHOP = [
       { name:'🫙 Przetwory i przyprawy', cls:'ho', items:[
         {n:'Sos rybny (do Pad Thai)',q:'150ml',p:'6,99 zł'},
         {n:'Sos ostrygowy (do Pad Thai)',q:'150ml',p:'7,99 zł'},
+        {n:'Sos sojowy (do kurczaka soba i Pad Thai)',q:'150ml',p:'4,99 zł'},
+        {n:'Ocet ryżowy (do kurczaka soba)',q:'150ml',p:'5,99 zł'},
         {n:'Ocet balsamiczny (do caprese)',q:'250ml',p:'8,99 zł'},
+        {n:'Ocet winny (do pavlovy)',q:'100ml',p:'3,99 zł'},
+        {n:'Wiórki kokosowe (do jogurtu z mango)',q:'50g',p:'2,99 zł'},
         {n:'Dżem morelowy (do rogalików)',q:'słoik',p:'6,99 zł'},
         {n:'Oliwki kalamata (do tapas)',q:'200g',p:'7,99 zł'},
-        {n:'Olej sezamowy (do Pad Thai)',q:'100ml',p:'8,99 zł'},
+        {n:'Olej sezamowy (do Pad Thai i soba)',q:'100ml',p:'8,99 zł'},
+        {n:'Imbir świeży (do kurczaka soba)',q:'1 kawałek',p:'2,99 zł'},
         {n:'Fasola czarna (do burrito)',q:'1 szt.',p:'2,99 zł'},
         {n:'Kawa espresso mielona (do tiramisù)',q:'250g',p:'12,99 zł'},
         {n:'Biszkopty ladyfingers (do tiramisù)',q:'200g',p:'7,99 zł'},
@@ -948,7 +1094,7 @@ const SHOP = [
         {n:'Pieczarki (do Bourguignon)',q:'250g',p:'4,99 zł'},
         {n:'Salsa pomidorowa (do taco i quesadilli)',q:'200g',p:'3,99 zł'},
         {n:'Ser manchego lub twardy (do tapas boxu)',q:'100g',p:'8,99 zł'},
-        {n:'Hummus gotowy (do azjatyckiego boxu)',q:'200g',p:'5,99 zł'},
+        {n:'Hummus gotowy (do tapas i warzywnych boxów)',q:'200g',p:'5,99 zł'},
         {n:'Bulion wołowy (do Bourguignon)',q:'1L',p:'5,99 zł'},
         {n:'Czerwone wino (do Bourguignon)',q:'1 butelka',p:'19,99 zł'},
         {n:'Koncentrat pomidorowy',q:'słoik',p:'2,99 zł'},
@@ -1011,6 +1157,7 @@ const SHOP = [
       { name:'🌾 Produkty zbożowe', cls:'hg', items:[
         {n:'Makaron ramen lub soba (do ramenu)',q:'200g',p:'7,99 zł'},
         {n:'Tortille duże (do wrapów)',q:'4 szt.',p:'6,99 zł'},
+        {n:'Tortille pszenne (do śniadania Pt-Sb)',q:'2 szt.',p:'2,99 zł'},
         {n:'Chleb na zakwasie',q:'1 bochenek',p:'8,99 zł'},
         {n:'Pieczywo chrupkie (do twarożku)',q:'1 opak.',p:'3,99 zł'},
         {n:'Ciasto drożdżowe (do makowca)',q:'1 opak.',p:'5,99 zł'},
@@ -1040,8 +1187,10 @@ const SHOP = [
         {n:'Kawa espresso (do tiramisu)',q:'250g',p:'12,99 zł'},
         {n:'Biszkopty ladyfingers (do tiramisu)',q:'200g',p:'7,99 zł'},
         {n:'Mleko kokosowe (do açaí bowl)',q:'1 puszka',p:'4,99 zł'},
+        {n:'Mrożone maliny lub açaí (do açaí bowl)',q:'200g',p:'5,99 zł'},
         {n:'Syrop klonowy (do pancakes)',q:'100ml',p:'9,99 zł'},
         {n:'Masło orzechowe (do açaí bowl)',q:'340g',p:'14,99 zł'},
+        {n:'Papryka wędzona (do wrapów i chorizo)',q:'małe opak.',p:'2,99 zł'},
         {n:'Rodzynki (do makowca)',q:'100g',p:'3,99 zł'},
         {n:'Skórka pomarańczowa kandyzowana (makowiec)',q:'50g',p:'3,99 zł'},
         {n:'Białe wino wytrawne (do risotto)',q:'150ml',p:'5,99 zł'},
@@ -1055,6 +1204,7 @@ const SHOP = [
         {n:'Orzechy włoskie (overnight oats i twarożek)',q:'150g',p:'8,99 zł'},
         {n:'Cukier brązowy',q:'500g',p:'4,49 zł'},
         {n:'Proszek do pieczenia',q:'2 opak.',p:'2,98 zł'},
+        {n:'Soda oczyszczona (do pancakes)',q:'1 opak.',p:'1,49 zł'},
         {n:'Biszkopty ladyfingers (tiramisu)',q:'200g',p:'7,99 zł'},
         {n:'Kawa espresso mielona',q:'250g',p:'12,99 zł'},
         {n:'Amaretto (opcjonalnie)',q:'',p:'opcja'},
@@ -1062,6 +1212,109 @@ const SHOP = [
         {n:'Krakersy',q:'1 opak.',p:'4,99 zł'},
         {n:'Czekolada gorzka (do eclair)',q:'100g',p:'6,99 zł'},
         {n:'Rodzynki',q:'100g',p:'3,99 zł'},
+      ]},
+    ]
+  },
+  // Tydzień 5
+  {
+    categories: [
+      { name:'🥩 Mięso i wędliny', cls:'hm', items:[
+        {n:'Guanciale lub boczek wędzony (do carbonary)',q:'150g',p:'9,99 zł'},
+        {n:'Łosoś wędzony (do śniadania Pn-Wt)',q:'100g',p:'11,99 zł'},
+        {n:'Filety łososia (do obiadu Pt-Sb)',q:'2 szt. ok. 300g',p:'22,99 zł'},
+        {n:'Filet z kurczaka (do wrapów Śr-Cz)',q:'300g',p:'9,00 zł'},
+        {n:'Udka jagnięce (niedzielny obiad)',q:'ok. 1 kg',p:'39,99 zł'},
+        {n:'Boczek wędzony (do niedzielnej jajecznicy)',q:'100g',p:'4,99 zł'},
+        {n:'Chorizo (do tapas boxu)',q:'80g',p:'8,99 zł'},
+      ]},
+      { name:'🥛 Nabiał i jaja', cls:'hd', items:[
+        {n:'Jajka (klasa L)',q:'14 szt.',p:'11,69 zł'},
+        {n:'Pecorino Romano lub parmezan (do carbonary)',q:'100g',p:'9,99 zł'},
+        {n:'Parmezan (do minestrone)',q:'80g',p:'6,99 zł'},
+        {n:'Ser Philadelphia (do sernika)',q:'500g',p:'17,49 zł'},
+        {n:'Śmietana 30%',q:'700ml',p:'10,49 zł'},
+        {n:'Twaróg śmietankowy (do tostów z łososiem)',q:'150g',p:'4,99 zł'},
+        {n:'Ricotta (do tostów Pt-Sb)',q:'200g',p:'7,99 zł'},
+        {n:'Jogurt grecki (do śniadania Śr-Cz)',q:'400g',p:'7,00 zł'},
+        {n:'Mozzarella (do caprese boxu i pizzy)',q:'500g',p:'14,99 zł'},
+        {n:'Ser manchego (do tapas boxu)',q:'80g',p:'7,99 zł'},
+        {n:'Ser feta (do greckiego boxu)',q:'80g',p:'4,99 zł'},
+        {n:'Masło',q:'200g',p:'5,49 zł'},
+        {n:'Maślanka (do pancakes)',q:'250ml',p:'2,99 zł'},
+        {n:'Mleko 3,2% (do owsianki)',q:'500ml',p:'1,99 zł'},
+        {n:'Mleko migdałowe (do smoothie bowl)',q:'250ml',p:'4,99 zł'},
+        {n:'Majonez (do wrapów)',q:'100g',p:'2,99 zł'},
+        {n:'Musztarda (do wrapów)',q:'słoiczek',p:'3,49 zł'},
+      ]},
+      { name:'🥦 Warzywa i owoce', cls:'hv', items:[
+        {n:'Pomidory malinowe (do caprese boxu)',q:'3 szt.',p:'6,99 zł'},
+        {n:'Pomidorki cherry (do greckiego boxu)',q:'150g',p:'3,99 zł'},
+        {n:'Ogórek (do tostów z łososiem i greckiego boxu)',q:'2 szt.',p:'3,98 zł'},
+        {n:'Owoce świeże (do smoothie bowl)',q:'200g',p:'5,99 zł'},
+        {n:'Rozmaryn i tymianek świeży (do jagnięciny i łososia)',q:'po 1 gałązce',p:'3,99 zł'},
+        {n:'Cukinia (do łososia i minestrone)',q:'2 szt.',p:'5,98 zł'},
+        {n:'Papryka czerwona (do łososia i wrapów)',q:'2 szt.',p:'4,98 zł'},
+        {n:'Marchewka (do jagnięciny i minestrone)',q:'1 kg',p:'3,99 zł'},
+        {n:'Seler naciowy (do minestrone)',q:'1 szt.',p:'3,99 zł'},
+        {n:'Cebula',q:'4 szt.',p:'2,79 zł'},
+        {n:'Czosnek',q:'2 główki',p:'3,98 zł'},
+        {n:'Ziemniaki (do jagnięciny)',q:'600g',p:'2,99 zł'},
+        {n:'Gruszka (do owsianki Pn-Wt)',q:'2 szt.',p:'3,99 zł'},
+        {n:'Figi świeże (do jogurtu i tostów)',q:'6 szt.',p:'7,99 zł'},
+        {n:'Banany mrożone (do smoothie bowl)',q:'3 szt.',p:'1,80 zł'},
+        {n:'Jagody mrożone (do smoothie bowl)',q:'150g',p:'5,99 zł'},
+        {n:'Banany świeże (do pancakes)',q:'2 szt.',p:'1,20 zł'},
+        {n:'Awokado (do wrapów)',q:'2 szt.',p:'5,98 zł'},
+        {n:'Cytryna',q:'3 szt.',p:'2,49 zł'},
+        {n:'Rukola (do wrapów)',q:'1 opak.',p:'3,49 zł'},
+        {n:'Bazylia świeża (do caprese i pizzy)',q:'1 doniczka',p:'5,99 zł'},
+        {n:'Koper świeży (do łososia i tostów)',q:'1 pęczek',p:'2,49 zł'},
+        {n:'Pieczarki (do niedzielnej jajecznicy)',q:'150g',p:'2,99 zł'},
+      ]},
+      { name:'🌾 Produkty zbożowe', cls:'hg', items:[
+        {n:'Spaghetti (do carbonary)',q:'300g',p:'2,99 zł'},
+        {n:'Mąka pszenna (do pizzy, pancakes i brownie)',q:'1 kg',p:'3,99 zł'},
+        {n:'Drożdże instant (do pizzy)',q:'7g',p:'1,49 zł'},
+        {n:'Makaron muszelki lub penne (do minestrone)',q:'100g',p:'2,49 zł'},
+        {n:'Chleb na zakwasie (do śniadań)',q:'1 bochenek',p:'8,99 zł'},
+        {n:'Bagietka (do caprese boxu)',q:'1 szt.',p:'2,49 zł'},
+        {n:'Tortille pszenne (do wrapów)',q:'4 szt.',p:'5,99 zł'},
+        {n:'Pita chlebki (do greckiego boxu)',q:'4 szt.',p:'4,99 zł'},
+        {n:'Krakersy lub pita (do tapas boxu)',q:'1 opak.',p:'3,99 zł'},
+        {n:'Granola (do smoothie bowl)',q:'200g',p:'6,99 zł'},
+        {n:'Płatki owsiane (do owsianki)',q:'200g',p:'2,49 zł'},
+        {n:'Herbatniki digestive (do sernika i tarty)',q:'400g',p:'7,99 zł'},
+      ]},
+      { name:'🫙 Przetwory i alkohole', cls:'ho', items:[
+        {n:'Passata pomidorowa (do pizzy)',q:'200g',p:'3,99 zł'},
+        {n:'Pomidory krojone (do jagnięciny i minestrone)',q:'2 puszki',p:'5,98 zł'},
+        {n:'Fasola biała (do minestrone)',q:'1 puszka',p:'3,49 zł'},
+        {n:'Czerwone wino wytrawne (do jagnięciny)',q:'200ml/butelka',p:'9,99 zł'},
+        {n:'Bulion warzywny (do minestrone)',q:'1L',p:'4,99 zł'},
+        {n:'Oliwa extra virgin',q:'500ml',p:'14,99 zł'},
+        {n:'Ocet balsamiczny (do caprese boxu)',q:'100ml',p:'5,99 zł'},
+        {n:'Oliwki mieszane (do tapas i greckiego boxu)',q:'200g',p:'7,99 zł'},
+        {n:'Oliwki kalamata (do greckiego boxu)',q:'100g',p:'5,99 zł'},
+        {n:'Tzatziki gotowe (do greckiego boxu)',q:'160g',p:'4,99 zł'},
+        {n:'Migdały prażone (do tapas boxu)',q:'80g',p:'5,99 zł'},
+        {n:'Miód (do śniadań)',q:'słoik 250g',p:'7,99 zł'},
+        {n:'Masło orzechowe (do smoothie bowl)',q:'200g',p:'9,99 zł'},
+        {n:'Orzechy włoskie (do brownie i śniadań)',q:'150g',p:'8,99 zł'},
+        {n:'Orzechy pekan lub włoskie (do owsianki)',q:'80g',p:'5,99 zł'},
+        {n:'Żelatyna (do panna cotty)',q:'1 opak.',p:'2,99 zł'},
+        {n:'Maliny (do panna cotty)',q:'200g',p:'5,99 zł'},
+        {n:'Syrop klonowy (do pancakes)',q:'100ml',p:'9,99 zł'},
+      ]},
+      { name:'🍰 Wypieki i słodkości', cls:'hc', items:[
+        {n:'Gorzka czekolada 70% (do brownie i tarty)',q:'300g',p:'14,99 zł'},
+        {n:'Kakao (do brownie)',q:'50g',p:'2,99 zł'},
+        {n:'Cukier biały',q:'500g',p:'2,99 zł'},
+        {n:'Cukier brązowy',q:'200g',p:'2,49 zł'},
+        {n:'Proszek do pieczenia',q:'1 opak.',p:'1,49 zł'},
+        {n:'Soda oczyszczona (do pancakes)',q:'1 opak.',p:'1,49 zł'},
+        {n:'Cynamon mielony (do owsianki i jogurtu)',q:'20g',p:'3,49 zł'},
+        {n:'Ekstrakt waniliowy',q:'30ml',p:'4,99 zł'},
+        {n:'Sól morska (do tarty czekoladowej)',q:'małe opak.',p:'2,99 zł'},
       ]},
     ]
   }
@@ -1091,7 +1344,7 @@ function getWeekData(w) {
 // ═══════════════ RENDER JADŁOSPIS ═══════════════
 function renderJadlospis() {
   const wsel = document.getElementById('week-sel');
-  wsel.innerHTML = [0,1,2,3].map(i =>
+  wsel.innerHTML = [0,1,2,3,4].map(i =>
     `<button class="wsb${i===currentWeek?' active':''}" onclick="setWeek(${i})">Tydzień ${i+1}</button>`
   ).join('');
   document.getElementById('week-chip').textContent = `Tydzień ${currentWeek+1}`;
@@ -1134,7 +1387,7 @@ function setWeek(w) {
 }
 
 function cycleWeek() {
-  currentWeek = (currentWeek + 1) % 4;
+  currentWeek = (currentWeek + 1) % 5;
   renderJadlospis();
 }
 
@@ -1192,7 +1445,7 @@ function closeModal(e) {
 // ═══════════════ SHOPPING ═══════════════
 function renderShopping() {
   const nav = document.getElementById('shop-week-nav');
-  nav.innerHTML = [0,1,2,3].map(i =>
+  nav.innerHTML = [0,1,2,3,4].map(i =>
     `<button class="swn${i===shopWeek?' active':''}" onclick="setShopWeek(${i})">Tydz. ${i+1}</button>`
   ).join('');
 
