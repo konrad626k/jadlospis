@@ -349,6 +349,72 @@ const WEEKS = [
       tip:'Prawdziwy rosół gotuje się wolno — nie spiesz się!'
     },
   ],
+  // Podwieczorki: Pn, Wt, Śr, Cz, Pt, Sb
+  snacks: [
+    { name:'Budyń waniliowy + świeże maliny', flag:'🌍', type:'Podwieczorek / deser', box:false,
+      ingredients:[{q:'2 szt.',n:'budyń waniliowy w kubku (gotowy)'},{q:'garść',n:'maliny lub truskawki'}],
+      steps:['Budyń wyjmij z lodówki.','Ułóż owoce na wierzchu.','Gotowe!'],
+      tip:'Szybki i pyszny podwieczorek!'
+    },
+    { name:'Baton zbożowy Corny + banan', flag:'🌍', type:'Podwieczorek / deser', box:false,
+      ingredients:[{q:'2 szt.',n:'baton zbożowy (np. Corny)'},{q:'2 szt.',n:'banan'}],
+      steps:['Wyjmij z plecaka lub szuflady.','Zjedz!'],
+      tip:'Prosty zastrzyk energii na popołudnie!'
+    },
+    { name:'Kisiel malinowy z waflem ryżowym', flag:'🌍', type:'Podwieczorek / deser', box:false,
+      ingredients:[{q:'2 opak.',n:'kisiel malinowy'},{q:'4 szt.',n:'wafle ryżowe'}],
+      steps:['Kisiel przygotuj wg przepisu, przelej do kubków.','Schłodź.','Podaj z waflami.'],
+      tip:'Zrób rano — po południu idealnie ścięty!'
+    },
+    { name:'Budyń czekoladowy + borówki', flag:'🌍', type:'Podwieczorek / deser', box:false,
+      ingredients:[{q:'2 szt.',n:'budyń czekoladowy w kubku'},{q:'garść',n:'borówki'}],
+      steps:['Budyń wyjmij z lodówki.','Posyp borówkami.','Podaj od razu.'],
+      tip:'Czekolada + borówki = klasyczne połączenie!'
+    },
+    { name:'Baton proteinowy + jabłko', flag:'🌍', type:'Podwieczorek / deser', box:false,
+      ingredients:[{q:'2 szt.',n:'baton proteinowy'},{q:'2 szt.',n:'jabłko'}],
+      steps:['Umyj jabłko.','Zjedz z batonikiem.'],
+      tip:'Piątkowa energia przed weekendem!'
+    },
+    { name:'Kisiel wiśniowy + wafelek czekoladowy', flag:'🌍', type:'Podwieczorek / deser', box:false,
+      ingredients:[{q:'2 opak.',n:'kisiel wiśniowy'},{q:'2 szt.',n:'wafelek czekoladowy (np. Prince Polo)'}],
+      steps:['Kisiel przygotuj wg przepisu, przelej do kubków.','Schłodź.','Podaj z wafelkiem.'],
+      tip:'Sobotni klasyk — prosty i satysfakcjonujący!'
+    },
+  ],
+  // Boxy serialowe: Pn, Wt, Śr, Cz, Pt, Sb
+  boxes: [
+    { name:'Box serialowy: nuggetsy + frytki z piekarnika + warzywa', flag:'🌍', type:'Kolacja serials box', box:false,
+      ingredients:[{q:'300g',n:'nuggetsy z kurczaka (mrożone)'},{q:'2 szt.',n:'ziemniaki'},{q:'1 szt.',n:'marchewka'},{q:'1 szt.',n:'ogórek'},{q:'2 łyżki',n:'ketchup i majonez'},{q:'oliwa, sól',n:'do frytek'}],
+      steps:['Ziemniaki pokrój w słupki, skrop oliwą i solą.','Piecz frytki i nuggetsy 200°C przez 20-25 min.','Warzywa pokrój w słupki.','Sosy w pojemniczkach.'],
+      tip:'Klasyczny comfort food do serialu!'
+    },
+    { name:'Box serialowy: kanapki z szynką, serem i ogórkiem', flag:'🇵🇱', type:'Kolacja serials box', box:false,
+      ingredients:[{q:'4 kromki',n:'chleb żytni'},{q:'80g',n:'szynka gotowana'},{q:'50g',n:'ser żółty'},{q:'1 szt.',n:'ogórek'},{q:'kilka liści',n:'sałata'},{q:'1 łyżka',n:'majonez lub musztarda'}],
+      steps:['Chleb posmaruj majonezem.','Ułóż szynkę, ser i sałatę.','Ogórek w plasterki obok.','Zapakuj do boxu.'],
+      tip:'Klasyczny polski box — prosty i sycący!'
+    },
+    { name:'Box serialowy: ser + winogrona + orzechy + krakersy', flag:'🌍', type:'Kolacja serials box', box:false,
+      ingredients:[{q:'80g',n:'ser żółty'},{q:'garść',n:'winogrona'},{q:'garść',n:'orzechy włoskie'},{q:'1 opak.',n:'krakersy'}],
+      steps:['Ser pokrój w kostkę.','Winogrona umyj.','Ułóż wszystko w boxie.','Krakersy osobno.'],
+      tip:'Box serowo-owocowy gotowy w 5 minut!'
+    },
+    { name:'Box serialowy: mini kanapki z jajkiem i pomidorem', flag:'🇵🇱', type:'Kolacja serials box', box:false,
+      ingredients:[{q:'4 kromki',n:'chleb pełnoziarnisty'},{q:'2 szt.',n:'jajka na twardo'},{q:'1 szt.',n:'pomidor'},{q:'kilka liści',n:'sałata'},{q:'1 łyżka',n:'majonez'},{q:'szczypta',n:'sól, pieprz'}],
+      steps:['Jajka ugotuj na twardo, pokrój w plastry.','Chleb posmaruj majonezem.','Ułóż sałatę, jajko i pomidor.','Zapakuj do boxu.'],
+      tip:'Szybki i pożywny box czwartkowy!'
+    },
+    { name:'Box serialowy: mini pizzerinki na tortilli', flag:'🇮🇹', type:'Kolacja serials box', box:false,
+      ingredients:[{q:'2 szt.',n:'tortilla pszenna'},{q:'4 łyżki',n:'passata pomidorowa'},{q:'80g',n:'ser żółty starty'},{q:'50g',n:'szynka lub salami'},{q:'szczypta',n:'oregano'}],
+      steps:['Tortillę posmaruj passatą.','Posyp serem i wędliną.','Zapiekaj 200°C przez 8-10 min.','Pokrój w trójkąty.'],
+      tip:'Chrupiąca mini-pizza w 10 minut!'
+    },
+    { name:'Box serialowy: chipsy z dipem czosnkowym + warzywa', flag:'🌍', type:'Kolacja serials box', box:false,
+      ingredients:[{q:'150g',n:'chipsy'},{q:'3 łyżki',n:'majonez + 1 ząbek czosnku (dip)'},{q:'1 szt.',n:'papryka'},{q:'1 szt.',n:'ogórek'},{q:'garść',n:'pomidorki cherry'}],
+      steps:['Majonez wymieszaj z przeciśniętym czosnkiem.','Warzywa pokrój w słupki.','Chipsy w misce.','Dip w osobnym pojemniku.'],
+      tip:'Sobotnio-serialowy must-have!'
+    },
+  ],
 },
 
 // ═══════════════════════════════════════════════
@@ -465,6 +531,72 @@ const WEEKS = [
       ingredients:[{q:'800g',n:'dynia piżmowa'},{q:'1 szt.',n:'cebula'},{q:'2 ząbki',n:'czosnek'},{q:'500ml',n:'bulion warzywny'},{q:'200ml',n:'mleko kokosowe'},{q:'1 łyżeczka',n:'imbir'},{q:'½ łyżeczki',n:'kurkuma'},{q:'2 łyżki',n:'oliwa'},{q:'pestki dyni',n:'do posypania'}],
       steps:['Dynię obierz, pokrój, piecz z oliwą 200°C przez 30 min.','Zeszklij cebulę i czosnek.','Dodaj upieczoną dynię, imbir, kurkumę.','Zalej bulionem, gotuj 10 min, zmiksuj.','Dodaj mleko kokosowe, dopraw.','Posyp pestkami.'],
       tip:'Krem z dyni wygląda jak z restauracji — zrób efekt oliwy na wierzchu!'
+    },
+  ],
+  // Podwieczorki: Pn, Wt, Śr, Cz, Pt, Sb
+  snacks: [
+    { name:'Budyń waniliowy + wiśnie lub winogrona', flag:'🌍', type:'Podwieczorek / deser', box:false,
+      ingredients:[{q:'2 szt.',n:'budyń waniliowy w kubku'},{q:'garść',n:'wiśnie lub winogrona'}],
+      steps:['Budyń wyjmij z lodówki.','Ułóż owoce na wierzchu.','Gotowe!'],
+      tip:'Zero gotowania, zero stresu!'
+    },
+    { name:'Kisiel wiśniowy + baton zbożowy', flag:'🌍', type:'Podwieczorek / deser', box:false,
+      ingredients:[{q:'2 opak.',n:'kisiel wiśniowy'},{q:'2 szt.',n:'baton zbożowy'}],
+      steps:['Kisiel przygotuj wg przepisu, schłodź.','Podaj z batonikiem.'],
+      tip:'Klasyczny wtorkowy podwieczorek!'
+    },
+    { name:'Baton czekoladowy + gruszka', flag:'🌍', type:'Podwieczorek / deser', box:false,
+      ingredients:[{q:'2 szt.',n:'baton czekoladowy (np. Kinder Bueno)'},{q:'2 szt.',n:'gruszka'}],
+      steps:['Gruszkę umyj i pokrój.','Zjedz z batonikiem.'],
+      tip:'Słodka środowa przerwa!'
+    },
+    { name:'Budyń czekoladowy + banan', flag:'🌍', type:'Podwieczorek / deser', box:false,
+      ingredients:[{q:'2 szt.',n:'budyń czekoladowy w kubku'},{q:'1 szt.',n:'banan'}],
+      steps:['Budyń wyjmij z lodówki.','Banan pokrój, ułóż na wierzchu.','Podaj od razu.'],
+      tip:'Klasyczna para — czekolada i banan!'
+    },
+    { name:'Kisiel malinowy + wafle ryżowe', flag:'🌍', type:'Podwieczorek / deser', box:false,
+      ingredients:[{q:'2 opak.',n:'kisiel malinowy'},{q:'4 szt.',n:'wafle ryżowe'}],
+      steps:['Kisiel przygotuj wg przepisu, przelej do kubków.','Schłodź.','Podaj z waflami.'],
+      tip:'Piątkowy lekki podwieczorek!'
+    },
+    { name:'Baton proteinowy + jabłko', flag:'🌍', type:'Podwieczorek / deser', box:false,
+      ingredients:[{q:'2 szt.',n:'baton proteinowy'},{q:'2 szt.',n:'jabłko'}],
+      steps:['Umyj jabłko.','Zjedz z batonikiem.'],
+      tip:'Sobotnio-energetyczny duet!'
+    },
+  ],
+  // Boxy serialowe: Pn, Wt, Śr, Cz, Pt, Sb
+  boxes: [
+    { name:'Box serialowy: mini hot-dogi z warzywami i serem', flag:'🌍', type:'Kolacja serials box', box:false,
+      ingredients:[{q:'4 szt.',n:'mini parówki'},{q:'4 szt.',n:'bułeczki do hot-dogów'},{q:'1 szt.',n:'ogórek'},{q:'50g',n:'ser żółty'},{q:'garść',n:'pomidorki cherry'},{q:'ketchup, musztarda',n:''}],
+      steps:['Parówki podgrzej (ugotuj lub mikrofala 1 min).','Ułóż w bułkach z ketchupem.','Ogórek i pomidorki obok.','Ser w kostkach.'],
+      tip:'Box hot-dog — klasyk wieczoru filmowego!'
+    },
+    { name:'Box serialowy: quesadilla z serem i papryką', flag:'🇲🇽', type:'Kolacja serials box', box:false,
+      ingredients:[{q:'2 szt.',n:'tortilla pszenna'},{q:'80g',n:'ser żółty starty'},{q:'1 szt.',n:'papryka czerwona'},{q:'2 łyżki',n:'śmietana 18%'},{q:'2 łyżki',n:'salsa pomidorowa'}],
+      steps:['Na tortillę nałóż ser i paprykę w kostkę.','Złóż, smaż na suchej patelni 2-3 min z każdej strony.','Pokrój w trójkąty.','Śmietanę i salsę osobno.'],
+      tip:'Ciepły box serialowy gotowy w 10 minut!'
+    },
+    { name:'Box serialowy: nachos z dipem i warzywami', flag:'🇲🇽', type:'Kolacja serials box', box:false,
+      ingredients:[{q:'150g',n:'nachos'},{q:'80g',n:'ser żółty starty'},{q:'1 szt.',n:'papryka'},{q:'garść',n:'pomidorki cherry'},{q:'3 łyżki',n:'salsa pomidorowa'}],
+      steps:['Ser podgrzej z łyżką mleka w mikrofali 1 min.','Warzywa pokrój w kawałki.','Nachos w misce, dip i warzywa obok.'],
+      tip:'Nachos + serial = idealne środowe combo!'
+    },
+    { name:'Box serialowy: wrapy z szynką i serem', flag:'🌍', type:'Kolacja serials box', box:false,
+      ingredients:[{q:'2 szt.',n:'tortilla pszenna'},{q:'80g',n:'szynka gotowana'},{q:'50g',n:'ser żółty'},{q:'kilka liści',n:'sałata'},{q:'1 szt.',n:'pomidor'},{q:'2 łyżki',n:'majonez'}],
+      steps:['Na tortillę nałóż majonez, sałatę, szynkę, ser i pomidor.','Zwiń ciasno.','Pokrój na pół.'],
+      tip:'Prosty wrap czwartkowy — gotowy w 5 minut!'
+    },
+    { name:'Box serialowy: kanapki z pastą jajeczną', flag:'🇵🇱', type:'Kolacja serials box', box:false,
+      ingredients:[{q:'4 kromki',n:'chleb żytni'},{q:'3 szt.',n:'jajka na twardo'},{q:'1 łyżka',n:'majonez'},{q:'1 pęczek',n:'szczypiorek'},{q:'1 szt.',n:'ogórek'},{q:'szczypta',n:'sól, pieprz'}],
+      steps:['Jajka posiekaj, wymieszaj z majonezem i szczypiorkiem.','Posmaruj chleb pastą.','Ogórek w plasterki obok.'],
+      tip:'Klasyczny piątkowy box jajeczny!'
+    },
+    { name:'Box serialowy: deska serów z owocami i krakersami', flag:'🌍', type:'Kolacja serials box', box:false,
+      ingredients:[{q:'80g',n:'ser żółty'},{q:'garść',n:'winogrona'},{q:'garść',n:'maliny lub truskawki'},{q:'1 opak.',n:'krakersy'},{q:'2 łyżki',n:'dżem figowy'}],
+      steps:['Ser pokrój w kostkę lub trójkąty.','Owoce umyj.','Ułóż wszystko w boxie.','Krakersy i dżem osobno.'],
+      tip:'Sobotni box-deska — elegancja bez wysiłku!'
     },
   ],
 },
@@ -585,6 +717,72 @@ const WEEKS = [
       tip:'Klasyk! Przy odrobinie cierpliwości (karmelizacja) wychodzi magicznie.'
     },
   ],
+  // Podwieczorki: Pn, Wt, Śr, Cz, Pt, Sb
+  snacks: [
+    { name:'Budyń karmelowy + borówki', flag:'🌍', type:'Podwieczorek / deser', box:false,
+      ingredients:[{q:'2 szt.',n:'budyń karmelowy w kubku'},{q:'garść',n:'borówki lub maliny'}],
+      steps:['Budyń wyjmij z lodówki.','Posyp owocami.','Gotowe!'],
+      tip:'Karmel + owoce — prosta przyjemność!'
+    },
+    { name:'Kisiel waniliowy + wafelek z kremem', flag:'🌍', type:'Podwieczorek / deser', box:false,
+      ingredients:[{q:'2 opak.',n:'kisiel waniliowy'},{q:'2 szt.',n:'wafelek z kremem (np. Grześki)'}],
+      steps:['Kisiel przygotuj wg przepisu, schłodź.','Podaj z wafelkiem.'],
+      tip:'Wtorek z Grześkiem — klasyk!'
+    },
+    { name:'Baton zbożowy + mandarynka', flag:'🌍', type:'Podwieczorek / deser', box:false,
+      ingredients:[{q:'2 szt.',n:'baton zbożowy'},{q:'2 szt.',n:'mandarynka lub pomarańcza'}],
+      steps:['Obierz mandarynkę.','Zjedz z batonikiem.'],
+      tip:'Owocowa przerwa w środku tygodnia!'
+    },
+    { name:'Budyń czekoladowy + truskawki', flag:'🌍', type:'Podwieczorek / deser', box:false,
+      ingredients:[{q:'2 szt.',n:'budyń czekoladowy w kubku'},{q:'garść',n:'truskawki lub maliny'}],
+      steps:['Budyń wyjmij z lodówki.','Ułóż owoce na wierzchu.','Gotowe!'],
+      tip:'Czwartkowa czekoladowa przyjemność!'
+    },
+    { name:'Baton proteinowy + banan', flag:'🌍', type:'Podwieczorek / deser', box:false,
+      ingredients:[{q:'2 szt.',n:'baton proteinowy'},{q:'2 szt.',n:'banan'}],
+      steps:['Obierz banana.','Zjedz z batonikiem.'],
+      tip:'Energia na piątkowe popołudnie!'
+    },
+    { name:'Kisiel malinowy + baton czekoladowy', flag:'🌍', type:'Podwieczorek / deser', box:false,
+      ingredients:[{q:'2 opak.',n:'kisiel malinowy'},{q:'2 szt.',n:'baton czekoladowy (np. Prince Polo)'}],
+      steps:['Kisiel przygotuj wg przepisu, schłodź.','Podaj z batonikiem.'],
+      tip:'Sobotnio-deserowy klasyk!'
+    },
+  ],
+  // Boxy serialowe: Pn, Wt, Śr, Cz, Pt, Sb
+  boxes: [
+    { name:'Box serialowy: nuggetsy + frytki + sos czosnkowy', flag:'🌍', type:'Kolacja serials box', box:false,
+      ingredients:[{q:'300g',n:'nuggetsy z kurczaka (mrożone)'},{q:'2 szt.',n:'ziemniaki'},{q:'3 łyżki',n:'majonez + czosnek (sos)'},{q:'1 szt.',n:'ogórek'},{q:'garść',n:'pomidorki cherry'}],
+      steps:['Ziemniaki pokrój w słupki, piecz z nuggetsy 200°C przez 20-25 min.','Majonez wymieszaj z czosnkiem na sos.','Warzywa obok.'],
+      tip:'Poniedziałkowy comfort box!'
+    },
+    { name:'Box serialowy: mini pizzerinki na tortilli', flag:'🇮🇹', type:'Kolacja serials box', box:false,
+      ingredients:[{q:'2 szt.',n:'tortilla pszenna'},{q:'4 łyżki',n:'passata pomidorowa'},{q:'80g',n:'ser żółty starty'},{q:'50g',n:'szynka lub salami'},{q:'szczypta',n:'oregano'}],
+      steps:['Tortillę posmaruj passatą.','Posyp serem i wędliną.','Zapiekaj 200°C przez 8-10 min.','Pokrój w trójkąty.'],
+      tip:'Wtorek z mini-pizzą — szybko i pysznie!'
+    },
+    { name:'Box serialowy: kanapki z pastą jajeczną i warzywami', flag:'🇵🇱', type:'Kolacja serials box', box:false,
+      ingredients:[{q:'4 kromki',n:'chleb żytni lub razowy'},{q:'3 szt.',n:'jajka na twardo'},{q:'1 łyżka',n:'majonez'},{q:'1 pęczek',n:'szczypiorek'},{q:'1 szt.',n:'ogórek'},{q:'garść',n:'pomidorki cherry'}],
+      steps:['Jajka posiekaj, wymieszaj z majonezem i szczypiorkiem.','Posmaruj chleb pastą.','Warzywa obok.'],
+      tip:'Środowy box jajeczny — klasyk!'
+    },
+    { name:'Box serialowy: chipsy z dipem + warzywa', flag:'🌍', type:'Kolacja serials box', box:false,
+      ingredients:[{q:'150g',n:'chipsy'},{q:'3 łyżki',n:'majonez + czosnek (dip)'},{q:'1 szt.',n:'papryka'},{q:'1 szt.',n:'ogórek'},{q:'garść',n:'pomidorki cherry'}],
+      steps:['Majonez wymieszaj z czosnkiem.','Warzywa pokrój w słupki.','Chipsy i dip w osobnych miseczkach.'],
+      tip:'Czwartkowy box chrupkowy!'
+    },
+    { name:'Box serialowy: wrapy z kurczakiem i awokado', flag:'🌍', type:'Kolacja serials box', box:false,
+      ingredients:[{q:'2 szt.',n:'tortilla pszenna'},{q:'150g',n:'filet z kurczaka (reszta z obiadu)'},{q:'1 szt.',n:'awokado'},{q:'kilka liści',n:'sałata'},{q:'1 łyżka',n:'majonez'},{q:'szczypta',n:'sól, pieprz'}],
+      steps:['Kurczaka pokrój w paski.','Awokado rozgnieć z solą.','Na tortillę nałóż majonez, awokado, kurczaka i sałatę.','Zwiń ciasno.'],
+      tip:'Piątkowy wrap z resztkami obiadu!'
+    },
+    { name:'Box serialowy: ser + owoce + krakersy + orzechy', flag:'🌍', type:'Kolacja serials box', box:false,
+      ingredients:[{q:'80g',n:'ser żółty'},{q:'garść',n:'winogrona lub truskawki'},{q:'garść',n:'orzechy mieszane'},{q:'1 opak.',n:'krakersy'}],
+      steps:['Ser pokrój w kostkę.','Owoce umyj.','Ułóż wszystko w boxie.','Krakersy osobno.'],
+      tip:'Sobotni box-deska — zero gotowania!'
+    },
+  ],
 },
 
 // ═══════════════════════════════════════════════
@@ -701,6 +899,72 @@ const WEEKS = [
       ingredients:[{q:'500ml',n:'zakwas na żurek (słoik)'},{q:'500ml',n:'bulion'},{q:'2 szt.',n:'biała kiełbasa'},{q:'4 szt.',n:'jajka na twardo'},{q:'200ml',n:'śmietana 18%'},{q:'2 ząbki',n:'czosnek'},{q:'1 łyżka',n:'chrzan'},{q:'majeranek, sól, pieprz',n:''}],
       steps:['Bulion zagotuj z czosnkiem.','Wlej zakwas na żurek, zagotuj.','Kiełbasę ugotuj osobno (15 min).','Dodaj śmietanę, chrzan, majeranek.','Podaj z jajkiem i kiełbasą.'],
       tip:'Żurek to polskie comfort food — niedzielna tradycja!'
+    },
+  ],
+  // Podwieczorki: Pn, Wt, Śr, Cz, Pt, Sb
+  snacks: [
+    { name:'Kisiel owocowy + wafle ryżowe', flag:'🌍', type:'Podwieczorek / deser', box:false,
+      ingredients:[{q:'2 opak.',n:'kisiel truskawkowy lub owocowy'},{q:'4 szt.',n:'wafle ryżowe'}],
+      steps:['Kisiel przygotuj wg przepisu, schłodź.','Podaj z waflami.'],
+      tip:'Poniedziałkowy lekki start!'
+    },
+    { name:'Baton zbożowy + gruszka', flag:'🌍', type:'Podwieczorek / deser', box:false,
+      ingredients:[{q:'2 szt.',n:'baton zbożowy (np. Corny)'},{q:'2 szt.',n:'gruszka'}],
+      steps:['Gruszkę umyj i pokrój.','Zjedz z batonikiem.'],
+      tip:'Wtorek z gruszką — prosta przyjemność!'
+    },
+    { name:'Budyń śmietankowy + owoce sezonowe', flag:'🌍', type:'Podwieczorek / deser', box:false,
+      ingredients:[{q:'2 szt.',n:'budyń śmietankowy w kubku'},{q:'garść',n:'owoce sezonowe'}],
+      steps:['Budyń wyjmij z lodówki.','Posyp owocami.','Gotowe!'],
+      tip:'Środkowy tygodnia — deserowe wytchnienie!'
+    },
+    { name:'Wafelek czekoladowy + jabłko', flag:'🌍', type:'Podwieczorek / deser', box:false,
+      ingredients:[{q:'2 szt.',n:'wafelek czekoladowy (np. Kit Kat)'},{q:'2 szt.',n:'jabłko'}],
+      steps:['Jabłko umyj i pokrój.','Zjedz z wafelkiem.'],
+      tip:'Czwartkowa mini-przerwa!'
+    },
+    { name:'Baton orzechowy + kisiel waniliowy', flag:'🌍', type:'Podwieczorek / deser', box:false,
+      ingredients:[{q:'2 szt.',n:'baton orzechowy (np. Snickers)'},{q:'2 opak.',n:'kisiel waniliowy'}],
+      steps:['Kisiel przygotuj wg przepisu, schłodź.','Podaj z batonikiem orzechowym.'],
+      tip:'Piątkowy energetyk na dobry weekend!'
+    },
+    { name:'Budyń czekoladowy + orzechy i borówki', flag:'🌍', type:'Podwieczorek / deser', box:false,
+      ingredients:[{q:'2 szt.',n:'budyń czekoladowy w kubku'},{q:'garść',n:'orzechy włoskie'},{q:'garść',n:'borówki'}],
+      steps:['Budyń wyjmij z lodówki.','Posyp orzechami i borówkami.','Gotowe!'],
+      tip:'Sobotnio-czekoladowy relaks!'
+    },
+  ],
+  // Boxy serialowe: Pn, Wt, Śr, Cz, Pt, Sb
+  boxes: [
+    { name:'Box serialowy: chipsy z dipem czosnkowym + warzywa', flag:'🌍', type:'Kolacja serials box', box:false,
+      ingredients:[{q:'150g',n:'chipsy'},{q:'3 łyżki',n:'majonez + czosnek (dip)'},{q:'1 szt.',n:'papryka'},{q:'1 szt.',n:'ogórek'},{q:'garść',n:'pomidorki cherry'}],
+      steps:['Majonez wymieszaj z przeciśniętym czosnkiem.','Warzywa pokrój w słupki.','Chipsy w misce.','Dip i warzywa obok.'],
+      tip:'Poniedziałkowy box chrupkowy!'
+    },
+    { name:'Box serialowy: kanapki z szynką i jajkiem', flag:'🇵🇱', type:'Kolacja serials box', box:false,
+      ingredients:[{q:'4 kromki',n:'chleb na zakwasie'},{q:'80g',n:'szynka gotowana'},{q:'2 szt.',n:'jajka na twardo'},{q:'1 szt.',n:'ogórek'},{q:'kilka liści',n:'sałata'},{q:'1 łyżka',n:'musztarda'}],
+      steps:['Chleb posmaruj musztardą.','Ułóż sałatę, szynkę i jajko w plasterki.','Ogórek obok.'],
+      tip:'Wtorek z klasyczną kanapką!'
+    },
+    { name:'Box serialowy: quesadilla z serem i papryką', flag:'🇲🇽', type:'Kolacja serials box', box:false,
+      ingredients:[{q:'2 szt.',n:'tortilla pszenna'},{q:'80g',n:'ser żółty starty'},{q:'1 szt.',n:'papryka'},{q:'2 łyżki',n:'śmietana 18%'}],
+      steps:['Na tortillę nałóż ser i paprykę.','Złóż, smaż 2-3 min z każdej strony.','Pokrój w trójkąty.','Śmietana obok.'],
+      tip:'Środowa quesadilla gotowa w 10 min!'
+    },
+    { name:'Box serialowy: ser + winogrona + orzechy + krakersy', flag:'🌍', type:'Kolacja serials box', box:false,
+      ingredients:[{q:'80g',n:'ser żółty'},{q:'garść',n:'winogrona lub truskawki'},{q:'garść',n:'orzechy mieszane'},{q:'1 opak.',n:'krakersy'},{q:'2 łyżki',n:'dżem figowy lub morelowy'}],
+      steps:['Ser pokrój.','Owoce umyj.','Ułóż wszystko w boxie.','Dżem i krakersy osobno.'],
+      tip:'Czwartkowy box-deska bez wysiłku!'
+    },
+    { name:'Box serialowy: grzanki z twarożkiem i warzywami', flag:'🌍', type:'Kolacja serials box', box:false,
+      ingredients:[{q:'4 kromki',n:'chleb tostowy lub bagietka'},{q:'80g',n:'pasta serowa lub twarożek z ziołami'},{q:'1 szt.',n:'pomidor'},{q:'1 szt.',n:'ogórek'},{q:'garść',n:'sałata lub rukola'}],
+      steps:['Chleb opiecz w tosterze.','Posmaruj pastą serową.','Pomidor i ogórek w plasterki, ułóż z sałatą.'],
+      tip:'Piątkowe grzanki — ciepłe i sycące!'
+    },
+    { name:'Box serialowy: nuggetsy + frytki + warzywa', flag:'🌍', type:'Kolacja serials box', box:false,
+      ingredients:[{q:'300g',n:'nuggetsy z kurczaka (mrożone)'},{q:'2 szt.',n:'ziemniaki'},{q:'1 szt.',n:'marchewka'},{q:'1 szt.',n:'ogórek'},{q:'ketchup, majonez',n:''}],
+      steps:['Ziemniaki pokrój w słupki, piecz z nuggetsy 200°C przez 20-25 min.','Warzywa pokrój do chrupania.','Sosy w pojemniczkach.'],
+      tip:'Sobotni nuggets-box — zawsze na propsie!'
     },
   ],
 },
@@ -821,6 +1085,72 @@ const WEEKS = [
       tip:'Minestrone to włoska zupa-spiżarnia — wrzuć co masz w lodówce!'
     },
   ],
+  // Podwieczorki: Pn, Wt, Śr, Cz, Pt, Sb
+  snacks: [
+    { name:'Budyń waniliowy z dżemem malinowym', flag:'🌍', type:'Podwieczorek / deser', box:false,
+      ingredients:[{q:'2 szt.',n:'budyń waniliowy w kubku'},{q:'2 łyżki',n:'dżem malinowy'}],
+      steps:['Budyń wyjmij z lodówki.','Nałóż łyżkę dżemu na wierzch.','Gotowe!'],
+      tip:'Wanilia + malina = szybki poniedziałkowy deser!'
+    },
+    { name:'Baton zbożowy + borówki', flag:'🌍', type:'Podwieczorek / deser', box:false,
+      ingredients:[{q:'2 szt.',n:'baton zbożowy'},{q:'garść',n:'borówki'}],
+      steps:['Borówki umyj.','Zjedz z batonikiem.'],
+      tip:'Wtorek na lekko!'
+    },
+    { name:'Kisiel truskawkowy + wafelek czekoladowy', flag:'🌍', type:'Podwieczorek / deser', box:false,
+      ingredients:[{q:'2 opak.',n:'kisiel truskawkowy'},{q:'2 szt.',n:'wafelek czekoladowy (np. Kit Kat)'}],
+      steps:['Kisiel przygotuj wg przepisu, schłodź.','Podaj z wafelkiem.'],
+      tip:'Środkowy tydzień potrzebuje czekolady!'
+    },
+    { name:'Budyń czekoladowy + owoce świeże', flag:'🌍', type:'Podwieczorek / deser', box:false,
+      ingredients:[{q:'2 szt.',n:'budyń czekoladowy w kubku'},{q:'garść',n:'truskawki lub maliny'}],
+      steps:['Budyń wyjmij z lodówki.','Ułóż owoce na wierzchu.','Podaj od razu.'],
+      tip:'Czwartkowa czekolada z owocami — zawsze dobra!'
+    },
+    { name:'Baton zbożowy z orzechami + banan', flag:'🌍', type:'Podwieczorek / deser', box:false,
+      ingredients:[{q:'2 szt.',n:'baton zbożowy z orzechami'},{q:'2 szt.',n:'banan'}],
+      steps:['Obierz banana.','Zjedz z batonikiem.'],
+      tip:'Piątkowa energia przed weekendem!'
+    },
+    { name:'Kisiel waniliowy + orzechy i winogrona', flag:'🌍', type:'Podwieczorek / deser', box:false,
+      ingredients:[{q:'2 opak.',n:'kisiel waniliowy'},{q:'garść',n:'orzechy włoskie'},{q:'garść',n:'winogrona'}],
+      steps:['Kisiel przygotuj wg przepisu, schłodź.','Posyp orzechami i dodaj winogrona.','Gotowe!'],
+      tip:'Sobotni kisiel z chrupiącymi orzechami!'
+    },
+  ],
+  // Boxy serialowe: Pn, Wt, Śr, Cz, Pt, Sb
+  boxes: [
+    { name:'Box serialowy: nuggetsy + frytki + warzywa', flag:'🌍', type:'Kolacja serials box', box:false,
+      ingredients:[{q:'300g',n:'nuggetsy z kurczaka (mrożone)'},{q:'2 szt.',n:'ziemniaki'},{q:'1 szt.',n:'marchewka'},{q:'1 szt.',n:'ogórek'},{q:'ketchup, majonez',n:''}],
+      steps:['Ziemniaki pokrój w słupki, piecz z nuggetsy 200°C przez 20-25 min.','Warzywa pokrój do chrupania.','Sosy w pojemniczkach.'],
+      tip:'Klasyczny poniedziałkowy comfort box!'
+    },
+    { name:'Box serialowy: kanapki z szynką, serem i ogórkiem', flag:'🇵🇱', type:'Kolacja serials box', box:false,
+      ingredients:[{q:'4 kromki',n:'chleb pełnoziarnisty'},{q:'80g',n:'szynka gotowana'},{q:'50g',n:'ser żółty'},{q:'1 szt.',n:'ogórek'},{q:'kilka liści',n:'sałata'},{q:'1 łyżka',n:'musztarda lub majonez'}],
+      steps:['Chleb posmaruj musztardą.','Ułóż sałatę, szynkę i ser.','Ogórek w plasterki obok.'],
+      tip:'Wtorek po polsku — klasyk i niezawodnik!'
+    },
+    { name:'Box serialowy: mini pizzerinki na tortilli z warzywami', flag:'🇮🇹', type:'Kolacja serials box', box:false,
+      ingredients:[{q:'2 szt.',n:'tortilla pszenna'},{q:'4 łyżki',n:'passata pomidorowa'},{q:'80g',n:'mozzarella starta'},{q:'1 szt.',n:'papryka czerwona'},{q:'szczypta',n:'oregano i bazylia'}],
+      steps:['Tortillę posmaruj passatą.','Posyp mozzarellą i papryką.','Zapiekaj 200°C przez 8-10 min.','Pokrój w trójkąty.'],
+      tip:'Środkowa pizza-tortilla — szybka i chrupiąca!'
+    },
+    { name:'Box serialowy: chipsy z dipem + warzywa + ser', flag:'🌍', type:'Kolacja serials box', box:false,
+      ingredients:[{q:'150g',n:'chipsy lub paluszki'},{q:'50g',n:'ser żółty w kostkach'},{q:'1 szt.',n:'ogórek'},{q:'1 szt.',n:'papryka'},{q:'3 łyżki',n:'majonez + czosnek (dip)'}],
+      steps:['Majonez wymieszaj z czosnkiem.','Warzywa pokrój w słupki.','Ser w kostki.','Chipsy, dip i warzywa w osobnych pojemnikach.'],
+      tip:'Czwartkowy box chrupkowy — lekko i pysznie!'
+    },
+    { name:'Box serialowy: ser + winogrona + orzechy + krakersy', flag:'🌍', type:'Kolacja serials box', box:false,
+      ingredients:[{q:'80g',n:'ser żółty'},{q:'garść',n:'winogrona'},{q:'garść',n:'orzechy włoskie'},{q:'1 opak.',n:'krakersy'},{q:'2 łyżki',n:'dżem figowy lub morelowy'}],
+      steps:['Ser pokrój w kostkę.','Winogrona umyj.','Ułóż wszystko w boxie.','Dżem i krakersy osobno.'],
+      tip:'Piątkowy box-deska — elegancja w 5 minut!'
+    },
+    { name:'Box serialowy: wrapy z serem, sałatą i pomidorem', flag:'🌍', type:'Kolacja serials box', box:false,
+      ingredients:[{q:'2 szt.',n:'tortilla pszenna'},{q:'80g',n:'ser żółty'},{q:'kilka liści',n:'sałata'},{q:'1 szt.',n:'pomidor'},{q:'2 łyżki',n:'majonez'},{q:'szczypta',n:'sól, pieprz'}],
+      steps:['Na tortillę nałóż majonez.','Ułóż sałatę, ser i pomidora.','Zwiń ciasno i pokrój na pół.'],
+      tip:'Sobotni wrap bez mięsa — lekko i smacznie!'
+    },
+  ],
 },
 
 ];
@@ -882,18 +1212,19 @@ const SHOP = [
         {n:'Płatki owsiane górskie',q:'500g',p:'3,49 zł'},
         {n:'Kasza manna (śniadanie Śr-Cz)',q:'400g',p:'2,49 zł'},
         {n:'Granola',q:'300g',p:'8,99 zł'},
-        {n:'Chleb żytni (do boxu Śr-Cz)',q:'1 bochenek',p:'5,99 zł'},
-        {n:'Chleb pełnoziarnisty (do boxu Pt-Sb)',q:'1 bochenek',p:'5,99 zł'},
+        {n:'Chleb żytni (box Wt i Cz)',q:'1 bochenek',p:'5,99 zł'},
+        {n:'Chleb pełnoziarnisty (box Śr)',q:'1 bochenek',p:'5,99 zł'},
         {n:'Bułki kajzerki (śniadanie Pn-Wt)',q:'4 szt.',p:'3,60 zł'},
         {n:'Makaron zacierka lub nitki (do rosołu)',q:'200g',p:'3,49 zł'},
         {n:'Mąka owsiana lub zwykła (do crumble)',q:'200g',p:'2,99 zł'},
-        {n:'Tortille pszenne (do wrapów Pt-Sb)',q:'4 szt.',p:'5,99 zł'},
-        {n:'Bułeczki do hot-dogów',q:'4 szt.',p:'2,99 zł'},
-        {n:'Krakersy lub pieczywo chrupkie (do boxu Pt-Sb)',q:'1 opak.',p:'3,99 zł'},
+        {n:'Tortille pszenne (box Pt + mini-pizza)',q:'4 szt.',p:'5,99 zł'},
+        {n:'Bułeczki do hot-dogów (box Pn)',q:'4 szt.',p:'2,99 zł'},
+        {n:'Krakersy (box Śr)',q:'1 opak.',p:'3,99 zł'},
       ]},
       { name:'🫙 Przetwory i przyprawy', cls:'ho', items:[
         {n:'Pesto bazyliowe (słoik)',q:'190g',p:'7,99 zł'},
         {n:'Dżem malinowy (do kaszy manny)',q:'słoik',p:'4,99 zł'},
+        {n:'Passata pomidorowa (do mini-pizzy Pt)',q:'200g',p:'3,99 zł'},
         {n:'Oliwa extra virgin',q:'500ml',p:'14,99 zł'},
         {n:'Pomidory krojone (do bigosu i shakshuki)',q:'2 puszki',p:'5,98 zł'},
         {n:'Miód',q:'słoik 250g',p:'7,99 zł'},
@@ -901,21 +1232,27 @@ const SHOP = [
         {n:'Czerwone wino (do bigosu)',q:'150ml/butelka',p:'14,99 zł'},
         {n:'Olej słonecznikowy',q:'500ml',p:'5,99 zł'},
         {n:'Cynamon mielony',q:'20g',p:'3,49 zł'},
-        {n:'Ketchup (do boxu Pn-Wt)',q:'300g',p:'3,49 zł'},
-        {n:'Dżem figowy lub morelowy (do boxu Pt-Sb)',q:'słoik',p:'5,99 zł'},
+        {n:'Ketchup (box Pn)',q:'300g',p:'3,49 zł'},
+        {n:'Dżem figowy (box Śr)',q:'słoik',p:'5,99 zł'},
       ]},
       { name:'🍰 Słodycze i przekąski', cls:'hc', items:[
-        {n:'Batoniki zbożowe — np. Corny (podwieczorek Pn-Wt)',q:'4 szt.',p:'5,99 zł'},
-        {n:'Budyń waniliowy w kubku (podwieczorek Pn-Wt)',q:'2 szt.',p:'3,99 zł'},
-        {n:'Kisiel owocowy (podwieczorek Śr-Cz)',q:'2 opak.',p:'2,99 zł'},
-        {n:'Wafle ryżowe (podwieczorek Śr-Cz)',q:'1 opak.',p:'3,49 zł'},
-        {n:'Budyń czekoladowy w kubku (podwieczorek Pt-Sb)',q:'2 szt.',p:'3,99 zł'},
-        {n:'Baton proteinowy lub zbożowy (podwieczorek Pt-Sb)',q:'2 szt.',p:'4,99 zł'},
-        {n:'Mąka pszenna',q:'1 kg',p:'3,99 zł'},
-        {n:'Cukier brązowy',q:'200g',p:'2,49 zł'},
+        {n:'Budyń waniliowy w kubku (podwieczorek Pn)',q:'2 szt.',p:'3,99 zł'},
+        {n:'Maliny lub truskawki (do budyniu Pn)',q:'150g',p:'3,99 zł'},
+        {n:'Baton zbożowy np. Corny (podwieczorek Wt)',q:'2 szt.',p:'2,99 zł'},
+        {n:'Kisiel malinowy (podwieczorek Śr)',q:'2 opak.',p:'2,99 zł'},
+        {n:'Wafle ryżowe (podwieczorek Śr)',q:'1 opak.',p:'3,49 zł'},
+        {n:'Budyń czekoladowy w kubku (podwieczorek Cz)',q:'2 szt.',p:'3,99 zł'},
+        {n:'Borówki (do budyniu Cz)',q:'garść',p:'2,99 zł'},
+        {n:'Baton proteinowy (podwieczorek Pt)',q:'2 szt.',p:'4,99 zł'},
+        {n:'Jabłka (do podwieczorku Pt, owsianki i crumble)',q:'ok. 1,2 kg',p:'5,99 zł'},
+        {n:'Kisiel wiśniowy (podwieczorek Sb)',q:'2 opak.',p:'2,99 zł'},
+        {n:'Wafelek czekoladowy np. Prince Polo (podwieczorek Sb)',q:'2 szt.',p:'2,99 zł'},
+        {n:'Mini parówki hot-dog (box Pn)',q:'4 szt.',p:'3,99 zł'},
+        {n:'Bułeczki do hot-dogów (box Pn)',q:'4 szt.',p:'2,99 zł'},
+        {n:'Chipsy (box Sb)',q:'150g',p:'4,99 zł'},
         {n:'Lody waniliowe (do crumble w niedzielę)',q:'500ml',p:'8,99 zł'},
-        {n:'Chipsy lub paluszki (do boxu Pt-Sb)',q:'150g',p:'4,99 zł'},
-        {n:'Mini parówki hot-dog (do boxu Pn-Wt)',q:'4 szt.',p:'3,99 zł'},
+        {n:'Mąka pszenna',q:'500g',p:'1,99 zł'},
+        {n:'Cukier brązowy',q:'200g',p:'2,49 zł'},
       ]},
     ]
   },
@@ -986,22 +1323,30 @@ const SHOP = [
         {n:'Bulion wołowy',q:'1L',p:'5,99 zł'},
         {n:'Bulion drobiowy (do zupy pomidorowej)',q:'500ml',p:'3,99 zł'},
         {n:'Kaparów słoiczek (do bajgli)',q:'100g',p:'5,99 zł'},
-        {n:'Salsa pomidorowa (do boxu Śr-Cz)',q:'200g',p:'5,99 zł'},
-        {n:'Kukurydza z puszki (do boxu Śr-Cz)',q:'1 szt.',p:'2,99 zł'},
-        {n:'Dżem figowy lub morelowy (do boxu Pt-Sb)',q:'słoik',p:'5,99 zł'},
+        {n:'Salsa pomidorowa (do boxu Wt i Śr)',q:'200g',p:'5,99 zł'},
+        {n:'Kukurydza z puszki (do boxu Śr)',q:'1 szt.',p:'2,99 zł'},
+        {n:'Dżem figowy lub morelowy (do boxu Sb)',q:'słoik',p:'5,99 zł'},
         {n:'Oliwa extra virgin',q:'250ml',p:'7,99 zł'},
         {n:'Passata pomidorowa (do pizzy)',q:'200g',p:'3,99 zł'},
         {n:'Drożdże instant (do pizzy)',q:'7g',p:'1,49 zł'},
       ]},
       { name:'🍰 Słodycze i przekąski', cls:'hc', items:[
-        {n:'Baton zbożowy + kisiel wiśniowy (podwieczorek Pn-Wt)',q:'2 bat. + 2 opak.',p:'6,99 zł'},
-        {n:'Budyń waniliowy w kubku (podwieczorek Śr-Cz)',q:'2 szt.',p:'3,99 zł'},
-        {n:'Wafle ryżowe (podwieczorek Śr-Cz)',q:'1 opak.',p:'3,49 zł'},
-        {n:'Baton czekoladowy (podwieczorek Pt-Sb)',q:'2 szt.',p:'4,99 zł'},
-        {n:'Kisiel malinowy (podwieczorek Pt-Sb)',q:'2 opak.',p:'2,99 zł'},
+        {n:'Budyń waniliowy w kubku (podwieczorek Pn)',q:'2 szt.',p:'3,99 zł'},
+        {n:'Winogrona (do budyniu Pn)',q:'garść',p:'2,99 zł'},
+        {n:'Kisiel wiśniowy (podwieczorek Wt)',q:'2 opak.',p:'2,99 zł'},
+        {n:'Baton zbożowy (podwieczorek Wt)',q:'2 szt.',p:'2,99 zł'},
+        {n:'Baton czekoladowy np. Kinder Bueno (podwieczorek Śr)',q:'2 szt.',p:'4,99 zł'},
+        {n:'Gruszka (do batona Śr)',q:'2 szt.',p:'2,99 zł'},
+        {n:'Budyń czekoladowy w kubku (podwieczorek Cz)',q:'2 szt.',p:'3,99 zł'},
+        {n:'Banan (do budyniu Cz)',q:'1 szt.',p:'0,60 zł'},
+        {n:'Kisiel malinowy (podwieczorek Pt)',q:'2 opak.',p:'2,99 zł'},
+        {n:'Wafle ryżowe (podwieczorek Pt)',q:'1 opak.',p:'3,49 zł'},
+        {n:'Baton proteinowy (podwieczorek Sb)',q:'2 szt.',p:'4,99 zł'},
+        {n:'Jabłka (podwieczorek Sb i inne)',q:'3 szt.',p:'2,99 zł'},
+        {n:'Nachos (box Śr)',q:'150g',p:'5,99 zł'},
         {n:'Lody waniliowe (do szarlotki w niedzielę)',q:'500ml',p:'8,99 zł'},
-        {n:'Mąka pszenna',q:'1 kg',p:'3,99 zł'},
-        {n:'Cukier brązowy',q:'500g',p:'4,49 zł'},
+        {n:'Mąka pszenna',q:'500g',p:'1,99 zł'},
+        {n:'Cukier brązowy',q:'200g',p:'2,49 zł'},
         {n:'Cynamon mielony',q:'20g',p:'3,49 zł'},
       ]},
     ]
@@ -1083,12 +1428,20 @@ const SHOP = [
         {n:'Miód (do tostów Pt-Sb)',q:'słoik 250g',p:'7,99 zł'},
       ]},
       { name:'🍰 Słodycze i przekąski', cls:'hc', items:[
-        {n:'Budyń karmelowy w kubku (podwieczorek Pn-Wt)',q:'2 szt.',p:'3,99 zł'},
-        {n:'Baton zbożowy (podwieczorek Pn-Wt)',q:'2 szt.',p:'2,99 zł'},
-        {n:'Kisiel waniliowy (podwieczorek Śr-Cz)',q:'2 opak.',p:'2,99 zł'},
-        {n:'Wafle z kremem np. Grześki (podwieczorek Śr-Cz)',q:'4 szt.',p:'3,99 zł'},
-        {n:'Baton proteinowy (podwieczorek Pt-Sb)',q:'2 szt.',p:'4,99 zł'},
-        {n:'Budyń czekoladowy w kubku (podwieczorek Pt-Sb)',q:'2 szt.',p:'3,99 zł'},
+        {n:'Budyń karmelowy w kubku (podwieczorek Pn)',q:'2 szt.',p:'3,99 zł'},
+        {n:'Borówki lub maliny (do budyniu Pn)',q:'garść',p:'2,99 zł'},
+        {n:'Kisiel waniliowy (podwieczorek Wt)',q:'2 opak.',p:'2,99 zł'},
+        {n:'Wafle z kremem np. Grześki (podwieczorek Wt)',q:'2 szt.',p:'1,99 zł'},
+        {n:'Baton zbożowy (podwieczorek Śr)',q:'2 szt.',p:'2,99 zł'},
+        {n:'Mandarynki lub pomarańcze (podwieczorek Śr)',q:'2 szt.',p:'1,99 zł'},
+        {n:'Budyń czekoladowy w kubku (podwieczorek Cz)',q:'2 szt.',p:'3,99 zł'},
+        {n:'Truskawki lub maliny (do budyniu Cz)',q:'garść',p:'2,99 zł'},
+        {n:'Baton proteinowy (podwieczorek Pt)',q:'2 szt.',p:'4,99 zł'},
+        {n:'Kisiel malinowy (podwieczorek Sb)',q:'2 opak.',p:'2,99 zł'},
+        {n:'Baton czekoladowy np. Prince Polo (podwieczorek Sb)',q:'2 szt.',p:'2,99 zł'},
+        {n:'Nachos (box Pn)',q:'150g',p:'5,99 zł'},
+        {n:'Chipsy (box Cz)',q:'150g',p:'4,99 zł'},
+        {n:'Orzechy mieszane (box Sb)',q:'80g',p:'4,99 zł'},
         {n:'Mąka pszenna',q:'500g',p:'1,99 zł'},
         {n:'Cukier brązowy',q:'200g',p:'2,49 zł'},
       ]},
@@ -1172,12 +1525,19 @@ const SHOP = [
         {n:'Orzechy mieszane (do boxu Pt-Sb)',q:'80g',p:'4,99 zł'},
       ]},
       { name:'🍰 Słodycze i przekąski', cls:'hc', items:[
-        {n:'Kisiel owocowy (podwieczorek Pn-Wt)',q:'2 opak.',p:'2,99 zł'},
-        {n:'Baton zbożowy (podwieczorek Pn-Wt)',q:'2 szt.',p:'2,99 zł'},
-        {n:'Budyń śmietankowy w kubku (podwieczorek Śr-Cz)',q:'2 szt.',p:'3,99 zł'},
-        {n:'Wafelek czekoladowy np. Kit Kat (podwieczorek Śr-Cz)',q:'2 szt.',p:'2,99 zł'},
-        {n:'Baton orzechowy np. Snickers (podwieczorek Pt-Sb)',q:'2 szt.',p:'4,99 zł'},
-        {n:'Kisiel waniliowy (podwieczorek Pt-Sb)',q:'2 opak.',p:'2,99 zł'},
+        {n:'Kisiel truskawkowy (podwieczorek Pn)',q:'2 opak.',p:'2,99 zł'},
+        {n:'Wafle ryżowe (podwieczorek Pn)',q:'1 opak.',p:'3,49 zł'},
+        {n:'Baton zbożowy np. Corny (podwieczorek Wt)',q:'2 szt.',p:'2,99 zł'},
+        {n:'Gruszka (podwieczorek Wt)',q:'2 szt.',p:'2,99 zł'},
+        {n:'Budyń śmietankowy w kubku (podwieczorek Śr)',q:'2 szt.',p:'3,99 zł'},
+        {n:'Owoce sezonowe (podwieczorek Śr)',q:'garść',p:'2,99 zł'},
+        {n:'Wafelek czekoladowy np. Kit Kat (podwieczorek Cz)',q:'2 szt.',p:'2,99 zł'},
+        {n:'Jabłko (podwieczorek Cz)',q:'2 szt.',p:'1,99 zł'},
+        {n:'Baton orzechowy np. Snickers (podwieczorek Pt)',q:'2 szt.',p:'4,99 zł'},
+        {n:'Kisiel waniliowy (podwieczorek Pt)',q:'2 opak.',p:'2,99 zł'},
+        {n:'Budyń czekoladowy w kubku (podwieczorek Sb)',q:'2 szt.',p:'3,99 zł'},
+        {n:'Borówki (do budyniu Sb)',q:'garść',p:'2,99 zł'},
+        {n:'Chipsy (box Pn)',q:'150g',p:'4,99 zł'},
         {n:'Mąka pszenna',q:'500g',p:'1,99 zł'},
         {n:'Cukier biały',q:'200g',p:'1,49 zł'},
         {n:'Proszek do pieczenia (do pancakes)',q:'1 opak.',p:'1,49 zł'},
@@ -1258,7 +1618,7 @@ const SHOP = [
         {n:'Herbatniki digestive (do sernika nowojorskiego)',q:'200g',p:'4,99 zł'},
       ]},
       { name:'🫙 Przetwory i alkohole', cls:'ho', items:[
-        {n:'Passata pomidorowa (do pizzy)',q:'200g',p:'3,99 zł'},
+        {n:'Passata pomidorowa (do pizzy i boxu Śr)',q:'200g',p:'3,99 zł'},
         {n:'Pomidory krojone (do jagnięciny i minestrone)',q:'2 puszki',p:'5,98 zł'},
         {n:'Fasola biała (do minestrone)',q:'1 puszka',p:'3,49 zł'},
         {n:'Czerwone wino wytrawne (do jagnięciny)',q:'200ml/butelka',p:'9,99 zł'},
@@ -1268,23 +1628,31 @@ const SHOP = [
         {n:'Miód (do owsianki i śniadań)',q:'słoik 250g',p:'7,99 zł'},
         {n:'Masło orzechowe (do smoothie bowl)',q:'200g',p:'9,99 zł'},
         {n:'Syrop klonowy (do pancakes)',q:'100ml',p:'9,99 zł'},
-        {n:'Dżem malinowy (do budyniu Pn-Wt)',q:'słoik',p:'4,99 zł'},
-        {n:'Dżem figowy lub morelowy (do boxu Pt-Sb)',q:'słoik',p:'5,99 zł'},
-        {n:'Ketchup i majonez (do boxu Pn-Wt)',q:'po 200g',p:'7,98 zł'},
-        {n:'Orzechy mieszane (do boxu Pt-Sb)',q:'80g',p:'4,99 zł'},
+        {n:'Dżem malinowy (do budyniu Pn)',q:'słoik',p:'4,99 zł'},
+        {n:'Dżem figowy lub morelowy (do boxu Pt)',q:'słoik',p:'5,99 zł'},
+        {n:'Ketchup (do boxu Pn)',q:'200g',p:'3,99 zł'},
+        {n:'Orzechy włoskie (do boxu Pt i Sb)',q:'100g',p:'5,99 zł'},
       ]},
       { name:'🍰 Słodycze i przekąski', cls:'hc', items:[
-        {n:'Budyń waniliowy w kubku + dżem (podwieczorek Pn-Wt)',q:'2 szt.',p:'3,99 zł'},
-        {n:'Baton zbożowy (podwieczorek Pn-Wt)',q:'2 szt.',p:'2,99 zł'},
-        {n:'Kisiel truskawkowy (podwieczorek Śr-Cz)',q:'2 opak.',p:'2,99 zł'},
-        {n:'Wafelek czekoladowy np. Kit Kat (podwieczorek Śr-Cz)',q:'2 szt.',p:'2,99 zł'},
-        {n:'Budyń czekoladowy w kubku (podwieczorek Pt-Sb)',q:'2 szt.',p:'3,99 zł'},
-        {n:'Baton zbożowy z orzechami (podwieczorek Pt-Sb)',q:'2 szt.',p:'2,99 zł'},
+        {n:'Budyń waniliowy w kubku (podwieczorek Pn)',q:'2 szt.',p:'3,99 zł'},
+        {n:'Borówki (do budyniu Pn)',q:'garść',p:'2,99 zł'},
+        {n:'Baton zbożowy (podwieczorek Wt)',q:'2 szt.',p:'2,99 zł'},
+        {n:'Kisiel truskawkowy (podwieczorek Śr)',q:'2 opak.',p:'2,99 zł'},
+        {n:'Wafelek czekoladowy np. Kit Kat (podwieczorek Śr)',q:'2 szt.',p:'2,99 zł'},
+        {n:'Budyń czekoladowy w kubku (podwieczorek Cz)',q:'2 szt.',p:'3,99 zł'},
+        {n:'Truskawki lub maliny (do budyniu Cz)',q:'garść',p:'2,99 zł'},
+        {n:'Baton zbożowy z orzechami (podwieczorek Pt)',q:'2 szt.',p:'2,99 zł'},
+        {n:'Kisiel waniliowy (podwieczorek Sb)',q:'2 opak.',p:'2,99 zł'},
+        {n:'Winogrona (do kisielu Sb)',q:'garść',p:'2,99 zł'},
+        {n:'Nuggetsy z kurczaka mrożone (box Pn)',q:'300g',p:'8,99 zł'},
+        {n:'Chipsy lub paluszki (box Cz)',q:'150g',p:'4,99 zł'},
+        {n:'Krakersy (box Pt i Sb)',q:'1 opak.',p:'3,99 zł'},
+        {n:'Herbatniki digestive (do sernika nowojorskiego)',q:'200g',p:'4,99 zł'},
         {n:'Cukier biały',q:'200g',p:'1,49 zł'},
         {n:'Proszek do pieczenia (do pizzy i pancakes)',q:'1 opak.',p:'1,49 zł'},
         {n:'Soda oczyszczona (do pancakes)',q:'1 opak.',p:'1,49 zł'},
         {n:'Cynamon (do owsianki)',q:'małe opak.',p:'2,99 zł'},
-        {n:'Kardamon (do owsianki Pn-Wt)',q:'małe opak.',p:'2,99 zł'},
+        {n:'Kardamon (do owsianki Pn)',q:'małe opak.',p:'2,99 zł'},
       ]},
     ]
   }
@@ -1298,16 +1666,31 @@ try { checkedItems = JSON.parse(localStorage.getItem('para-checked') || '{}'); }
 const saveChecked = () => { try { localStorage.setItem('para-checked', JSON.stringify(checkedItems)); } catch(e) {} };
 
 // ═══════════════ HELPERS ═══════════════
+function getDayMeals(wd, dayNum) {
+  // dayNum: 1=Pn, 2=Wt, 3=Śr, 4=Cz, 5=Pt, 6=Sb, 0=Nd
+  let base;
+  if (dayNum === 0) return wd.sunday;
+  else if (dayNum === 1 || dayNum === 2) base = wd.monTue.slice(0, 3);
+  else if (dayNum === 3 || dayNum === 4) base = wd.wedThu.slice(0, 3);
+  else base = wd.friSat.slice(0, 3);
+
+  // per-day snack and box (indices: 0=Pn,1=Wt,2=Śr,3=Cz,4=Pt,5=Sb)
+  const di = [1,2,3,4,5,6].indexOf(dayNum);
+  const snack = wd.snacks ? wd.snacks[di] : (dayNum <= 2 ? wd.monTue[3] : dayNum <= 4 ? wd.wedThu[3] : wd.friSat[3]);
+  const box   = wd.boxes  ? wd.boxes[di]  : (dayNum <= 2 ? wd.monTue[4] : dayNum <= 4 ? wd.wedThu[4] : wd.friSat[4]);
+  return [...base, snack, box];
+}
+
 function getWeekData(w) {
   const wd = WEEKS[w];
   return [
-    { day: 1, name: 'Poniedziałek', meals: wd.monTue, badge: '📦 box', home: false },
-    { day: 2, name: 'Wtorek', meals: wd.monTue, badge: '📦 box', home: false },
-    { day: 3, name: 'Środa', meals: wd.wedThu, badge: '📦 box', home: false },
-    { day: 4, name: 'Czwartek', meals: wd.wedThu, badge: '📦 box', home: false },
-    { day: 5, name: 'Piątek', meals: wd.friSat, badge: '📦 box', home: false },
-    { day: 6, name: 'Sobota', meals: wd.friSat, badge: '📦 box', home: false },
-    { day: 0, name: 'Niedziela', meals: wd.sunday, badge: '🏠 dom', home: true },
+    { day: 1, name: 'Poniedziałek', meals: getDayMeals(wd, 1), badge: '📦 box', home: false },
+    { day: 2, name: 'Wtorek',       meals: getDayMeals(wd, 2), badge: '📦 box', home: false },
+    { day: 3, name: 'Środa',        meals: getDayMeals(wd, 3), badge: '📦 box', home: false },
+    { day: 4, name: 'Czwartek',     meals: getDayMeals(wd, 4), badge: '📦 box', home: false },
+    { day: 5, name: 'Piątek',       meals: getDayMeals(wd, 5), badge: '📦 box', home: false },
+    { day: 6, name: 'Sobota',       meals: getDayMeals(wd, 6), badge: '📦 box', home: false },
+    { day: 0, name: 'Niedziela',    meals: wd.sunday,          badge: '🏠 dom', home: true  },
   ];
 }
 
@@ -1371,12 +1754,7 @@ function toggleDay(id) {
 // ═══════════════ MODAL ═══════════════
 function getMealData(week, day, mealIdx) {
   const wd = WEEKS[week];
-  let meals;
-  if (day === 0) meals = wd.sunday;
-  else if (day === 1 || day === 2) meals = wd.monTue;
-  else if (day === 3 || day === 4) meals = wd.wedThu;
-  else meals = wd.friSat;
-  return meals[mealIdx];
+  return getDayMeals(wd, day)[mealIdx];
 }
 
 function openModal(week, day, mealIdx) {
